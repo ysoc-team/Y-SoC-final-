@@ -14,7 +14,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { supabase } from "@/lib/supabaseClient"; // <-- Import the supabase client
+import { createClient } from "@supabase/supabase-js"; // <-- Import the supabase client
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -60,6 +60,11 @@ export default function ContactPage() {
     setIsSubmitting(true);
 
     try {
+      // Initialize Supabase client inside the function
+      const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || ""
+      const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || ""
+      const supabase = createClient(supabaseUrl, supabaseAnonKey)
+
       // Use the Supabase client to insert data
       const { error } = await supabase
         .from("contact_submissions") // <-- Specify your table name

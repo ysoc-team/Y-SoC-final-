@@ -16,11 +16,6 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { motion } from "framer-motion"
 import { Crown, Users, Code, Palette, GraduationCap, Send, CheckCircle, AlertCircle, Briefcase, BookOpen, Mail, MapPin, Star, Link as LinkIcon, Clock, Heart } from "lucide-react"
 
-// Initialize Supabase client
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || ""
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || ""
-const supabase = createClient(supabaseUrl, supabaseAnonKey)
-
 export default function RecruitPage() {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -55,6 +50,11 @@ export default function RecruitPage() {
     e.preventDefault()
     setIsSubmitting(true)
     setSubmitError("")
+
+    // Initialize Supabase client inside the function
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || ""
+    const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || ""
+    const supabase = createClient(supabaseUrl, supabaseAnonKey)
 
     const { data, error } = await supabase
       .from("applications")
