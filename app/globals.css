@@ -1,0 +1,374 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smooth scrolling for better UX */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Performance optimizations */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* GPU acceleration for smooth animations */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Smooth transitions for interactive elements */
+button, a, [role="button"] {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Optimize text rendering */
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth focus states */
+*:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+  transition: outline-offset 0.2s ease;
+}
+
+/* Custom smooth transitions for form elements */
+@keyframes smoothFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes smoothScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Enhanced select animations */
+[data-radix-select-content] {
+  animation: smoothScaleIn 0.2s ease-out;
+}
+
+[data-radix-select-item] {
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-radix-select-item]:hover {
+  transform: translateX(2px);
+}
+
+/* Smooth chevron rotation */
+[data-radix-select-trigger] svg {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-state="open"] [data-radix-select-trigger] svg {
+  transform: rotate(180deg);
+}
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated to Y-SoC purple-blue neon theme */
+  --background: oklch(0.98 0.01 270);
+  --foreground: oklch(0.15 0.02 270);
+  --card: oklch(0.98 0.01 270);
+  --card-foreground: oklch(0.15 0.02 270);
+  --popover: oklch(0.98 0.01 270);
+  --popover-foreground: oklch(0.15 0.02 270);
+  --primary: oklch(0.55 0.25 270); /* Vibrant purple #6b5bff */
+  --primary-foreground: oklch(0.98 0.01 270);
+  --secondary: oklch(0.65 0.2 200); /* Bright cyan #00d1ff */
+  --secondary-foreground: oklch(0.15 0.02 270);
+  --muted: oklch(0.94 0.01 270);
+  --muted-foreground: oklch(0.45 0.02 270);
+  --accent: oklch(0.65 0.2 200); /* Cyan accent */
+  --accent-foreground: oklch(0.15 0.02 270);
+  --destructive: oklch(0.6 0.25 15);
+  --destructive-foreground: oklch(0.98 0.01 270);
+  --border: oklch(0.9 0.01 270);
+  --input: oklch(0.94 0.01 270);
+  --ring: oklch(0.55 0.25 270);
+  --chart-1: oklch(0.55 0.25 270);
+  --chart-2: oklch(0.65 0.2 200);
+  --chart-3: oklch(0.6 0.25 15);
+  --chart-4: oklch(0.7 0.15 120);
+  --chart-5: oklch(0.5 0.2 300);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.96 0.01 270);
+  --sidebar-foreground: oklch(0.15 0.02 270);
+  --sidebar-primary: oklch(0.55 0.25 270);
+  --sidebar-primary-foreground: oklch(0.98 0.01 270);
+  --sidebar-accent: oklch(0.94 0.01 270);
+  --sidebar-accent-foreground: oklch(0.15 0.02 270);
+  --sidebar-border: oklch(0.9 0.01 270);
+  --sidebar-ring: oklch(0.55 0.25 270);
+}
+
+.dark {
+  /* Dark mode with neon purple-blue theme */
+  --background: oklch(0.12 0.02 270); /* Dark background #1e1e2f */
+  --foreground: oklch(0.95 0.01 270);
+  --card: oklch(0.16 0.02 270); /* Card background #2a2a3c */
+  --card-foreground: oklch(0.95 0.01 270);
+  --popover: oklch(0.12 0.02 270);
+  --popover-foreground: oklch(0.95 0.01 270);
+  --primary: oklch(0.6 0.25 270); /* Brighter purple for dark mode */
+  --primary-foreground: oklch(0.95 0.01 270);
+  --secondary: oklch(0.7 0.2 200); /* Brighter cyan for dark mode */
+  --secondary-foreground: oklch(0.12 0.02 270);
+  --muted: oklch(0.2 0.02 270);
+  --muted-foreground: oklch(0.65 0.01 270);
+  --accent: oklch(0.7 0.2 200);
+  --accent-foreground: oklch(0.12 0.02 270);
+  --destructive: oklch(0.65 0.25 15);
+  --destructive-foreground: oklch(0.95 0.01 270);
+  --border: oklch(0.2 0.02 270);
+  --input: oklch(0.2 0.02 270);
+  --ring: oklch(0.6 0.25 270);
+  --chart-1: oklch(0.6 0.25 270);
+  --chart-2: oklch(0.7 0.2 200);
+  --chart-3: oklch(0.65 0.25 15);
+  --chart-4: oklch(0.75 0.15 120);
+  --chart-5: oklch(0.55 0.2 300);
+  --sidebar: oklch(0.16 0.02 270);
+  --sidebar-foreground: oklch(0.95 0.01 270);
+  --sidebar-primary: oklch(0.6 0.25 270);
+  --sidebar-primary-foreground: oklch(0.95 0.01 270);
+  --sidebar-accent: oklch(0.2 0.02 270);
+  --sidebar-accent-foreground: oklch(0.95 0.01 270);
+  --sidebar-border: oklch(0.2 0.02 270);
+  --sidebar-ring: oklch(0.6 0.25 270);
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-gray-700 outline-blue-500/50;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  }
+  body {
+    background-color: #000000;
+    color: #ffffff;
+  }
+
+  /* Enhanced gradient utilities and animations */
+  .gradient-primary {
+    background: linear-gradient(135deg, oklch(0.55 0.25 270), oklch(0.65 0.2 200));
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, oklch(0.55 0.25 270), oklch(0.65 0.2 200));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .neon-glow {
+    box-shadow: 0 0 20px oklch(0.55 0.25 270 / 0.3), 0 0 40px oklch(0.65 0.2 200 / 0.2);
+  }
+
+  /* Enhanced scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar for webkit browsers */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: oklch(0.94 0.01 270);
+  }
+
+  .dark ::-webkit-scrollbar-track {
+    background: oklch(0.16 0.02 270);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: oklch(0.55 0.25 270);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: oklch(0.6 0.25 270);
+  }
+
+  /* Focus styles for better accessibility */
+  .focus-visible:focus-visible {
+    outline: 2px solid oklch(0.55 0.25 270);
+    outline-offset: 2px;
+  }
+
+  /* Enhanced smooth transitions for all interactive elements */
+  * {
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+
+  /* GPU acceleration for animations */
+  .gpu-accelerated {
+    will-change: transform, opacity;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  /* Optimized animations for 60fps */
+  .smooth-animate {
+    will-change: transform, opacity;
+    transform: translateZ(0);
+  }
+
+  /* Reduce motion for accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* Smooth page transitions */
+  .page-transition {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Improved button interactions */
+  button, [role="button"] {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Smooth card hover effects */
+  .card-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Smooth text animations */
+  .text-animate {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Performance optimizations */
+  .performance-optimized {
+    contain: layout style paint;
+  }
+
+  /* Optimized animations with CSS custom properties */
+  .performance-optimized * {
+    animation-duration: calc(var(--animation-quality, 1) * 0.3s);
+    transition-duration: calc(var(--animation-quality, 1) * 0.15s);
+  }
+
+  /* Critical rendering path optimizations */
+  .critical-content {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 500px;
+  }
+
+  /* Optimize repaints and reflows */
+  .optimize-rendering {
+    will-change: transform, opacity;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
+  /* Lazy loading styles */
+  [data-animate] {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  [data-animate].animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Optimize scroll performance */
+  .scroll-optimized {
+    overflow-anchor: none;
+    scroll-behavior: smooth;
+  }
+
+  /* Reduce layout thrashing */
+  .stable-layout {
+    contain: layout;
+  }
+}
