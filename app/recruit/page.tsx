@@ -2,7 +2,7 @@
 
 import type React from "react"
 import { useState } from "react"
-import { createClient } from "@supabase/supabase-js" // Import the Supabase client
+import { createClient } from "@supabase/supabase-js"
 
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
@@ -28,10 +28,11 @@ export default function RecruitPage() {
     motivation: "",
     portfolio: "",
     github: "",
-    linkedin: "", // Added to match the form structure
+    linkedin: "",
     availability: "",
     agreeTerms: false,
     agreeNewsletter: false,
+    resumeLink: "",
   })
 
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -51,9 +52,16 @@ export default function RecruitPage() {
     setIsSubmitting(true)
     setSubmitError("")
 
-    // Initialize Supabase client inside the function
-    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || ""
-    const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || ""
+    // Initialize Supabase client inside the function to avoid build-time issues
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+    const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+    
+    if (!supabaseUrl || !supabaseAnonKey) {
+      setSubmitError("Configuration error. Please try again later.")
+      setIsSubmitting(false)
+      return
+    }
+
     const supabase = createClient(supabaseUrl, supabaseAnonKey)
 
     const { data, error } = await supabase
@@ -71,6 +79,7 @@ export default function RecruitPage() {
           github: formData.github,
           portfolio: formData.portfolio,
           linkedin: formData.linkedin,
+          resume_link: formData.resumeLink,
           time_commitment: formData.availability,
           agree_terms: formData.agreeTerms,
           updates_subscription: formData.agreeNewsletter,
@@ -80,10 +89,13 @@ export default function RecruitPage() {
 
     if (error) {
       console.error("Supabase submission error:", error)
-      setSubmitError("Failed to submit application. Please try again.")
+      if (error.code === '23505') {
+        setSubmitError("This email has already been registered. Please use a different one or contact support.")
+      } else {
+        setSubmitError("Failed to submit application. Please try again.")
+      }
     } else {
       setIsSubmitted(true)
-      // Clear form data after successful submission
       setFormData({
         firstName: "",
         lastName: "",
@@ -99,6 +111,7 @@ export default function RecruitPage() {
         availability: "",
         agreeTerms: false,
         agreeNewsletter: false,
+        resumeLink: "",
       })
     }
     setIsSubmitting(false)
@@ -107,9 +120,6 @@ export default function RecruitPage() {
   const handleInputChange = (field: string, value: string | boolean) => {
     setFormData((prev) => ({ ...prev, [field]: value }))
   }
-
-  // The rest of the component's JSX remains largely the same, with minor adjustments
-  // to the form element to include the new 'linkedin' field.
 
   if (isSubmitted) {
     return (
@@ -428,6 +438,16 @@ export default function RecruitPage() {
                           placeholder="https://linkedin.com/in/username"
                           value={formData.linkedin}
                           onChange={(e) => handleInputChange("linkedin", e.target.value)}
+                          className="bg-gray-900/50 border-gray-600/50 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500/20 transition-all duration-200 hover:border-gray-500/50"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="resumeLink" className="text-gray-300 font-medium">Resume Link</Label>
+                        <Input
+                          id="resumeLink"
+                          placeholder="https://docs.google.com/document/d/..."
+                          value={formData.resumeLink}
+                          onChange={(e) => handleInputChange("resumeLink", e.target.value)}
                           className="bg-gray-900/50 border-gray-600/50 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500/20 transition-all duration-200 hover:border-gray-500/50"
                         />
                       </div>

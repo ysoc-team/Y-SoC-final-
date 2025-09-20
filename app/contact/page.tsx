@@ -60,9 +60,14 @@ export default function ContactPage() {
     setIsSubmitting(true);
 
     try {
-      // Initialize Supabase client inside the function
-      const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || ""
-      const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || ""
+      // Initialize Supabase client inside the function to avoid build-time issues
+      const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+      const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+      
+      if (!supabaseUrl || !supabaseAnonKey) {
+        throw new Error("Configuration error. Please try again later.")
+      }
+
       const supabase = createClient(supabaseUrl, supabaseAnonKey)
 
       // Use the Supabase client to insert data
