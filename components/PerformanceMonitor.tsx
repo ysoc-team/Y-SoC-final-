@@ -1,163 +1,134 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
 
 interface PerformanceMetrics {
-  fcp: number | null
-  lcp: number | null
-  fid: number | null
-  cls: number | null
-  ttfb: number | null
-  fmp: number | null
+  fps: number;
+  memoryUsage: number;
+  renderTime: number;
+  isLowPerformance: boolean;
 }
 
-export function PerformanceMonitor() {
+export const PerformanceMonitor = () => {
   const [metrics, setMetrics] = useState<PerformanceMetrics>({
-    fcp: null,
-    lcp: null,
-    fid: null,
-    cls: null,
-    ttfb: null,
-    fmp: null
-  })
+    fps: 60,
+    memoryUsage: 0,
+    renderTime: 0,
+    isLowPerformance: false,
+  });
+
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Only run in development and if PerformanceObserver is available
-    if (process.env.NODE_ENV !== 'development' || typeof window === 'undefined' || !('PerformanceObserver' in window)) {
-      return
-    }
+    let frameCount = 0;
+    let lastTime = performance.now();
+    let fps = 60;
 
-    const observer = new PerformanceObserver((list) => {
-      const entries = list.getEntries()
+    const measurePerformance = () => {
+      frameCount++;
+      const currentTime = performance.now();
       
-      entries.forEach((entry) => {
-        switch (entry.entryType) {
-          case 'paint':
-            if (entry.name === 'first-contentful-paint') {
-              setMetrics(prev => ({ ...prev, fcp: entry.startTime }))
-            }
-            if (entry.name === 'first-meaningful-paint') {
-              setMetrics(prev => ({ ...prev, fmp: entry.startTime }))
-            }
-            break
-          case 'largest-contentful-paint':
-            setMetrics(prev => ({ ...prev, lcp: entry.startTime }))
-            break
-          case 'first-input':
-            setMetrics(prev => ({ ...prev, fid: entry.processingStart - entry.startTime }))
-            break
-          case 'layout-shift':
-            if (!(entry as any).hadRecentInput) {
-              setMetrics(prev => ({ ...prev, cls: (prev.cls || 0) + (entry as any).value }))
-            }
-            break
-          case 'navigation':
-            setMetrics(prev => ({ ...prev, ttfb: entry.responseStart - entry.requestStart }))
-            break
-        }
-      })
-    })
+      if (currentTime - lastTime >= 1000) {
+        fps = Math.round((frameCount * 1000) / (currentTime - lastTime));
+        frameCount = 0;
+        lastTime = currentTime;
 
-    // Observe different types of performance entries
-    try {
-      observer.observe({ entryTypes: ['paint', 'largest-contentful-paint', 'first-input', 'layout-shift', 'navigation'] })
-    } catch (error) {
-      console.warn('Performance monitoring not fully supported:', error)
-    }
+        // Get memory usage if available
+        const memory = (performance as any).memory;
+        const memoryUsage = memory ? Math.round(memory.usedJSHeapSize / 1024 / 1024) : 0;
 
-    // Monitor Web Vitals
-    const reportWebVitals = (metric: any) => {
-      setMetrics(prev => ({
-        ...prev,
-        [metric.name]: metric.value
-      }))
-
-      // Send to analytics (replace with your analytics service)
-      if (typeof window !== 'undefined' && (window as any).gtag) {
-        (window as any).gtag('event', metric.name, {
-          event_category: 'Web Vitals',
-          value: Math.round(metric.value),
-          event_label: metric.id,
-          non_interaction: true,
-        })
+        // Measure render time
+        const renderStart = performance.now();
+        requestAnimationFrame(() => {
+          const renderTime = performance.now() - renderStart;
+          
+          setMetrics({
+            fps,
+            memoryUsage,
+            renderTime: Math.round(renderTime * 100) / 100,
+            isLowPerformance: fps < 30 || memoryUsage > 100,
+          });
+        });
       }
-    }
 
-    // Load web-vitals library dynamically
-    import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
-      try {
-        getCLS(reportWebVitals)
-        getFID(reportWebVitals)
-        getFCP(reportWebVitals)
-        getLCP(reportWebVitals)
-        getTTFB(reportWebVitals)
-      } catch (error) {
-        console.warn('Error initializing web vitals:', error)
+      requestAnimationFrame(measurePerformance);
+    };
+
+    measurePerformance();
+
+    // Toggle visibility with Ctrl+Shift+P
+    const handleKeyPress = (e: KeyboardEvent) => {
+      if (e.ctrlKey && e.shiftKey && e.key === 'P') {
+        setIsVisible(prev => !prev);
       }
-    }).catch(() => {
-      console.warn('web-vitals library not available')
-    })
+    };
 
-    return () => {
-      observer.disconnect()
-    }
-  }, [])
+    window.addEventListener('keydown', handleKeyPress);
+    return () => window.removeEventListener('keydown', handleKeyPress);
+  }, []);
 
-  // Performance optimization suggestions
-  const getPerformanceSuggestions = () => {
-    const suggestions = []
-    
-    if (metrics.fcp && metrics.fcp > 1800) {
-      suggestions.push('First Contentful Paint is slow. Consider optimizing critical resources.')
-    }
-    
-    if (metrics.lcp && metrics.lcp > 2500) {
-      suggestions.push('Largest Contentful Paint is slow. Optimize images and reduce render-blocking resources.')
-    }
-    
-    if (metrics.fid && metrics.fid > 100) {
-      suggestions.push('First Input Delay is high. Reduce JavaScript execution time.')
-    }
-    
-    if (metrics.cls && metrics.cls > 0.1) {
-      suggestions.push('Cumulative Layout Shift is high. Ensure stable layouts.')
-    }
-    
-    if (metrics.ttfb && metrics.ttfb > 600) {
-      suggestions.push('Time to First Byte is slow. Optimize server response time.')
-    }
-    
-    return suggestions
-  }
-
-  // Only show in development
-  if (process.env.NODE_ENV !== 'development') {
-    return null
-  }
-
-  const suggestions = getPerformanceSuggestions()
+  if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-4 right-4 bg-black/80 text-white p-4 rounded-lg text-xs max-w-sm z-50 backdrop-blur-sm">
-      <h3 className="font-bold mb-2">Performance Metrics</h3>
-      <div className="space-y-1">
-        {metrics.fcp && <div>FCP: {Math.round(metrics.fcp)}ms</div>}
-        {metrics.lcp && <div>LCP: {Math.round(metrics.lcp)}ms</div>}
-        {metrics.fid && <div>FID: {Math.round(metrics.fid)}ms</div>}
-        {metrics.cls && <div>CLS: {metrics.cls.toFixed(3)}</div>}
-        {metrics.ttfb && <div>TTFB: {Math.round(metrics.ttfb)}ms</div>}
+    <div className="fixed top-4 right-4 z-50 bg-black/80 backdrop-blur-sm border border-gray-700 rounded-lg p-3 text-xs font-mono text-white">
+      <div className="flex items-center gap-2 mb-2">
+        <div className={`w-2 h-2 rounded-full ${metrics.isLowPerformance ? 'bg-red-500' : 'bg-green-500'}`} />
+        <span>Performance Monitor</span>
       </div>
-      
-      {suggestions.length > 0 && (
-        <div className="mt-3 pt-2 border-t border-white/20">
-          <h4 className="font-semibold mb-1">Suggestions:</h4>
-          <ul className="space-y-1">
-            {suggestions.map((suggestion, index) => (
-              <li key={index} className="text-yellow-300">• {suggestion}</li>
-            ))}
-          </ul>
-        </div>
-      )}
+      <div className="space-y-1">
+        <div>FPS: <span className={metrics.fps < 30 ? 'text-red-400' : 'text-green-400'}>{metrics.fps}</span></div>
+        <div>Memory: <span className={metrics.memoryUsage > 100 ? 'text-red-400' : 'text-blue-400'}>{metrics.memoryUsage}MB</span></div>
+        <div>Render: <span className="text-yellow-400">{metrics.renderTime}ms</span></div>
+      </div>
+      <div className="text-gray-400 mt-2 text-xs">
+        Press Ctrl+Shift+P to toggle
+      </div>
     </div>
-  )
-}
+  );
+};
+
+// Performance optimization hook
+export const usePerformanceOptimization = () => {
+  const [shouldReduceMotion, setShouldReduceMotion] = useState(false);
+  const [isLowEndDevice, setIsLowEndDevice] = useState(false);
+
+  useEffect(() => {
+    // Check for reduced motion preference
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setShouldReduceMotion(mediaQuery.matches);
+
+    // Check for low-end device
+    const isLowEnd = navigator.hardwareConcurrency <= 2 || 
+                    (navigator as any).deviceMemory <= 4 ||
+                    window.innerWidth < 768;
+    setIsLowEndDevice(isLowEnd);
+
+    // Monitor performance and adjust accordingly
+    let frameCount = 0;
+    let lastTime = performance.now();
+
+    const checkPerformance = () => {
+      frameCount++;
+      const currentTime = performance.now();
+      
+      if (currentTime - lastTime >= 2000) {
+        const fps = (frameCount * 1000) / (currentTime - lastTime);
+        if (fps < 30) {
+          setShouldReduceMotion(true);
+        }
+        frameCount = 0;
+        lastTime = currentTime;
+      }
+      
+      requestAnimationFrame(checkPerformance);
+    };
+
+    checkPerformance();
+  }, []);
+
+  return {
+    shouldReduceMotion,
+    isLowEndDevice,
+    quality: isLowEndDevice ? 'low' : 'high',
+  };
+};

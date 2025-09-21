@@ -10,6 +10,8 @@ import { ArrowRight, Code, Users, Zap, Globe, Calendar, Trophy, ChevronUp, Brief
 import { motion, useScroll, useTransform, useSpring, useInView } from "framer-motion"
 import { useEffect, useState, useCallback, useMemo, lazy, Suspense } from "react"
 import { animations, getTransition } from "@/lib/animations"
+import { PerformanceMonitor, usePerformanceOptimization } from "@/components/PerformanceMonitor"
+import { LazyPrism, LazyPrismaticBurst, LazyPlasma, LazyPixelBlast } from "@/components/LazyComponents"
 
 // Lazy load heavy WebGL components for better performance
 const Plasma = lazy(() => import("@/components/Plasma"))
@@ -18,9 +20,11 @@ const PixelBlast = lazy(() => import("@/components/PixelBlast"))
 export default function HomePage() {
   const [showScrollTop, setShowScrollTop] = useState(false)
   const { scrollYProgress } = useScroll()
+  const { shouldReduceMotion, isLowEndDevice } = usePerformanceOptimization()
+  
   const scaleX = useSpring(scrollYProgress, {
-    stiffness: 200,
-    damping: 40,
+    stiffness: shouldReduceMotion ? 100 : 200,
+    damping: shouldReduceMotion ? 20 : 40,
     restDelta: 0.001
   })
 
@@ -116,6 +120,7 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-black scroll-smooth">
+        <PerformanceMonitor />
         {/* Optimized Scroll Progress Bar */}
         <motion.div
           className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary to-secondary z-50 origin-left gpu-accelerated"
