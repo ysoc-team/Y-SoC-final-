@@ -90,7 +90,7 @@ export default function RecruitPage() {
     if (error) {
       console.error("Supabase submission error:", error)
       if (error.code === '23505') {
-        setSubmitError("This email has already been registered. Please use a different one or contact support.")
+        setSubmitError("This email is already registered. Please try using another email or contact support.")
       } else {
         setSubmitError("Failed to submit application. Please try again.")
       }
