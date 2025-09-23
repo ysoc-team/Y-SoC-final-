@@ -412,12 +412,13 @@ export default function RecruitPage() {
                     </h3>
                     <div className="grid md:grid-cols-2 gap-6">
                       <div className="space-y-2">
-                        <Label htmlFor="github" className="text-gray-300 font-medium">GitHub Profile</Label>
+                        <Label htmlFor="github" className="text-gray-300 font-medium">GitHub Profile *</Label>
                         <Input
                           id="github"
                           placeholder="https://github.com/username"
                           value={formData.github}
                           onChange={(e) => handleInputChange("github", e.target.value)}
+                          required
                           className="bg-gray-900/50 border-gray-600/50 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500/20 transition-all duration-200 hover:border-gray-500/50"
                         />
                       </div>
@@ -432,12 +433,13 @@ export default function RecruitPage() {
                         />
                       </div>
                       <div className="space-y-2">
-                        <Label htmlFor="linkedin" className="text-gray-300 font-medium">LinkedIn Profile</Label>
+                        <Label htmlFor="linkedin" className="text-gray-300 font-medium">LinkedIn Profile *</Label>
                         <Input
                           id="linkedin"
                           placeholder="https://linkedin.com/in/username"
                           value={formData.linkedin}
                           onChange={(e) => handleInputChange("linkedin", e.target.value)}
+                          required
                           className="bg-gray-900/50 border-gray-600/50 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500/20 transition-all duration-200 hover:border-gray-500/50"
                         />
                       </div>
@@ -553,7 +555,7 @@ export default function RecruitPage() {
                   <div className="pt-6">
                     <Button
                       type="submit"
-                      disabled={isSubmitting || !formData.role || !formData.agreeTerms}
+                      disabled={isSubmitting || !formData.role || !formData.agreeTerms || !formData.github || !formData.linkedin}
                       className="w-full bg-gradient-to-r from-blue-500 to-cyan-400 text-white hover:opacity-90 transition-all duration-300 hover:scale-105 shadow-lg shadow-blue-500/25 font-semibold py-3"
                     >
                       {isSubmitting ? (
