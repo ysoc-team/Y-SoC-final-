@@ -271,5 +271,20 @@ export const mentors: Mentor[] = [
     timezone: "IST",
     languages: ["English", "Hindi", "Marathi", "Gujarati"],
     linkedin: "https://www.linkedin.com/in/tejas-bakhai-562475b/"
+  },
+  {
+    id: 18,
+    name: "Sarah Johnson",
+    role: "Senior Frontend Developer",
+    company: "Microsoft",
+    avatar: "/placeholder-user.jpg",
+    expertise: ["React", "TypeScript", "Next.js", "Node.js", "GraphQL", "CSS-in-JS", "Webpack", "Jest", "Cypress", "Accessibility", "Performance Optimization", "Design Systems", "Component Architecture"],
+    experience: "8+ years",
+    bio: "Senior Frontend Developer at Microsoft specializing in building scalable, accessible, and performant web applications. Passionate about modern web technologies and mentoring developers.",
+    specialties: ["Frontend Architecture", "React Ecosystem", "Performance Optimization", "Accessibility", "Design Systems", "Testing", "Mentoring"],
+    availability: "Available",
+    timezone: "PST",
+    languages: ["English", "Spanish"],
+    linkedin: "https://www.linkedin.com/in/sarah-johnson-dev/"
   }
 ]
