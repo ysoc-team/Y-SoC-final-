@@ -269,7 +269,7 @@ export default function RecruitPage() {
                           value={formData.firstName}
                           onChange={(e) => handleInputChange("firstName", e.target.value)}
                           required
-                          className="bg-gray-900/50 border-gray-600/50 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500/20 transition-all duration-200 hover:border-gray-500/50"
+                          className="bg-gray-900/50 border-gray-600/50 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500/20  hover:border-gray-500/50"
                           placeholder="Enter your first name"
                         />
                       </div>
@@ -280,7 +280,7 @@ export default function RecruitPage() {
                           value={formData.lastName}
                           onChange={(e) => handleInputChange("lastName", e.target.value)}
                           required
-                          className="bg-gray-900/50 border-gray-600/50 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500/20 transition-all duration-200 hover:border-gray-500/50"
+                          className="bg-gray-900/50 border-gray-600/50 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500/20  hover:border-gray-500/50"
                           placeholder="Enter your last name"
                         />
                       </div>
@@ -296,7 +296,7 @@ export default function RecruitPage() {
                         value={formData.email}
                         onChange={(e) => handleInputChange("email", e.target.value)}
                         required
-                        className="bg-gray-900/50 border-gray-600/50 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500/20 transition-all duration-200 hover:border-gray-500/50"
+                        className="bg-gray-900/50 border-gray-600/50 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500/20  hover:border-gray-500/50"
                         placeholder="your.email@example.com"
                       />
                     </div>
@@ -307,7 +307,7 @@ export default function RecruitPage() {
                         value={formData.country}
                         onChange={(e) => handleInputChange("country", e.target.value)}
                         required
-                        className="bg-gray-900/50 border-gray-600/50 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500/20 transition-all duration-200 hover:border-gray-500/50"
+                        className="bg-gray-900/50 border-gray-600/50 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500/20  hover:border-gray-500/50"
                         placeholder="Your country"
                       />
                     </div>
@@ -339,31 +339,31 @@ export default function RecruitPage() {
                         value={formData.experience}
                         onValueChange={(value) => handleInputChange("experience", value)}
                       >
-                        <SelectTrigger className="bg-gray-900/50 border-gray-600/50 text-white focus:border-blue-500 focus:ring-blue-500/20 transition-all duration-200 hover:border-gray-500/50">
+                        <SelectTrigger className="bg-gray-900/50 border-gray-600/50 text-white focus:border-blue-500 focus:ring-blue-500/20  hover:border-gray-500/50">
                           <SelectValue placeholder="Select your experience level" />
                         </SelectTrigger>
                         <SelectContent className="z-50 bg-gray-900 border-gray-700">
                           <SelectItem 
                             value="beginner"
-                            className="text-white hover:bg-blue-500/20 transition-colors duration-150"
+                            className="text-white hover:bg-blue-500/20"
                           >
                             Beginner (0-1 years)
                           </SelectItem>
                           <SelectItem 
                             value="intermediate"
-                            className="text-white hover:bg-blue-500/20 transition-colors duration-150"
+                            className="text-white hover:bg-blue-500/20"
                           >
                             Intermediate (1-3 years)
                           </SelectItem>
                           <SelectItem 
                             value="advanced"
-                            className="text-white hover:bg-blue-500/20 transition-colors duration-150"
+                            className="text-white hover:bg-blue-500/20"
                           >
                             Advanced (3-5 years)
                           </SelectItem>
                           <SelectItem 
                             value="expert"
-                            className="text-white hover:bg-blue-500/20 transition-colors duration-150"
+                            className="text-white hover:bg-blue-500/20"
                           >
                             Expert (5+ years)
                           </SelectItem>
@@ -381,7 +381,7 @@ export default function RecruitPage() {
                       value={formData.skills}
                       onChange={(e) => handleInputChange("skills", e.target.value)}
                       required
-                      className="bg-gray-900/50 border-gray-600/50 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500/20 min-h-[100px] transition-all duration-200 hover:border-gray-500/50"
+                      className="bg-gray-900/50 border-gray-600/50 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500/20 min-h-[100px]  hover:border-gray-500/50"
                     />
                   </div>
 
@@ -399,7 +399,7 @@ export default function RecruitPage() {
                         value={formData.motivation}
                         onChange={(e) => handleInputChange("motivation", e.target.value)}
                         required
-                        className="bg-gray-900/50 border-gray-600/50 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500/20 min-h-[120px] transition-all duration-200 hover:border-gray-500/50"
+                        className="bg-gray-900/50 border-gray-600/50 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500/20 min-h-[120px]  hover:border-gray-500/50"
                       />
                     </div>
                   </div>
@@ -419,7 +419,7 @@ export default function RecruitPage() {
                           value={formData.github}
                           onChange={(e) => handleInputChange("github", e.target.value)}
                           required
-                          className="bg-gray-900/50 border-gray-600/50 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500/20 transition-all duration-200 hover:border-gray-500/50"
+                          className="bg-gray-900/50 border-gray-600/50 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500/20  hover:border-gray-500/50"
                         />
                       </div>
                       <div className="space-y-2">
@@ -429,7 +429,7 @@ export default function RecruitPage() {
                           placeholder="https://yourportfolio.com"
                           value={formData.portfolio}
                           onChange={(e) => handleInputChange("portfolio", e.target.value)}
-                          className="bg-gray-900/50 border-gray-600/50 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500/20 transition-all duration-200 hover:border-gray-500/50"
+                          className="bg-gray-900/50 border-gray-600/50 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500/20  hover:border-gray-500/50"
                         />
                       </div>
                       <div className="space-y-2">
@@ -440,7 +440,7 @@ export default function RecruitPage() {
                           value={formData.linkedin}
                           onChange={(e) => handleInputChange("linkedin", e.target.value)}
                           required
-                          className="bg-gray-900/50 border-gray-600/50 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500/20 transition-all duration-200 hover:border-gray-500/50"
+                          className="bg-gray-900/50 border-gray-600/50 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500/20  hover:border-gray-500/50"
                         />
                       </div>
                       <div className="space-y-2">
@@ -450,7 +450,7 @@ export default function RecruitPage() {
                           placeholder="https://docs.google.com/document/d/..."
                           value={formData.resumeLink}
                           onChange={(e) => handleInputChange("resumeLink", e.target.value)}
-                          className="bg-gray-900/50 border-gray-600/50 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500/20 transition-all duration-200 hover:border-gray-500/50"
+                          className="bg-gray-900/50 border-gray-600/50 text-white placeholder-gray-400 focus:border-blue-500 focus:ring-blue-500/20  hover:border-gray-500/50"
                         />
                       </div>
                     </div>
@@ -468,31 +468,31 @@ export default function RecruitPage() {
                         value={formData.availability}
                         onValueChange={(value) => handleInputChange("availability", value)}
                       >
-                        <SelectTrigger className="bg-gray-900/50 border-gray-600/50 text-white focus:border-blue-500 focus:ring-blue-500/20 transition-all duration-200 hover:border-gray-500/50">
+                        <SelectTrigger className="bg-gray-900/50 border-gray-600/50 text-white focus:border-blue-500 focus:ring-blue-500/20 hover:border-gray-500/50">
                           <SelectValue placeholder="How many hours per week can you commit?" />
                         </SelectTrigger>
                         <SelectContent className="z-50 bg-gray-900 border-gray-700">
                           <SelectItem 
                             value="5-10"
-                            className="text-white hover:bg-blue-500/20 transition-colors duration-150"
+                            className="text-white hover:bg-blue-500/20"
                           >
                             5-10 hours per week
                           </SelectItem>
                           <SelectItem 
                             value="10-15"
-                            className="text-white hover:bg-blue-500/20 transition-colors duration-150"
+                            className="text-white hover:bg-blue-500/20"
                           >
                             10-15 hours per week
                           </SelectItem>
                           <SelectItem 
                             value="15-20"
-                            className="text-white hover:bg-blue-500/20 transition-colors duration-150"
+                            className="text-white hover:bg-blue-500/20"
                           >
                             15-20 hours per week
                           </SelectItem>
                           <SelectItem 
                             value="20+"
-                            className="text-white hover:bg-blue-500/20 transition-colors duration-150"
+                            className="text-white hover:bg-blue-500/20"
                           >
                             20+ hours per week
                           </SelectItem>
@@ -514,7 +514,7 @@ export default function RecruitPage() {
                           checked={formData.agreeTerms}
                           onCheckedChange={(checked) => handleInputChange("agreeTerms", checked as boolean)}
                           required
-                          className="mt-1 transition-all duration-200 hover:scale-110"
+                          className="mt-1  hover:scale-110"
                         />
                         <Label htmlFor="agreeTerms" className="text-sm text-gray-300 leading-relaxed">
                           I agree to the{" "}
@@ -533,7 +533,7 @@ export default function RecruitPage() {
                           id="agreeNewsletter"
                           checked={formData.agreeNewsletter}
                           onCheckedChange={(checked) => handleInputChange("agreeNewsletter", checked as boolean)}
-                          className="mt-1 transition-all duration-200 hover:scale-110"
+                          className="mt-1  hover:scale-110"
                         />
                         <Label htmlFor="agreeNewsletter" className="text-sm text-gray-300 leading-relaxed">
                           I'd like to receive updates about Y-SoC and the open-source community
