@@ -12,6 +12,7 @@ import { useEffect, useState, useCallback, useMemo, lazy, Suspense } from "react
 import { animations, getTransition } from "@/lib/animations"
 import { PerformanceMonitor, usePerformanceOptimization } from "@/components/PerformanceMonitor"
 import { LazyPrism, LazyPrismaticBurst } from "@/components/LazyComponents"
+import GridDistortion from "@/components/GridDistortion"
 
 export default function HomePage() {
   const [showScrollTop, setShowScrollTop] = useState(false)
@@ -136,79 +137,23 @@ export default function HomePage() {
         {/* Light mode contrast overlay */}
         <div className="absolute inset-0 bg-white/5 dark:bg-transparent" />
         
-        {/* Enhanced Backdrop Background with Dynamic Animations */}
+        {/* Video Background */}
         <div className="absolute inset-0">
-          <div 
-            className="w-full h-full bg-cover bg-center bg-no-repeat transition-all duration-1000"
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover"
             style={{
-              backgroundImage: 'url(/backdrop.png)',
-              filter: 'brightness(0.6) contrast(1.2) saturate(1.3)'
+              filter: 'brightness(0.4) contrast(1.2) saturate(1.1)'
             }}
-          />
-          {/* Dynamic light overlay animations */}
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/15 via-transparent to-secondary/15" />
-          <div className="absolute inset-0">
-            {/* Floating light orbs with different animations */}
-            <motion.div 
-              className="absolute top-20 left-10 w-72 h-72 bg-primary/25 rounded-full blur-3xl"
-              animate={{
-                scale: [1, 1.2, 1],
-                opacity: [0.3, 0.6, 0.3],
-                x: [0, 20, 0],
-                y: [0, -10, 0]
-              }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
-            <motion.div 
-              className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/25 rounded-full blur-3xl"
-              animate={{
-                scale: [1, 1.1, 1],
-                opacity: [0.2, 0.5, 0.2],
-                x: [0, -15, 0],
-                y: [0, 15, 0]
-              }}
-              transition={{
-                duration: 5,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 1
-              }}
-            />
-            <motion.div 
-              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full blur-2xl"
-              animate={{
-                scale: [1, 1.3, 1],
-                opacity: [0.1, 0.4, 0.1],
-                rotate: [0, 180, 360]
-              }}
-              transition={{
-                duration: 6,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 2
-              }}
-            />
-            {/* Additional floating particles */}
-            <motion.div 
-              className="absolute top-1/4 right-1/3 w-32 h-32 bg-cyan-500/20 rounded-full blur-xl"
-              animate={{
-                scale: [0.8, 1.2, 0.8],
-                opacity: [0.2, 0.6, 0.2],
-                x: [0, 30, 0],
-                y: [0, -20, 0]
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 0.5
-              }}
-            />
-          </div>
+          >
+            <source src="/back.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          {/* Overlay for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-br from-black/30 via-transparent to-black/30" />
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
@@ -231,91 +176,103 @@ export default function HomePage() {
               >
                 <Badge 
                   variant="secondary" 
-                  className="px-8 py-4 text-base font-semibold border-2 border-primary/30 bg-gradient-to-r from-primary/10 via-primary/5 to-secondary/10 hover:from-primary/20 hover:via-primary/10 hover:to-secondary/20 transition-all duration-500 text-white backdrop-blur-sm shadow-lg hover:shadow-xl"
+                  className="px-8 py-4 text-base font-bold border-2 border-primary/30 bg-gradient-to-r from-primary/10 via-primary/5 to-secondary/10 hover:from-primary/20 hover:via-primary/10 hover:to-secondary/20 transition-all duration-500 text-white backdrop-blur-sm shadow-lg hover:shadow-xl"
+                  style={{
+                    fontFamily: "'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif",
+                    letterSpacing: "0.05em",
+                    textTransform: "uppercase"
+                  }}
                 >
                   <Calendar className="w-5 h-5 mr-3 animate-pulse" />
-                  <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                  November 2025 - April 2026
+                  <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent font-black tracking-wider">
+                    November 2025 - April 2026
                   </span>
                 </Badge>
               </motion.div>
             </motion.div>
 
-            {/* Enhanced Main Title with better animations */}
+            {/* Enhanced Main Title with stylish fonts */}
             <motion.h1 
-              className="text-6xl md:text-8xl lg:text-9xl font-black mb-8 leading-tight gpu-accelerated"
+              className="text-6xl md:text-8xl lg:text-9xl font-black mb-8 leading-tight gpu-accelerated text-white"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.4 }}
+              style={{
+                fontFamily: "'Poppins', 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif",
+                fontWeight: 900,
+                letterSpacing: "-0.02em",
+                lineHeight: 0.9
+              }}
             >
               <motion.span 
-                className="gradient-text inline-block relative"
+                className="inline-block relative text-white"
                 whileHover={{ 
                   scale: 1.05,
-                  textShadow: "0 0 30px rgba(59, 130, 246, 0.5)"
+                  textShadow: "0 0 30px rgba(255, 255, 255, 0.8)"
                 }}
                 transition={getTransition(0.3)}
                 style={{
-                  background: "linear-gradient(135deg, #3b82f6, #8b5cf6, #06b6d4, #3b82f6)",
-                  backgroundSize: "300% 300%",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                  animation: "gradientShift 3s ease-in-out infinite"
+                  textShadow: "0 0 20px rgba(255, 255, 255, 0.3)",
+                  fontFamily: "'Poppins', sans-serif",
+                  fontWeight: 900,
+                  letterSpacing: "-0.02em"
                 }}
               >
                 Youth Season
               </motion.span>
               <br />
               <motion.span 
-                className="gradient-text inline-block relative"
+                className="inline-block relative text-white"
                 whileHover={{ 
                   scale: 1.05,
-                  textShadow: "0 0 30px rgba(139, 92, 246, 0.5)"
+                  textShadow: "0 0 30px rgba(255, 255, 255, 0.8)"
                 }}
                 transition={getTransition(0.3)}
                 style={{
-                  background: "linear-gradient(135deg, #8b5cf6, #06b6d4, #3b82f6, #8b5cf6)",
-                  backgroundSize: "300% 300%",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                  animation: "gradientShift 3s ease-in-out infinite reverse"
+                  textShadow: "0 0 20px rgba(255, 255, 255, 0.3)",
+                  fontFamily: "'Poppins', sans-serif",
+                  fontWeight: 900,
+                  letterSpacing: "-0.02em"
                 }}
               >
                 of Code
               </motion.span>
             </motion.h1>
 
-            {/* Enhanced Subtitle with better typography */}
+            {/* Enhanced Subtitle with stylish typography */}
             <motion.div 
-              className="text-2xl md:text-3xl lg:text-4xl text-muted-foreground mb-16 max-w-4xl mx-auto"
+              className="text-2xl md:text-3xl lg:text-4xl text-white mb-16 max-w-4xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               <div className="space-y-4">
                 <motion.div 
-                  className="font-bold text-foreground text-3xl md:text-4xl lg:text-5xl"
+                  className="font-bold text-white text-3xl md:text-4xl lg:text-5xl"
                   style={{
-                    background: "linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4, #3b82f6)",
-                    backgroundSize: "300% 100%",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    backgroundClip: "text",
-                    animation: "gradientShift 4s ease-in-out infinite"
+                    textShadow: "0 0 20px rgba(255, 255, 255, 0.4)",
+                    fontFamily: "'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif",
+                    fontWeight: 800,
+                    letterSpacing: "-0.01em",
+                    lineHeight: 1.1
                   }}
                   whileHover={{
                     scale: 1.02,
-                    textShadow: "0 0 20px rgba(59, 130, 246, 0.3)"
+                    textShadow: "0 0 30px rgba(255, 255, 255, 0.6)"
                   }}
                 >
                   You Code, You Create, You Collaborate
                 </motion.div>
                 <motion.div 
-                  className="text-xl md:text-2xl lg:text-3xl font-medium text-gray-300"
+                  className="text-xl md:text-2xl lg:text-3xl font-medium text-gray-200"
+                  style={{
+                    fontFamily: "'Inter', 'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif",
+                    fontWeight: 500,
+                    letterSpacing: "0.01em",
+                    lineHeight: 1.4
+                  }}
                   whileHover={{
-                    color: "#60a5fa",
+                    color: "#ffffff",
                     transition: { duration: 0.3 }
                   }}
                 >
@@ -526,192 +483,26 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section id="cta" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-gray-900/40 via-gray-800/20 to-gray-900/40 relative overflow-hidden page-transition">
+      <section id="cta" className="py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-gray-900/40 via-gray-800/20 to-gray-900/40 relative overflow-hidden page-transition min-h-[80vh] flex items-center">
         {/* Light mode contrast overlay */}
         <div className="absolute inset-0 bg-white/5 dark:bg-transparent" />
         
-        {/* Enhanced Dynamic Background with Particle System */}
+        {/* Grid Distortion Background */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-secondary/10" />
-          <div className="absolute inset-0">
-            {/* Large floating orbs */}
-            <motion.div 
-              className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500/30 rounded-full blur-3xl"
-              animate={{
-                scale: [1, 1.5, 1],
-                opacity: [0.3, 0.8, 0.3],
-                x: [0, 50, 0],
-                y: [0, -30, 0]
-              }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 0.5
-              }}
-            />
-            <motion.div 
-              className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-500/30 rounded-full blur-3xl"
-              animate={{
-                scale: [1, 1.3, 1],
-                opacity: [0.2, 0.7, 0.2],
-                x: [0, -40, 0],
-                y: [0, 40, 0]
-              }}
-              transition={{
-                duration: 5,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 1.5
-              }}
-            />
-            
-            {/* Particle System - Small floating dots */}
-            {Array.from({ length: 15 }).map((_, i) => (
-              <motion.div
-                key={`particle-${i}`}
-                className="absolute w-2 h-2 bg-white/60 rounded-full"
-                style={{
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
-                }}
-                animate={{
-                  y: [0, -30, 0],
-                  x: [0, Math.random() * 20 - 10, 0],
-                  opacity: [0.3, 1, 0.3],
-                  scale: [0.5, 1.2, 0.5],
-                }}
-                transition={{
-                  duration: 3 + Math.random() * 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: Math.random() * 5,
-                }}
-              />
-            ))}
-            
-            {/* Geometric particles - Triangles */}
-            {Array.from({ length: 8 }).map((_, i) => (
-              <motion.div
-                key={`triangle-${i}`}
-                className="absolute w-0 h-0"
-                style={{
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
-                  borderLeft: '8px solid transparent',
-                  borderRight: '8px solid transparent',
-                  borderBottom: `16px solid rgba(59, 130, 246, ${0.3 + Math.random() * 0.4})`,
-                }}
-                animate={{
-                  rotate: [0, 360],
-                  y: [0, -40, 0],
-                  x: [0, Math.random() * 30 - 15, 0],
-                  opacity: [0.2, 0.8, 0.2],
-                }}
-                transition={{
-                  duration: 4 + Math.random() * 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: Math.random() * 6,
-                }}
-              />
-            ))}
-            
-            {/* Floating squares */}
-            {Array.from({ length: 6 }).map((_, i) => (
-              <motion.div
-                key={`square-${i}`}
-                className="absolute w-4 h-4 bg-gradient-to-r from-cyan-400/40 to-blue-400/40 rounded-sm"
-                style={{
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
-                }}
-                animate={{
-                  rotate: [0, 180, 360],
-                  y: [0, -50, 0],
-                  x: [0, Math.random() * 25 - 12.5, 0],
-                  opacity: [0.1, 0.7, 0.1],
-                  scale: [0.8, 1.3, 0.8],
-                }}
-                transition={{
-                  duration: 5 + Math.random() * 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: Math.random() * 7,
-                }}
-              />
-            ))}
-            
-            {/* Floating hexagons */}
-            {Array.from({ length: 4 }).map((_, i) => (
-              <motion.div
-                key={`hexagon-${i}`}
-                className="absolute w-6 h-6 bg-gradient-to-r from-purple-400/30 to-pink-400/30"
-                style={{
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
-                  clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)',
-                }}
-                animate={{
-                  rotate: [0, 360],
-                  y: [0, -35, 0],
-                  x: [0, Math.random() * 20 - 10, 0],
-                  opacity: [0.2, 0.6, 0.2],
-                  scale: [0.6, 1.1, 0.6],
-                }}
-                transition={{
-                  duration: 6 + Math.random() * 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: Math.random() * 8,
-                }}
-              />
-            ))}
-            
-            {/* Floating diamonds */}
-            {Array.from({ length: 5 }).map((_, i) => (
-              <motion.div
-                key={`diamond-${i}`}
-                className="absolute w-3 h-3 bg-gradient-to-r from-green-400/40 to-cyan-400/40"
-                style={{
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
-                  transform: 'rotate(45deg)',
-                }}
-                animate={{
-                  rotate: [45, 225, 45],
-                  y: [0, -45, 0],
-                  x: [0, Math.random() * 18 - 9, 0],
-                  opacity: [0.15, 0.8, 0.15],
-                  scale: [0.7, 1.4, 0.7],
-                }}
-                transition={{
-                  duration: 4 + Math.random() * 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: Math.random() * 6,
-                }}
-              />
-            ))}
-            
-            {/* Center pulsing orb */}
-            <motion.div 
-              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-3xl"
-              animate={{
-                scale: [1, 2, 1],
-                opacity: [0.1, 0.5, 0.1]
-              }}
-              transition={{
-                duration: 8,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
-          </div>
+          <GridDistortion
+            imageSrc="/backdrop.png"
+            grid={15}
+            mouse={0.1}
+            strength={0.15}
+            relaxation={0.9}
+            className="w-full h-full"
+          />
+          {/* Overlay for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-transparent to-black/40" />
         </div>
         
        
-        <div className="max-w-4xl mx-auto text-center relative z-10">
+        <div className="max-w-5xl mx-auto text-center relative z-10">
           <div>
             <motion.div
               whileHover={{ 
@@ -720,18 +511,32 @@ export default function HomePage() {
                 transition: { duration: 0.5 }
               }}
             >
-              <Trophy className="w-16 h-16 mx-auto mb-6 text-primary drop-shadow-lg" />
+              <Trophy className="w-20 h-20 mx-auto mb-8 text-primary drop-shadow-lg" />
             </motion.div>
             <motion.h2 
-              className="text-3xl md:text-5xl font-bold gradient-text mb-6"
+              className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8"
               whileHover={{ 
                 scale: 1.02,
-                textShadow: "0 0 20px rgba(59, 130, 246, 0.5)"
+                textShadow: "0 0 20px rgba(255, 255, 255, 0.5)"
+              }}
+              style={{
+                fontFamily: "'Poppins', 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif",
+                fontWeight: 900,
+                letterSpacing: "-0.02em",
+                lineHeight: 1.1,
+                textShadow: "0 0 30px rgba(255, 255, 255, 0.3)"
               }}
             >
               Ready to Start Coding?
             </motion.h2>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <p className="text-2xl md:text-3xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed"
+               style={{
+                 fontFamily: "'Inter', 'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif",
+                 fontWeight: 500,
+                 letterSpacing: "0.01em",
+                 lineHeight: 1.4
+               }}
+            >
               Join thousands of young developers building the future of open source. Your journey starts here.
             </p>
             <div className="flex justify-center">
@@ -743,10 +548,15 @@ export default function HomePage() {
                 <Button
                   asChild
                   size="lg"
-                  className="gradient-primary text-white hover:opacity-90 transition-all duration-300 neon-glow shadow-lg hover:shadow-xl"
+                  className="px-10 py-6 text-xl font-bold gradient-primary text-white hover:opacity-90 transition-all duration-300 neon-glow shadow-lg hover:shadow-xl"
+                  style={{
+                    fontFamily: "'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif",
+                    fontWeight: 700,
+                    letterSpacing: "0.02em"
+                  }}
                 >
                   <Link href="/recruit" className="flex items-center group">
-                    Apply Now <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                    Apply Now <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </Button>
               </motion.div>
