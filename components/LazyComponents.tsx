@@ -14,15 +14,7 @@ export const LazyPrismaticBurst = dynamic(() => import('./PrismaticBurst'), {
   ssr: false,
 });
 
-export const LazyPlasma = dynamic(() => import('./Plasma'), {
-  loading: () => <div className="w-full h-64 bg-gradient-to-br from-purple-900/20 to-pink-900/20 rounded-lg animate-pulse" />,
-  ssr: false,
-});
-
-export const LazyPixelBlast = dynamic(() => import('./PixelBlast'), {
-  loading: () => <div className="w-full h-64 bg-gradient-to-br from-green-900/20 to-blue-900/20 rounded-lg animate-pulse" />,
-  ssr: false,
-});
+// Removed LazyPlasma and LazyPixelBlast as they are no longer used
 
 export const LazyBackgroundBeams = dynamic(() => import('./ui/background-beams-with-collision'), {
   loading: () => <div className="w-full h-full bg-gray-900/30" />,
