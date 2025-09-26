@@ -11,8 +11,7 @@ import { motion, useScroll, useTransform, useSpring, useInView } from "framer-mo
 import { useEffect, useState, useCallback, useMemo, lazy, Suspense } from "react"
 import { animations, getTransition } from "@/lib/animations"
 import { PerformanceMonitor, usePerformanceOptimization } from "@/components/PerformanceMonitor"
-import { LazyPrism, LazyPrismaticBurst } from "@/components/LazyComponents"
-import GridDistortion from "@/components/GridDistortion"
+import { LazyPrism, LazyPrismaticBurst, LazyPixelBlast } from "@/components/LazyComponents"
 
 export default function HomePage() {
   const [showScrollTop, setShowScrollTop] = useState(false)
@@ -487,19 +486,22 @@ export default function HomePage() {
         {/* Light mode contrast overlay */}
         <div className="absolute inset-0 bg-white/5 dark:bg-transparent" />
         
-        {/* Grid Distortion Background */}
-        <div className="absolute inset-0 z-0">
-          <GridDistortion
-            imageSrc="/backdrop.png"
-            grid={15}
-            mouse={0.1}
-            strength={0.15}
-            relaxation={0.9}
-            className="w-full h-full"
-          />
-          {/* Overlay for better text readability */}
-          <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-transparent to-black/40" />
-        </div>
+         {/* PixelBlast Background with light dependencies */}
+         <div className="absolute inset-0 z-0">
+           <Suspense fallback={<div className="w-full h-full bg-gradient-to-br from-primary/5 to-secondary/5" />}>
+             <LazyPixelBlast
+               color="#3b82f6"
+               speed={0.3}
+               direction="horizontal"
+               scale={0.8}
+               opacity={0.4}
+               mouseInteractive={false}
+               className="w-full h-full"
+             />
+           </Suspense>
+           {/* Overlay for better text readability */}
+           <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-transparent to-black/60" />
+         </div>
         
        
         <div className="max-w-5xl mx-auto text-center relative z-10">
@@ -529,16 +531,17 @@ export default function HomePage() {
             >
               Ready to Start Coding?
             </motion.h2>
-            <p className="text-2xl md:text-3xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed"
-               style={{
-                 fontFamily: "'Inter', 'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif",
-                 fontWeight: 500,
-                 letterSpacing: "0.01em",
-                 lineHeight: 1.4
-               }}
-            >
-              Join thousands of young developers building the future of open source. Your journey starts here.
-            </p>
+             <p className="text-2xl md:text-3xl text-white mb-12 max-w-3xl mx-auto leading-relaxed"
+                style={{
+                  fontFamily: "'Inter', 'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif",
+                  fontWeight: 500,
+                  letterSpacing: "0.01em",
+                  lineHeight: 1.4,
+                  textShadow: "0 0 20px rgba(255, 255, 255, 0.3)"
+                }}
+             >
+               Join thousands of young developers building the future of open source. Your journey starts here.
+             </p>
             <div className="flex justify-center">
               <motion.div
                 whileHover={animations.hover}
