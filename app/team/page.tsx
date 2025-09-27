@@ -11,7 +11,7 @@ import { motion } from "framer-motion"
 import { Github, Linkedin, Twitter, Globe, Mail, MapPin } from "lucide-react"
 
 export default function TeamPage() {
-  const coreTeam = [
+  const leadershipTeam = [
     {
       name: "Punya Mittal",
       role: "Founder",
@@ -20,7 +20,10 @@ export default function TeamPage() {
       image: "/mittal.jpg",
       skills: ["Leadership", "Open Source", "Community Building"],
       social: {
-        linkedin: "https://www.linkedin.com/in/punya-mittal-a1122520b"
+        linkedin: "https://www.linkedin.com/in/punya-mittal-a1122520b",
+        github: "",
+        twitter: "",
+        website: ""
       },
     },
     {
@@ -31,9 +34,15 @@ export default function TeamPage() {
       image: "/ay.jpg",
       skills: ["Program Management", "System Design", "Mentorship"],
       social: {
-        linkedin: "https://www.linkedin.com/in/ayush-vaish-286064361"
+        linkedin: "https://www.linkedin.com/in/ayush-vaish-286064361",
+        github: "",
+        twitter: "",
+        website: ""
       },
     },
+  ]
+
+  const coreTeam = [
     {
       name: "Vaibhav Dwivedi",
       role: "Programme Management Head",
@@ -42,7 +51,10 @@ export default function TeamPage() {
       image: "/vaibhav.jpg",
       skills: ["Development", "Management", "Communication"],
       social: {
-        linkedin: "https://www.linkedin.com/in/vaibhav-dwivedi-64bds"
+        linkedin: "https://www.linkedin.com/in/vaibhav-dwivedi-64bds",
+        github: "",
+        twitter: "",
+        website: ""
       },
     },
     {
@@ -53,7 +65,10 @@ export default function TeamPage() {
       image: "/vr.jpg",
       skills: ["Full-Stack Development", "System Architecture", "Accessibility"],
       social: {
-        linkedin: "https://www.linkedin.com/in/vaibhavraj28"
+        linkedin: "https://www.linkedin.com/in/vaibhavraj28",
+        github: "",
+        twitter: "",
+        website: ""
       },
     },
     {
@@ -64,18 +79,24 @@ export default function TeamPage() {
       image: "/utsav.jpg",
       skills: ["Mentorship", "Coordination", "Industry Expertise"],
       social: {
-        linkedin: "https://www.linkedin.com/in/utsav-gautam-406696303"
+        linkedin: "https://www.linkedin.com/in/utsav-gautam-406696303",
+        github: "",
+        twitter: "",
+        website: ""
       },
     },
     {
       name: "Nayonika Nair",
-      role: "Design and UI/UX Head",
+      role: "Design and Branding Head",
       location: "Karnataka, India",
       bio: "Leads the design vision of Y-SoC. Focused on crafting engaging, modern, and accessible user experiences for the community.",
       image: "/nyonika.jpg",
       skills: ["UI/UX", "Design Thinking", "Prototyping"],
       social: {
-        linkedin: "https://www.linkedin.com/in/nayonika-nair"
+        linkedin: "https://www.linkedin.com/in/nayonika-nair",
+        github: "",
+        twitter: "",
+        website: ""
       },
     },
     {
@@ -86,7 +107,10 @@ export default function TeamPage() {
       image: "/ar.jpeg",
       skills: ["Technical Writing", "Documentation", "Content Strategy"],
       social: {
-        linkedin: "https://www.linkedin.com/in/aryaman-kumar-singh-2b6832317"
+        linkedin: "https://www.linkedin.com/in/aryaman-kumar-singh-2b6832317",
+        github: "",
+        twitter: "",
+        website: ""
       },
     },
     {
@@ -97,7 +121,10 @@ export default function TeamPage() {
       image: "/sa.jpg",
       skills: ["Community Guidelines", "Policy Making", "Conflict Resolution"],
       social: {
-        linkedin: "https://www.linkedin.com/in/sahil-poply-6150b1324"
+        linkedin: "https://www.linkedin.com/in/sahil-poply-6150b1324",
+        github: "",
+        twitter: "",
+        website: ""
       },
     },
   ]
@@ -158,8 +185,126 @@ export default function TeamPage() {
         </BackgroundBeamsWithCollision>
       </section>
 
-      {/* Core Team */}
+      {/* Leadership Team */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/50 relative overflow-hidden page-transition">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <Badge variant="secondary" className="mb-6 px-6 py-3 text-sm font-medium border-2 border-purple-500 bg-purple-500/10 text-purple-400 hover:bg-purple-500/20 transition-all duration-300">
+              Leadership Team
+            </Badge>
+            <h2 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-purple-400 via-purple-500 to-pink-400 bg-clip-text text-transparent mb-6">
+              Our Leadership
+            </h2>
+            <p className="text-xl text-gray-200 max-w-2xl mx-auto">
+              The visionary leaders who guide Y-SoC's mission and drive our community forward.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {leadershipTeam.map((member, index) => (
+              <motion.div
+                key={member.name}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -10 }}
+                className="group"
+              >
+                <Card className="h-full hover:shadow-2xl transition-all duration-300 border-gray-800/50 hover:border-purple-500/50 overflow-hidden bg-gray-900/50 backdrop-blur-sm">
+                  <CardContent className="p-0">
+                    <div className="relative overflow-hidden">
+                      <img
+                        src={member.image || "/placeholder.svg"}
+                        alt={member.name}
+                        className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="flex gap-2">
+                          {member.social.github && (
+                            <Button 
+                              size="sm" 
+                              variant="secondary" 
+                              className="w-8 h-8 p-0 hover:bg-primary hover:text-primary-foreground transition-colors bg-white/10 border-white/20"
+                              asChild
+                            >
+                              <Link href={`https://github.com/${member.social.github}`} target="_blank" rel="noopener noreferrer">
+                                <Github className="w-4 h-4" />
+                              </Link>
+                            </Button>
+                          )}
+                          {member.social.linkedin && (
+                            <Button 
+                              size="sm" 
+                              variant="secondary" 
+                              className="w-8 h-8 p-0 hover:bg-blue-600 hover:text-white transition-colors bg-white/10 border-white/20"
+                              asChild
+                            >
+                              <Link href={member.social.linkedin} target="_blank" rel="noopener noreferrer">
+                                <Linkedin className="w-4 h-4" />
+                              </Link>
+                            </Button>
+                          )}
+                          {member.social.twitter && (
+                            <Button 
+                              size="sm" 
+                              variant="secondary" 
+                              className="w-8 h-8 p-0 hover:bg-blue-400 hover:text-white transition-colors"
+                              asChild
+                            >
+                              <Link href={`https://twitter.com/${member.social.twitter}`} target="_blank" rel="noopener noreferrer">
+                                <Twitter className="w-4 h-4" />
+                              </Link>
+                            </Button>
+                          )}
+                          {member.social.website && (
+                            <Button 
+                              size="sm" 
+                              variant="secondary" 
+                              className="w-8 h-8 p-0 hover:bg-green-600 hover:text-white transition-colors"
+                              asChild
+                            >
+                              <Link href={`https://${member.social.website}`} target="_blank" rel="noopener noreferrer">
+                                <Globe className="w-4 h-4" />
+                              </Link>
+                            </Button>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                    <div className="p-6 bg-gray-900/30">
+                      <h3 className="text-xl font-bold text-white mb-2">{member.name}</h3>
+                      <p className="text-purple-400 font-medium mb-3">{member.role}</p>
+                      <div className="flex items-center text-sm text-gray-400 mb-4">
+                        <MapPin className="w-4 h-4 mr-2" />
+                        {member.location}
+                      </div>
+                      <p className="text-sm text-gray-300 mb-4 leading-relaxed">{member.bio}</p>
+                      <div className="flex flex-wrap gap-2">
+                        {member.skills.map((skill) => (
+                          <Badge key={skill} variant="outline" className="text-xs border-purple-500/30 text-purple-300 hover:bg-purple-500/10">
+                            {skill}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Core Team */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800/30 relative overflow-hidden page-transition">
         <div className="max-w-7xl mx-auto">
           <motion.div
             className="text-center mb-16"
@@ -172,14 +317,14 @@ export default function TeamPage() {
               Core Team
             </Badge>
             <h2 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent mb-6">
-              The People Behind Y-SoC
+              Our Core Team
             </h2>
             <p className="text-xl text-gray-200 max-w-2xl mx-auto">
               The dedicated organizers who make Y-SoC possible through their passion, expertise, and commitment to empowering youth in open source.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {coreTeam.map((member, index) => (
               <motion.div
                 key={member.name}
