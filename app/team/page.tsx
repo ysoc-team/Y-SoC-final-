@@ -11,7 +11,7 @@ import { motion } from "framer-motion"
 import { Github, Linkedin, Twitter, Globe, Mail, MapPin } from "lucide-react"
 
 export default function TeamPage() {
-  const leadershipTeam = [
+  const coreTeam = [
     {
       name: "Punya Mittal",
       role: "Founder",
@@ -40,14 +40,11 @@ export default function TeamPage() {
         website: ""
       },
     },
-  ]
-
-  const coreTeam = [
     {
       name: "Vaibhav Dwivedi",
       role: "Programme Management Head",
       location: "Uttar Pradesh, India",
-      bio: "Coordinates teams and drives collaboration across departments. Focused on fostering inclusive, well-managed communities.",
+      bio: "Manages program operations and team coordination. Ensures smooth execution of Y-SoC initiatives.",
       image: "/vaibhav.jpg",
       skills: ["Development", "Management", "Communication"],
       social: {
@@ -57,25 +54,39 @@ export default function TeamPage() {
         website: ""
       },
     },
-    {
-      name: "Vaibhav Raj",
-      role: "Technical Head",
-      location: "Jharkhand, India",
-      bio: "Leads the technical direction of Y-SoC, ensuring scalable and innovative solutions. Passionate about clean design and accessible technology.",
-      image: "/vr.jpg",
-      skills: ["Full-Stack Development", "System Architecture", "Accessibility"],
-      social: {
-        linkedin: "https://www.linkedin.com/in/vaibhavraj28",
-        github: "",
-        twitter: "",
-        website: ""
+      {
+        name: "Vaibhav Raj",
+        role: "Technical Head",
+        location: "Jharkhand, India",
+        bio: "Oversees website development and technical systems. Creates smooth user experiences across platforms.",
+        image: "/vr.jpg",
+        skills: ["Full-Stack Development", "System Architecture", "Accessibility"],
+        social: {
+          linkedin: "https://www.linkedin.com/in/vaibhavraj28",
+          github: "",
+          twitter: "",
+          website: ""
+        },
       },
-    },
+      {
+        name: "Vismit Bhat",
+        role: "Technical Head",
+        location: "Goa, India",
+        bio: "Handles Discord operations and community management. Builds engaging collaborative environments.",
+        image: "/vismit.jpg",
+        skills: ["Full-Stack Development", "System Architecture", "Technical Leadership"],
+        social: {
+          linkedin: "https://www.linkedin.com/in/vismit-bhat-78b60b363/",
+          github: "",
+          twitter: "",
+          website: ""
+        },
+      },
     {
       name: "Utsav Gautam",
       role: "Mentor Coordination Head",
       location: "Uttar Pradesh, India",
-      bio: "Bridges mentors with participants to maximize learning. Experienced in guiding developers and building strong mentor ecosystems.",
+      bio: "Connects mentors with participants for optimal learning. Builds strong mentor ecosystems and guidance programs.",
       image: "/utsav.jpg",
       skills: ["Mentorship", "Coordination", "Industry Expertise"],
       social: {
@@ -86,24 +97,10 @@ export default function TeamPage() {
       },
     },
     {
-      name: "Nayonika Nair",
-      role: "Design and Branding Head",
-      location: "Karnataka, India",
-      bio: "Leads the design vision of Y-SoC. Focused on crafting engaging, modern, and accessible user experiences for the community.",
-      image: "/nyonika.jpg",
-      skills: ["UI/UX", "Design Thinking", "Prototyping"],
-      social: {
-        linkedin: "https://www.linkedin.com/in/nayonika-nair",
-        github: "",
-        twitter: "",
-        website: ""
-      },
-    },
-    {
       name: "Aryaman Kumar Singh",
       role: "Documentation and Content Head",
       location: "Jharkhand, India",
-      bio: "Responsible for creating and managing clear, structured documentation. Dedicated to making Y-SoC processes transparent and accessible.",
+      bio: "Creates clear documentation and content strategies. Makes Y-SoC processes transparent and accessible to all.",
       image: "/ar.jpeg",
       skills: ["Technical Writing", "Documentation", "Content Strategy"],
       social: {
@@ -114,14 +111,84 @@ export default function TeamPage() {
       },
     },
     {
+      name: "Garvik Jain",
+      role: "Code of Conduct Head",
+      location: "Karnataka, India",
+      bio: "Leads community guidelines and ensures inclusive participation. Focuses on creating safe spaces for all contributors.",
+      image: "/garvik.jpg",
+      skills: ["Community Guidelines", "Policy Making", "Conflict Resolution"],
+      social: {
+        linkedin: "https://www.linkedin.com/in/garvik-jain-23378931b/",
+        github: "",
+        twitter: "",
+        website: ""
+      },
+    },
+    {
       name: "Sahil Poply",
       role: "Code of Conduct Head",
       location: "Madhya Pradesh, India",
-      bio: "Ensures a safe, inclusive, and collaborative environment at Y-SoC. Advocates for diversity and fair practices in open-source communities.",
+      bio: "Supports community standards and promotes ethical collaboration. Dedicated to maintaining respectful interactions.",
       image: "/sa.jpg",
       skills: ["Community Guidelines", "Policy Making", "Conflict Resolution"],
       social: {
         linkedin: "https://www.linkedin.com/in/sahil-poply-6150b1324",
+        github: "",
+        twitter: "",
+        website: ""
+      },
+    },
+    {
+      name: "Harshil Jauhari",
+      role: "Marketing Head",
+      location: "India",
+      bio: "Leads marketing campaigns and brand promotion. Develops strategies to expand community reach.",
+      image: "/harshil.png",
+      skills: ["Digital Marketing", "Brand Strategy", "Community Growth"],
+      social: {
+        linkedin: "https://www.linkedin.com/in/harshil-jauhari-09281931b/",
+        github: "",
+        twitter: "",
+        website: ""
+      },
+    },
+    {
+      name: "Sharanya Ahire",
+      role: "Marketing Co-Head",
+      location: "Maharashtra, India",
+      bio: "Assists marketing efforts and community expansion. Contributes to growth strategies and engagement.",
+      image: "/sharanya_ahire.jpg",
+      skills: ["Digital Marketing", "Brand Strategy", "Community Growth"],
+      social: {
+        linkedin: "https://www.linkedin.com/in/sharanya-ahire-889720261/",
+        github: "",
+        twitter: "",
+        website: ""
+      },
+    },
+    {
+      name: "Raaghav Agarwal",
+      role: "Social Media & Design and Branding Head",
+      location: "Delhi, India",
+      bio: "Creates visual content and manages social platforms. Streamlines member onboarding experience.",
+      image: "/raaghav_agarwal.jpg",
+      skills: ["Social Media", "Design", "Onboarding", "Content Creation"],
+      social: {
+        linkedin: "https://www.linkedin.com/in/raaghav-agarwal-a6514331a/",
+        github: "",
+        twitter: "",
+        website: ""
+      },
+    },
+    {
+      name: "Pratham Shukla",
+      role: "Social Media Co-Head",
+      location: "Uttar Pradesh, India",
+      bio: "Assists with social media content and community engagement. Supports platform management and outreach.",
+      image: "/pratham_shukla.jpg",
+      skills: ["Social Media", "Content Strategy", "Community Management"],
+      social: {
+        linkedin: "",
         github: "",
         twitter: "",
         website: ""
@@ -185,111 +252,77 @@ export default function TeamPage() {
         </BackgroundBeamsWithCollision>
       </section>
 
-      {/* Leadership Team */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/50 relative overflow-hidden page-transition">
+      {/* Core Team */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-800/30 relative overflow-hidden page-transition">
         <div className="max-w-7xl mx-auto">
           <motion.div
-            className="text-center mb-16"
+            className="text-center mb-20"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <Badge variant="secondary" className="mb-6 px-6 py-3 text-sm font-medium border-2 border-purple-500 bg-purple-500/10 text-purple-400 hover:bg-purple-500/20 transition-all duration-300">
-              Leadership Team
+            <Badge variant="secondary" className="mb-8 px-8 py-4 text-base font-medium border-2 border-blue-500 bg-blue-500/10 text-blue-400 hover:bg-blue-500/20 transition-all duration-300 shadow-lg">
+              Core Team
             </Badge>
-            <h2 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-purple-400 via-purple-500 to-pink-400 bg-clip-text text-transparent mb-6">
-              Our Leadership
+            <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent mb-8">
+              Our Core Team
             </h2>
-            <p className="text-xl text-gray-200 max-w-2xl mx-auto">
-              The visionary leaders who guide Y-SoC's mission and drive our community forward.
+            <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
+              The dedicated organizers who make Y-SoC possible through their passion, expertise, and commitment to empowering youth in open source.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {leadershipTeam.map((member, index) => (
-              <motion.div
-                key={member.name}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -10 }}
-                className="group"
-              >
-                <Card className="h-full hover:shadow-2xl transition-all duration-300 border-gray-800/50 hover:border-purple-500/50 overflow-hidden bg-gray-900/50 backdrop-blur-sm">
+          {/* Leadership Row - Centered */}
+          <div className="flex justify-center mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl">
+              {coreTeam.slice(0, 2).map((member, index) => (
+                <motion.div
+                  key={member.name}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -10 }}
+                  className="group"
+                >
+                <Card className="h-full hover:shadow-2xl transition-all duration-300 border-gray-800/50 hover:border-blue-500/50 overflow-hidden bg-gray-900/50 backdrop-blur-sm">
                   <CardContent className="p-0">
                     <div className="relative overflow-hidden">
-                      <img
-                        src={member.image || "/placeholder.svg"}
-                        alt={member.name}
-                        className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div className="flex gap-2">
-                          {member.social.github && (
-                            <Button 
-                              size="sm" 
-                              variant="secondary" 
-                              className="w-8 h-8 p-0 hover:bg-primary hover:text-primary-foreground transition-colors bg-white/10 border-white/20"
-                              asChild
-                            >
-                              <Link href={`https://github.com/${member.social.github}`} target="_blank" rel="noopener noreferrer">
-                                <Github className="w-4 h-4" />
-                              </Link>
-                            </Button>
-                          )}
-                          {member.social.linkedin && (
-                            <Button 
-                              size="sm" 
-                              variant="secondary" 
-                              className="w-8 h-8 p-0 hover:bg-blue-600 hover:text-white transition-colors bg-white/10 border-white/20"
-                              asChild
-                            >
-                              <Link href={member.social.linkedin} target="_blank" rel="noopener noreferrer">
-                                <Linkedin className="w-4 h-4" />
-                              </Link>
-                            </Button>
-                          )}
-                          {member.social.twitter && (
-                            <Button 
-                              size="sm" 
-                              variant="secondary" 
-                              className="w-8 h-8 p-0 hover:bg-blue-400 hover:text-white transition-colors"
-                              asChild
-                            >
-                              <Link href={`https://twitter.com/${member.social.twitter}`} target="_blank" rel="noopener noreferrer">
-                                <Twitter className="w-4 h-4" />
-                              </Link>
-                            </Button>
-                          )}
-                          {member.social.website && (
-                            <Button 
-                              size="sm" 
-                              variant="secondary" 
-                              className="w-8 h-8 p-0 hover:bg-green-600 hover:text-white transition-colors"
-                              asChild
-                            >
-                              <Link href={`https://${member.social.website}`} target="_blank" rel="noopener noreferrer">
-                                <Globe className="w-4 h-4" />
-                              </Link>
-                            </Button>
-                          )}
-                        </div>
+                      <div className="aspect-square w-full">
+                        <img
+                          src={member.image || "/placeholder.svg"}
+                          alt={member.name}
+                          className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      <div className="absolute bottom-3 left-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        {member.social.linkedin && (
+                          <Button 
+                            size="sm" 
+                            variant="secondary" 
+                            className="w-8 h-8 p-0 hover:bg-blue-600 hover:text-white transition-colors bg-white/20 border-white/30 backdrop-blur-sm"
+                            asChild
+                          >
+                            <Link href={member.social.linkedin} target="_blank" rel="noopener noreferrer">
+                              <Linkedin className="w-4 h-4" />
+                            </Link>
+                          </Button>
+                        )}
                       </div>
                     </div>
-                    <div className="p-6 bg-gray-900/30">
-                      <h3 className="text-xl font-bold text-white mb-2">{member.name}</h3>
-                      <p className="text-purple-400 font-medium mb-3">{member.role}</p>
-                      <div className="flex items-center text-sm text-gray-400 mb-4">
-                        <MapPin className="w-4 h-4 mr-2" />
+                    <div className="p-4 bg-gray-900/30">
+                      <h3 className="text-base font-bold text-white mb-2">{member.name}</h3>
+                      <p className="text-blue-400 font-medium mb-2 text-xs">{member.role}</p>
+                      <div className="flex items-center text-xs text-gray-400 mb-2">
+                        <MapPin className="w-3 h-3 mr-1" />
                         {member.location}
                       </div>
-                      <p className="text-sm text-gray-300 mb-4 leading-relaxed">{member.bio}</p>
-                      <div className="flex flex-wrap gap-2">
+                      <p className="text-xs text-gray-300 mb-3 leading-relaxed line-clamp-3">{member.bio}</p>
+                      <div className="flex flex-wrap gap-1">
                         {member.skills.map((skill) => (
-                          <Badge key={skill} variant="outline" className="text-xs border-purple-500/30 text-purple-300 hover:bg-purple-500/10">
+                          <Badge key={skill} variant="outline" className="text-xs border-blue-500/30 text-blue-300 hover:bg-blue-500/10 px-1.5 py-0.5 transition-colors">
                             {skill}
                           </Badge>
                         ))}
@@ -297,35 +330,14 @@ export default function TeamPage() {
                     </div>
                   </CardContent>
                 </Card>
-              </motion.div>
-            ))}
+                </motion.div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
 
-      {/* Core Team */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800/30 relative overflow-hidden page-transition">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <Badge variant="secondary" className="mb-6 px-6 py-3 text-sm font-medium border-2 border-blue-500 bg-blue-500/10 text-blue-400 hover:bg-blue-500/20 transition-all duration-300">
-              Core Team
-            </Badge>
-            <h2 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent mb-6">
-              Our Core Team
-            </h2>
-            <p className="text-xl text-gray-200 max-w-2xl mx-auto">
-              The dedicated organizers who make Y-SoC possible through their passion, expertise, and commitment to empowering youth in open source.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {coreTeam.map((member, index) => (
+          {/* Rest of Core Team - Regular Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {coreTeam.slice(2).map((member, index) => (
               <motion.div
                 key={member.name}
                 initial={{ opacity: 0, y: 30 }}
@@ -338,76 +350,40 @@ export default function TeamPage() {
                 <Card className="h-full hover:shadow-2xl transition-all duration-300 border-gray-800/50 hover:border-blue-500/50 overflow-hidden bg-gray-900/50 backdrop-blur-sm">
                   <CardContent className="p-0">
                     <div className="relative overflow-hidden">
-                      <img
-                        src={member.image || "/placeholder.svg"}
-                        alt={member.name}
-                        className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div className="flex gap-2">
-                          {member.social.github && (
-                            <Button 
-                              size="sm" 
-                              variant="secondary" 
-                              className="w-8 h-8 p-0 hover:bg-primary hover:text-primary-foreground transition-colors bg-white/10 border-white/20"
-                              asChild
-                            >
-                              <Link href={`https://github.com/${member.social.github}`} target="_blank" rel="noopener noreferrer">
-                                <Github className="w-4 h-4" />
-                              </Link>
-                            </Button>
-                          )}
-                          {member.social.linkedin && (
-                            <Button 
-                              size="sm" 
-                              variant="secondary" 
-                              className="w-8 h-8 p-0 hover:bg-blue-600 hover:text-white transition-colors bg-white/10 border-white/20"
-                              asChild
-                            >
-                              <Link href={member.social.linkedin} target="_blank" rel="noopener noreferrer">
-                                <Linkedin className="w-4 h-4" />
-                              </Link>
-                            </Button>
-                          )}
-                          {member.social.twitter && (
-                            <Button 
-                              size="sm" 
-                              variant="secondary" 
-                              className="w-8 h-8 p-0 hover:bg-blue-400 hover:text-white transition-colors"
-                              asChild
-                            >
-                              <Link href={`https://twitter.com/${member.social.twitter}`} target="_blank" rel="noopener noreferrer">
-                                <Twitter className="w-4 h-4" />
-                              </Link>
-                            </Button>
-                          )}
-                          {member.social.website && (
-                            <Button 
-                              size="sm" 
-                              variant="secondary" 
-                              className="w-8 h-8 p-0 hover:bg-green-600 hover:text-white transition-colors"
-                              asChild
-                            >
-                              <Link href={`https://${member.social.website}`} target="_blank" rel="noopener noreferrer">
-                                <Globe className="w-4 h-4" />
-                              </Link>
-                            </Button>
-                          )}
-                        </div>
+                      <div className="aspect-square w-full">
+                        <img
+                          src={member.image || "/placeholder.svg"}
+                          alt={member.name}
+                          className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      <div className="absolute bottom-3 left-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        {member.social.linkedin && (
+                          <Button 
+                            size="sm" 
+                            variant="secondary" 
+                            className="w-8 h-8 p-0 hover:bg-blue-600 hover:text-white transition-colors bg-white/20 border-white/30 backdrop-blur-sm"
+                            asChild
+                          >
+                            <Link href={member.social.linkedin} target="_blank" rel="noopener noreferrer">
+                              <Linkedin className="w-4 h-4" />
+                            </Link>
+                          </Button>
+                        )}
                       </div>
                     </div>
-                    <div className="p-6 bg-gray-900/30">
-                      <h3 className="text-xl font-bold text-white mb-2">{member.name}</h3>
-                      <p className="text-blue-400 font-medium mb-3">{member.role}</p>
-                      <div className="flex items-center text-sm text-gray-400 mb-4">
-                        <MapPin className="w-4 h-4 mr-2" />
+                    <div className="p-4 bg-gray-900/30">
+                      <h3 className="text-base font-bold text-white mb-2">{member.name}</h3>
+                      <p className="text-blue-400 font-medium mb-2 text-xs">{member.role}</p>
+                      <div className="flex items-center text-xs text-gray-400 mb-2">
+                        <MapPin className="w-3 h-3 mr-1" />
                         {member.location}
                       </div>
-                      <p className="text-sm text-gray-300 mb-4 leading-relaxed">{member.bio}</p>
-                      <div className="flex flex-wrap gap-2">
+                      <p className="text-xs text-gray-300 mb-3 leading-relaxed line-clamp-3">{member.bio}</p>
+                      <div className="flex flex-wrap gap-1">
                         {member.skills.map((skill) => (
-                          <Badge key={skill} variant="outline" className="text-xs border-blue-500/30 text-blue-300 hover:bg-blue-500/10">
+                          <Badge key={skill} variant="outline" className="text-xs border-blue-500/30 text-blue-300 hover:bg-blue-500/10 px-1.5 py-0.5 transition-colors">
                             {skill}
                           </Badge>
                         ))}
@@ -422,24 +398,24 @@ export default function TeamPage() {
       </section>
 
       {/* Join Team CTA */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-gray-900/40 via-gray-800/20 to-gray-900/40 relative overflow-hidden page-transition">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-gray-900/60 via-gray-800/40 to-gray-900/60 relative overflow-hidden page-transition">
+        <div className="max-w-5xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent">Want to Join Our Team?</h2>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <h2 className="text-4xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent">Want to Join Our Team?</h2>
+            <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
               We're always looking for passionate individuals to help grow the Y-SoC community. Whether as a mentor,
               organizer, or contributor, there's a place for you.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Button
                 asChild
                 size="lg"
-                className="gradient-primary text-white hover:opacity-90 transition-opacity neon-glow"
+                className="gradient-primary text-white hover:opacity-90 transition-opacity neon-glow px-8 py-4 text-lg"
               >
                 <Link href="/contact" className="flex items-center">
                   Get In Touch <Mail className="ml-2 h-5 w-5" />
@@ -449,9 +425,11 @@ export default function TeamPage() {
                 asChild
                 variant="outline"
                 size="lg"
-                className="border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
+                className="border-gray-600 text-gray-300 hover:bg-gray-700 hover:text-white transition-colors px-8 py-4 text-lg"
               >
-                <Link href="/recruit">Join as Participant</Link>
+                <Link href="/recruit" className="flex items-center">
+                  View Openings <Globe className="ml-2 h-5 w-5" />
+                </Link>
               </Button>
             </div>
           </motion.div>
