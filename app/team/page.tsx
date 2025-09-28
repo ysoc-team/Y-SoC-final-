@@ -141,7 +141,7 @@ export default function TeamPage() {
     {
       name: "Harshil Jauhari",
       role: "Marketing Head",
-      location: "India",
+      location: "Uttar Pradesh, India",
       bio: "Leads marketing campaigns and brand promotion. Develops strategies to expand community reach.",
       image: "/harshil.png",
       skills: ["Digital Marketing", "Brand Strategy", "Community Growth"],
