@@ -313,19 +313,6 @@ export default function RecruitPage() {
                     </div>
                   </div>
 
-                  {/* Role Selection Alert */}
-                  {!formData.role && (
-                    <motion.div 
-                      initial={{ opacity: 0, y: -10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -10 }}
-                      transition={{ duration: 0.3 }}
-                      className="flex items-center gap-2 p-4 bg-destructive/10 border border-destructive/20 rounded-lg"
-                    >
-                      <AlertCircle className="w-5 h-5 text-destructive" />
-                      <p className="text-sm text-destructive">Please select a role above to continue.</p>
-                    </motion.div>
-                  )}
 
                   {/* Experience Level */}
                   <div className="bg-gray-800/30 rounded-xl p-6 border border-gray-700/20">
@@ -338,8 +325,9 @@ export default function RecruitPage() {
                       <Select
                         value={formData.experience}
                         onValueChange={(value) => handleInputChange("experience", value)}
+                        required
                       >
-                        <SelectTrigger className="bg-gray-900/50 border-gray-600/50 text-white focus:border-blue-500 focus:ring-blue-500/20  hover:border-gray-500/50">
+                        <SelectTrigger className={`bg-gray-900/50 text-white focus:border-blue-500 focus:ring-blue-500/20 hover:border-gray-500/50 ${!formData.experience ? 'border-red-500/50' : 'border-gray-600/50'}`}>
                           <SelectValue placeholder="Select your experience level" />
                         </SelectTrigger>
                         <SelectContent className="z-50 bg-gray-900 border-gray-700">
@@ -467,8 +455,9 @@ export default function RecruitPage() {
                       <Select
                         value={formData.availability}
                         onValueChange={(value) => handleInputChange("availability", value)}
+                        required
                       >
-                        <SelectTrigger className="bg-gray-900/50 border-gray-600/50 text-white focus:border-blue-500 focus:ring-blue-500/20 hover:border-gray-500/50">
+                        <SelectTrigger className={`bg-gray-900/50 text-white focus:border-blue-500 focus:ring-blue-500/20 hover:border-gray-500/50 ${!formData.availability ? 'border-red-500/50' : 'border-gray-600/50'}`}>
                           <SelectValue placeholder="How many hours per week can you commit?" />
                         </SelectTrigger>
                         <SelectContent className="z-50 bg-gray-900 border-gray-700">
@@ -542,6 +531,22 @@ export default function RecruitPage() {
                     </div>
                   </div>
 
+                  {/* Required Fields Alert */}
+                  {(!formData.role || !formData.experience || !formData.availability) && (
+                    <motion.div 
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.3 }}
+                      className="flex items-center gap-2 p-4 bg-destructive/10 border border-destructive/20 rounded-lg mb-4"
+                    >
+                      <AlertCircle className="w-5 h-5 text-destructive" />
+                      <p className="text-sm text-destructive">
+                        Please complete all required fields to continue
+                      </p>
+                    </motion.div>
+                  )}
+
                   {/* Submit Button */}
                   {submitError && (
                     <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-lg mb-4">
@@ -555,7 +560,7 @@ export default function RecruitPage() {
                   <div className="pt-6">
                     <Button
                       type="submit"
-                      disabled={isSubmitting || !formData.role || !formData.agreeTerms || !formData.github || !formData.linkedin}
+                      disabled={isSubmitting || !formData.role || !formData.experience || !formData.availability || !formData.agreeTerms || !formData.github || !formData.linkedin}
                       className="w-full bg-gradient-to-r from-blue-500 to-cyan-400 text-white hover:opacity-90 transition-all duration-300 hover:scale-105 shadow-lg shadow-blue-500/25 font-semibold py-3"
                     >
                       {isSubmitting ? (
