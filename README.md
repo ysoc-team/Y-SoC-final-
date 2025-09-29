@@ -213,10 +213,10 @@ We welcome contributions from the community! Here's how you can help:
 
 ## 📊 Performance Metrics
 
-- **Lighthouse Score**: 95+ across all categories
-- **First Contentful Paint**: < 1.5s
-- **Largest Contentful Paint**: < 2.5s
-- **Cumulative Layout Shift**: < 0.1
+- **Lighthouse Score**: 90+ across majority categories
+- **First Contentful Paint**: < 0.2s
+- **Largest Contentful Paint**: < 1.3s
+- **Cumulative Layout Shift**: < 0
 - **Time to Interactive**: < 3.5s
 
 ## 🌐 Browser Support
