@@ -398,6 +398,16 @@ body {
     overflow-anchor: none;
     scroll-behavior: smooth;
   }
+  /* Add your custom heading fix here */
+.heading-fix {
+  display: block;
+  overflow: visible;
+  white-space: normal;
+  line-height: 1.3;
+  padding-bottom: 0.25rem;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
   /* Reduce layout thrashing */
   .stable-layout {

@@ -102,7 +102,7 @@ export default function AboutPage() {
             <Badge variant="secondary" className="mb-4 px-4 py-2 border-2 border-blue-500 bg-blue-500/10 text-blue-400 hover:bg-blue-500/20 transition-all duration-300">
               About Y-SoC
             </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent">
+            <h1 className="heading-fix text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400">
               Empowering Youth Through Open Source
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
