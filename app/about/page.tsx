@@ -103,7 +103,7 @@ export default function AboutPage() {
               About Y-SoC
             </Badge>
             <h1
-              className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent leading-[1.3] pb-1">
+              className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent leading-[1.3] pb-2">
               Empowering Youth Through Open Source
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
