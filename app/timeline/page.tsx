@@ -138,10 +138,7 @@ export default function TimelinePage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="mb-4 px-4 py-2 border-2 border-blue-500 bg-blue-500/10 
-             text-blue-400 hover:bg-blue-500/20 
-             transition-all duration-300 
-             leading-normal pb-3 overflow-visible">Program Flow</h2>
+            <h2 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent mb-6">Program Flow</h2>
             <p className="text-xl text-gray-200 max-w-2xl mx-auto">
               Each phase is carefully designed to maximize learning, collaboration, and project success
             </p>
