@@ -112,7 +112,10 @@ export default function TimelinePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <Badge variant="secondary" className="mb-4 px-4 py-2 border-2 border-blue-500 bg-blue-500/10 text-blue-400 hover:bg-blue-500/20 transition-all duration-300">
+            <Badge variant="secondary" className="mb-4 px-4 py-2 border-2 border-blue-500 bg-blue-500/10 
+             text-blue-400 hover:bg-blue-500/20 
+             transition-all duration-300 
+             leading-normal pb-2 overflow-visible">
               Program Flow
             </Badge>
             <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent mb-6 leading-[1.3] pb-2">Your 6-Month Journey</h1>
