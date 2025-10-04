@@ -390,7 +390,7 @@ export const mentors: Mentor[] = [
     availability: "Available",
     timezone: "IST",
     languages: ["English", "Hindi"],
-    linkedin: "https://www.linkedin.com/in/sandeep-shivam"
+    linkedin: "https://www.linkedin.com/in/sandeep-shivam-51910232/"
   },
   {
     id: 26,
@@ -405,7 +405,7 @@ export const mentors: Mentor[] = [
     availability: "Available",
     timezone: "PST",
     languages: ["English", "Hindi"],
-    linkedin: "https://www.linkedin.com/in/ganpati-goel/"
+    linkedin: "https://www.linkedin.com/in/ganpatigoel"
   },
   {
     id: 27,
@@ -450,6 +450,6 @@ export const mentors: Mentor[] = [
     availability: "Available",
     timezone: "PST",
     languages: ["English"],
-    linkedin: "https://www.linkedin.com/in/archana-rajendran"
+    linkedin: "https://www.linkedin.com/in/archana-rajendran-5a2a6228/"
   }
 ]
