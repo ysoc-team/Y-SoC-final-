@@ -398,6 +398,12 @@ body {
     overflow-anchor: none;
     scroll-behavior: smooth;
   }
+  .badge {
+  line-height: 1.5 !important; 
+  overflow: visible !important;
+}
+
+
 
   /* Reduce layout thrashing */
   .stable-layout {
