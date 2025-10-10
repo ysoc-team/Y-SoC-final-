@@ -188,7 +188,7 @@ export default function TeamPage() {
       image: "/pratham_shukla.jpg",
       skills: ["Social Media", "Content Strategy", "Community Management"],
       social: {
-        linkedin: "",
+        linkedin: "https://www.linkedin.com/in/pratham-shukla-745a12385/",
         github: "",
         twitter: "",
         website: ""
