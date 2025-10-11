@@ -249,7 +249,7 @@ export default function TermsOfServicePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent">Participant Obligations</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent leading-[1.3] pb-3">Participant Obligations</h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               As a Y-SoC participant, you agree to fulfill these obligations throughout the program.
             </p>

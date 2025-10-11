@@ -155,7 +155,7 @@ export default function FAQPage() {
             <Badge variant="secondary" className="mb-4 px-4 py-2">
               Frequently Asked Questions
             </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold gradient-text mb-6">Got Questions?</h1>
+            <h1 className="text-4xl md:text-6xl font-bold gradient-text mb-6 leading-[1.3] pb-3">Got Questions?</h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Find answers to common questions about Y-SoC, our program structure, and how to get involved in the global youth open-source community.
             </p>
@@ -179,7 +179,7 @@ export default function FAQPage() {
                 <div className={`w-12 h-12 rounded-lg ${category.color} flex items-center justify-center mr-4`}>
                   <category.icon className="w-6 h-6 text-white" />
                 </div>
-                <h2 className="text-3xl font-bold gradient-text">{category.title}</h2>
+                <h2 className="text-3xl font-bold gradient-text leading-[1.3] pb-3">{category.title}</h2>
               </div>
 
               <div className="space-y-4">
@@ -246,7 +246,7 @@ export default function FAQPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold gradient-text mb-6">Still Have Questions?</h2>
+            <h2 className="text-3xl md:text-5xl font-bold gradient-text mb-6 leading-[1.3] pb-3">Still Have Questions?</h2>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
               Can't find what you're looking for? Our team is here to help you get started with Y-SoC.
             </p>

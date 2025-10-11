@@ -145,7 +145,7 @@ export default function PrivacyPolicyPage() {
           </motion.div>
 
           <motion.h1
-            className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent mb-8"
+            className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent mb-8 leading-[1.3] pb-3"
             initial={animations.slideUp.initial}
             animate={animations.slideUp.animate}
             transition={getTransition(0.8)}
@@ -207,7 +207,7 @@ export default function PrivacyPolicyPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent">Our Privacy Principles</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent leading-[1.3] pb-3">Our Privacy Principles</h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               We follow these core principles to ensure your privacy and data protection.
             </p>
@@ -343,7 +343,7 @@ export default function PrivacyPolicyPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent">Your Privacy Rights</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent leading-[1.3] pb-3">Your Privacy Rights</h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               You have certain rights regarding your personal information under applicable privacy laws.
             </p>

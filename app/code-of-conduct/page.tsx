@@ -312,7 +312,7 @@ export default function CodeOfConductPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent">Reporting Process</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent leading-[1.3] pb-3">Reporting Process</h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               If you experience or witness harassment, we encourage you to report it. All reports will be handled confidentially.
             </p>
