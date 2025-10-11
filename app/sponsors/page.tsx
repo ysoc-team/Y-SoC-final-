@@ -206,7 +206,7 @@ export default function SponsorsPage() {
             transition={animations.scrollReveal.transition}
             viewport={animations.scrollReveal.viewport}
           >
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent">Why Sponsor Y-SoC?</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent leading-[1.3] pb-3">Why Sponsor Y-SoC?</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Partner with us to make a meaningful impact on the future of open source development and youth education.
             </p>

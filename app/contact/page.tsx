@@ -195,7 +195,7 @@ export default function ContactPage() {
               <div className="rounded-2xl border border-gray-700/30 bg-gray-900/50 backdrop-blur-sm shadow-xl">
                 <div className="p-8">
                   <div className="text-center mb-8">
-                    <h2 className="text-3xl font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent mb-4">Send us a Message</h2>
+                    <h2 className="text-3xl font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent mb-4 leading-[1.3] pb-3">Send us a Message</h2>
                     <p className="text-gray-300">We'd love to hear from you! Send us a message and we'll respond as soon as possible.</p>
                   </div>
                   <form onSubmit={handleSubmit} className="space-y-6">

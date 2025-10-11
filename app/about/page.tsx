@@ -226,7 +226,7 @@ export default function AboutPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent">Community Roles</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent leading-[1.3] pb-3">Community Roles</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Discover where you fit in our diverse community of creators, collaborators, and innovators
             </p>
@@ -433,7 +433,7 @@ export default function AboutPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent">Role-Specific Benefits</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent leading-[1.3] pb-3">Role-Specific Benefits</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Each role in Y-SoC offers unique opportunities for growth and contribution
             </p>
@@ -526,7 +526,7 @@ export default function AboutPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent">Ready to Join Our Community?</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent leading-[1.3] pb-3">Ready to Join Our Community?</h2>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
               Whether you're a seasoned developer, researcher, or just starting out, there's a place for you in Y-SoC. Let's build
               the future of open source together through innovation and meaningful contributions.

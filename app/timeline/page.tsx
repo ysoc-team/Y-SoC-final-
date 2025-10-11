@@ -233,7 +233,7 @@ export default function TimelinePage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent mb-6">Ready to Start Your Journey?</h2>
+            <h2 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent mb-6 leading-[1.3] pb-3">Ready to Start Your Journey?</h2>
             <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
               Don't miss out on this incredible opportunity to grow, learn, and contribute to meaningful projects. Your
               open-source journey starts with a single application.

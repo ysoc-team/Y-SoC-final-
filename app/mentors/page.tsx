@@ -61,7 +61,7 @@ export default function MentorsPage() {
             <Badge variant="secondary" className="mb-4 px-4 py-2 border-2 border-blue-500 bg-blue-500/10 text-blue-400 hover:bg-blue-500/20 transition-all duration-300">
               Our Mentors
             </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent">Learn from Industry Experts</h1>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent leading-[1.3] pb-3">Learn from Industry Experts</h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Get personalized guidance from experienced professionals who are passionate about helping you succeed in your open-source journey.
             </p>
@@ -184,7 +184,7 @@ export default function MentorsPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent">Ready to Get Mentored?</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent leading-[1.3] pb-3">Ready to Get Mentored?</h2>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
               Join Y-SoC and get paired with experienced mentors who will guide you through your open-source journey and help you grow as a developer.
             </p>
