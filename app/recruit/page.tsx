@@ -192,58 +192,8 @@ export default function RecruitPage() {
         </div>
       </section>
 
-      {/* Role Selection */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/50 relative overflow-hidden page-transition">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <h2 className="text-2xl font-bold text-center mb-8 gradient-text">Choose Your Role</h2>
-            <div className="grid md:grid-cols-5 gap-4 mb-8">
-              {roles.map((role, index) => (
-                <motion.div
-                  key={role.value}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="cursor-pointer"
-                  onClick={() => handleInputChange("role", role.value)}
-                >
-                  <div
-                    className={`h-full rounded-2xl border transition-all duration-300 ease-in-out ${
-                      formData.role === role.value
-                          ? "border-blue-500/70 shadow-lg shadow-blue-500/20 scale-105 bg-blue-500/10"
-                          : "border-gray-700/30 hover:border-gray-600/50 hover:shadow-md bg-gray-900/50"
-                    }`}
-                  >
-                    <div className="p-6 text-center">
-                      {/* Modern Icon */}
-                      <div className="mb-4">
-                        <div className={`w-12 h-12 rounded-full ${role.color.replace('text-', 'bg-')} flex items-center justify-center mx-auto shadow-lg`}>
-                          <role.icon className="w-6 h-6 text-white" />
-                        </div>
-                      </div>
-                      
-                      {/* Role Title */}
-                      <h3 className={`font-bold mb-2 text-lg ${role.color}`}>{role.label}</h3>
-                      
-                      {/* Description */}
-                      <p className="text-sm text-gray-300 leading-relaxed">{role.description}</p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Application Form */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black relative overflow-hidden">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/50 relative overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -257,6 +207,54 @@ export default function RecruitPage() {
                   <p className="text-gray-300">Tell us about yourself and let's start your Y-SoC journey together!</p>
                 </div>
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  {/* Role Selection */}
+                  <div className="bg-gray-800/30 rounded-xl p-6 border border-gray-700/20">
+                    <h3 className="text-lg font-semibold text-white mb-6 flex items-center gap-2">
+                      <Crown className="w-5 h-5 text-blue-400" />
+                      Choose Your Role *
+                    </h3>
+                    <div className="grid md:grid-cols-5 gap-4">
+                      {roles.map((role, index) => (
+                        <motion.div
+                          key={role.value}
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.5, delay: 0.1 + index * 0.1 }}
+                          whileHover={{ scale: 1.05, y: -2 }}
+                          whileTap={{ scale: 0.98 }}
+                          className="cursor-pointer"
+                          onClick={() => handleInputChange("role", role.value)}
+                        >
+                          <div
+                            className={`h-full rounded-2xl border transition-all duration-300 ease-in-out ${
+                              formData.role === role.value
+                                  ? "border-blue-500/70 shadow-lg shadow-blue-500/20 scale-105 bg-blue-500/10"
+                                  : "border-gray-700/30 hover:border-gray-600/50 hover:shadow-md bg-gray-900/50"
+                            }`}
+                          >
+                            <div className="p-4 text-center">
+                              {/* Modern Icon */}
+                              <div className="mb-3">
+                                <div className={`w-10 h-10 rounded-full ${role.color.replace('text-', 'bg-')} flex items-center justify-center mx-auto shadow-lg`}>
+                                  <role.icon className="w-5 h-5 text-white" />
+                                </div>
+                              </div>
+                              
+                              {/* Role Title */}
+                              <h4 className={`font-bold mb-2 text-sm ${role.color}`}>{role.label}</h4>
+                              
+                              {/* Description */}
+                              <p className="text-xs text-gray-300 leading-relaxed">{role.description}</p>
+                            </div>
+                          </div>
+                        </motion.div>
+                      ))}
+                    </div>
+                    {hasAttemptedSubmit && !formData.role && (
+                      <p className="text-red-400 text-sm mt-2">Please select a role to continue</p>
+                    )}
+                  </div>
+
                   {/* Personal Information */}
                   <div className="bg-gray-800/30 rounded-xl p-6 border border-gray-700/20">
                     <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
