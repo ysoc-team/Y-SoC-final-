@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
 import { useState } from "react"
 import { ChevronDown, ChevronUp, HelpCircle, Users, Code, Calendar, Mail, ExternalLink } from "lucide-react"
+import GridDotBackground from "@/components/GridDotBackground"
 
 export default function FAQPage() {
   const [openItems, setOpenItems] = useState<number[]>([])
@@ -139,27 +140,55 @@ export default function FAQPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-black scroll-smooth">
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden min-h-[60vh] flex items-center">
+        <div className="absolute inset-0">
+          <GridDotBackground
+            dotSize={2}
+            dotSpacing={40}
+            dotColor="#06b6d4"
+            backgroundColor="transparent"
+            opacity={0.3}
+            animationSpeed={0.7}
+            pulseIntensity={0.4}
+          />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5" />
-        <div className="max-w-4xl mx-auto relative">
+        <div className="absolute inset-0 bg-white/10 dark:bg-transparent" />
+        
+        <div className="relative z-10 max-w-7xl mx-auto text-center">
           <motion.div
-            className="text-center mb-16"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
+            className="mb-6"
           >
-            <Badge variant="secondary" className="mb-4 px-4 py-2">
+            <Badge variant="secondary" className="mb-4 px-4 py-2 border-2 border-blue-500 bg-blue-500/10 text-blue-400 hover:bg-blue-500/20 transition-all duration-300">
+              <HelpCircle className="w-4 h-4 mr-2" />
               Frequently Asked Questions
             </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold gradient-text mb-6 leading-[1.3] pb-3">Got Questions?</h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Find answers to common questions about Y-SoC, our program structure, and how to get involved in the global youth open-source community.
-            </p>
           </motion.div>
+
+          <motion.h1
+            className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            Got Questions?
+          </motion.h1>
+
+          <motion.p
+            className="text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            Find answers to common questions about Y-SoC, our program structure, and how to get involved in the global youth open-source community.
+          </motion.p>
         </div>
       </section>
 
@@ -169,20 +198,24 @@ export default function FAQPage() {
           {faqCategories.map((category, categoryIndex) => (
             <motion.div
               key={category.title}
-              className="mb-16"
+              className={`mb-20 ${categoryIndex % 2 === 0 ? 'bg-gray-900/30' : 'bg-gray-800/20'} rounded-3xl p-8 md:p-12 border border-gray-700/30 backdrop-blur-sm`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
               viewport={{ once: true }}
             >
-              <div className="flex items-center mb-8">
-                <div className={`w-12 h-12 rounded-lg ${category.color} flex items-center justify-center mr-4`}>
-                  <category.icon className="w-6 h-6 text-white" />
+              <div className="flex items-center mb-12">
+                <div className={`w-16 h-16 rounded-2xl ${category.color} flex items-center justify-center mr-6 shadow-lg shadow-${category.color.replace('bg-', '')}/30`}>
+                  <category.icon className="w-8 h-8 text-white" />
                 </div>
-                <h2 className="text-3xl font-bold gradient-text leading-[1.3] pb-3">{category.title}</h2>
+                <div>
+                  <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent">
+                    {category.title}
+                  </h2>
+                </div>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-6">
                 {category.questions.map((item, itemIndex) => {
                   const globalIndex = categoryIndex * 100 + itemIndex
                   const isOpen = openItems.includes(globalIndex)
@@ -195,20 +228,22 @@ export default function FAQPage() {
                       transition={{ duration: 0.4, delay: itemIndex * 0.1 }}
                       viewport={{ once: true }}
                     >
-                      <Card className="border-border/50 hover:border-primary/30 transition-all duration-300">
+                      <Card className="border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 bg-gray-800/50 backdrop-blur-sm hover:shadow-xl hover:shadow-blue-500/10">
                         <CardContent className="p-0">
                           <button
                             onClick={() => toggleItem(globalIndex)}
-                            className="w-full p-6 text-left flex items-center justify-between hover:bg-muted/50 transition-colors"
+                            className="w-full p-6 text-left flex items-start justify-between hover:bg-gray-700/30 transition-colors rounded-t-lg"
                           >
-                            <h3 className="text-lg font-semibold text-foreground pr-4">
+                            <h3 className="text-lg font-semibold text-white pr-6 flex-1 leading-relaxed">
                               {item.question}
                             </h3>
-                            {isOpen ? (
-                              <ChevronUp className="w-5 h-5 text-primary flex-shrink-0" />
-                            ) : (
-                              <ChevronDown className="w-5 h-5 text-muted-foreground flex-shrink-0" />
-                            )}
+                            <div className="flex-shrink-0 ml-4">
+                              {isOpen ? (
+                                <ChevronUp className="w-5 h-5 text-blue-400" />
+                              ) : (
+                                <ChevronDown className="w-5 h-5 text-gray-400" />
+                              )}
+                            </div>
                           </button>
                           
                           {isOpen && (
@@ -219,8 +254,8 @@ export default function FAQPage() {
                               transition={{ duration: 0.3 }}
                               className="overflow-hidden"
                             >
-                              <div className="px-6 pb-6 pt-0">
-                                <p className="text-muted-foreground leading-relaxed">
+                              <div className="px-6 pb-6 pt-0 border-t border-gray-700/30">
+                                <p className="text-gray-300 leading-relaxed">
                                   {item.answer}
                                 </p>
                               </div>
@@ -238,16 +273,19 @@ export default function FAQPage() {
       </section>
 
       {/* Contact CTA */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/20">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/50 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-transparent to-cyan-500/5"></div>
+        <div className="max-w-4xl mx-auto text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold gradient-text mb-6 leading-[1.3] pb-3">Still Have Questions?</h2>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent mb-6">
+              Still Have Questions?
+            </h2>
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
               Can't find what you're looking for? Our team is here to help you get started with Y-SoC.
             </p>
             
@@ -255,7 +293,7 @@ export default function FAQPage() {
               <Button
                 asChild
                 size="lg"
-                className="gradient-primary text-white hover:opacity-90 transition-all duration-300 neon-glow shadow-lg hover:shadow-xl"
+                className="bg-gradient-to-r from-blue-500 to-cyan-400 text-white hover:opacity-90 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-blue-500/25"
               >
                 <a href="/contact" className="flex items-center">
                   Contact Us <ExternalLink className="ml-2 h-5 w-5" />
@@ -264,7 +302,7 @@ export default function FAQPage() {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
+                className="border-blue-500/50 text-blue-400 hover:bg-blue-500/10 hover:text-blue-300 bg-transparent"
                 onClick={() => window.open("https://mail.google.com/mail/?view=cm&fs=1&to=team@ysoc.in", "_blank")}
               >
                 <Mail className="w-5 h-5 mr-2" />

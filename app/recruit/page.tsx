@@ -38,6 +38,7 @@ export default function RecruitPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [submitError, setSubmitError] = useState("")
+  const [hasAttemptedSubmit, setHasAttemptedSubmit] = useState(false)
 
   const roles = [
     { value: "project-lead", label: "Project Lead", icon: Briefcase, description: "Guide and manage open-source projects", color: "text-blue-500", iconColor: "text-blue-500" },
@@ -49,6 +50,7 @@ export default function RecruitPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    setHasAttemptedSubmit(true)
     setIsSubmitting(true)
     setSubmitError("")
 
@@ -327,7 +329,7 @@ export default function RecruitPage() {
                         onValueChange={(value) => handleInputChange("experience", value)}
                         required
                       >
-                        <SelectTrigger className={`bg-gray-900/50 text-white focus:border-blue-500 focus:ring-blue-500/20 hover:border-gray-500/50 ${!formData.experience ? 'border-red-500/50' : 'border-gray-600/50'}`}>
+                        <SelectTrigger className={`bg-gray-900/50 text-white focus:border-blue-500 focus:ring-blue-500/20 hover:border-gray-500/50 ${hasAttemptedSubmit && !formData.experience ? 'border-red-500/50' : 'border-gray-600/50'}`}>
                           <SelectValue placeholder="Select your experience level" />
                         </SelectTrigger>
                         <SelectContent className="z-50 bg-gray-900 border-gray-700">
@@ -457,7 +459,7 @@ export default function RecruitPage() {
                         onValueChange={(value) => handleInputChange("availability", value)}
                         required
                       >
-                        <SelectTrigger className={`bg-gray-900/50 text-white focus:border-blue-500 focus:ring-blue-500/20 hover:border-gray-500/50 ${!formData.availability ? 'border-red-500/50' : 'border-gray-600/50'}`}>
+                        <SelectTrigger className={`bg-gray-900/50 text-white focus:border-blue-500 focus:ring-blue-500/20 hover:border-gray-500/50 ${hasAttemptedSubmit && !formData.availability ? 'border-red-500/50' : 'border-gray-600/50'}`}>
                           <SelectValue placeholder="How many hours per week can you commit?" />
                         </SelectTrigger>
                         <SelectContent className="z-50 bg-gray-900 border-gray-700">

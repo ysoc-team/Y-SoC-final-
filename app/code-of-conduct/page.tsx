@@ -166,16 +166,18 @@ export default function CodeOfConductPage() {
           >
             <div className="rounded-2xl border border-gray-700/30 bg-gray-900/50 backdrop-blur-sm shadow-xl">
               <div className="p-8 md:p-12">
-                <h2 className="text-3xl font-bold text-center mb-8 text-white">Our Commitment</h2>
-                <p className="text-lg text-gray-300 leading-relaxed">
-                  The Youth Season of Code (Y-SoC) is dedicated to providing a harassment-free experience for everyone, 
-                  regardless of age, body size, disability, ethnicity, gender identity and expression, level of experience, 
-                  nationality, personal appearance, race, religion, or sexual identity and orientation.
-                </p>
-                <p className="text-lg text-gray-300 leading-relaxed">
-                  We do not tolerate harassment of participants in any form. This code of conduct applies to all Y-SoC 
-                  spaces, including online forums, chat rooms, email lists, social media, and in-person events.
-                </p>
+                <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent">Our Commitment</h2>
+                <div className="space-y-6">
+                  <p className="text-lg text-gray-300 leading-relaxed">
+                    The Youth Season of Code (Y-SoC) is dedicated to providing a harassment-free experience for everyone, 
+                    regardless of age, body size, disability, ethnicity, gender identity and expression, level of experience, 
+                    nationality, personal appearance, race, religion, or sexual identity and orientation.
+                  </p>
+                  <p className="text-lg text-gray-300 leading-relaxed">
+                    We do not tolerate harassment of participants in any form. This code of conduct applies to all Y-SoC 
+                    spaces, including online forums, chat rooms, email lists, social media, and in-person events.
+                  </p>
+                </div>
               </div>
             </div>
           </motion.div>
@@ -380,8 +382,8 @@ export default function CodeOfConductPage() {
           >
             <div className="rounded-2xl border border-gray-700/30 bg-gray-900/50 backdrop-blur-sm shadow-xl">
               <div className="p-8 md:p-12">
-                <h2 className="text-3xl font-bold text-center mb-8 text-white">Enforcement</h2>
-                <div className="space-y-4 text-lg text-gray-300 leading-relaxed">
+                <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent">Enforcement</h2>
+                <div className="space-y-6 text-lg text-gray-300 leading-relaxed">
                   <p>
                     Participants asked to stop any harassing behavior are expected to comply immediately. 
                     If a participant engages in harassing behavior, the Y-SoC team may take any action they 

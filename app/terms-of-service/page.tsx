@@ -73,7 +73,7 @@ export default function TermsOfServicePage() {
     },
     {
       obligation: "Intellectual Property",
-      description: "Respect for intellectual property rights and proper attribution of work."
+      description: "Respect for intellectual property rights and proper attribution of work. Y-SoC retains 50% ownership rights to all projects developed during the program."
     },
     {
       obligation: "Confidentiality",
@@ -175,17 +175,19 @@ export default function TermsOfServicePage() {
           >
             <div className="rounded-2xl border border-gray-700/30 bg-gray-900/50 backdrop-blur-sm shadow-xl">
               <div className="p-8 md:p-12">
-                <h2 className="text-3xl font-bold text-center mb-8 text-white">Agreement to Terms</h2>
-                <p className="text-lg text-gray-300 leading-relaxed">
-                  Welcome to Youth Season of Code (Y-SoC). These Terms of Service ("Terms") govern your 
-                  participation in our program and use of our website and services. By participating in 
-                  Y-SoC, you agree to be bound by these Terms.
-                </p>
-                <p className="text-lg text-gray-300 leading-relaxed">
-                  If you do not agree to these Terms, please do not participate in our program or use our services. 
-                  We reserve the right to modify these Terms at any time, and your continued participation 
-                  constitutes acceptance of any changes.
-                </p>
+                <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent">Agreement to Terms</h2>
+                <div className="space-y-6 mb-8">
+                  <p className="text-lg text-gray-300 leading-relaxed">
+                    Welcome to Youth Season of Code (Y-SoC). These Terms of Service ("Terms") govern your 
+                    participation in our program and use of our website and services. By participating in 
+                    Y-SoC, you agree to be bound by these Terms.
+                  </p>
+                  <p className="text-lg text-gray-300 leading-relaxed">
+                    If you do not agree to these Terms, please do not participate in our program or use our services. 
+                    We reserve the right to modify these Terms at any time, and your continued participation 
+                    constitutes acceptance of any changes.
+                  </p>
+                </div>
                 <div className="bg-gray-800/30 p-6 rounded-lg border border-gray-700/20">
                   <p className="text-sm text-gray-300">
                     <strong>Last Updated:</strong> September 2025
@@ -378,7 +380,7 @@ export default function TermsOfServicePage() {
           >
             <div className="rounded-2xl border border-gray-700/30 bg-gray-900/50 backdrop-blur-sm shadow-xl">
               <div className="p-8 md:p-12">
-                <h2 className="text-3xl font-bold text-center mb-8 text-white">Limitation of Liability</h2>
+                <h2 className="text-3xl font-bold text-center mb-8 bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent">Limitation of Liability</h2>
                 <div className="space-y-4 text-lg text-gray-300 leading-relaxed">
                   <p>
                     Y-SoC is provided on an "as is" basis. We make no warranties, express or implied, 
@@ -413,13 +415,13 @@ export default function TermsOfServicePage() {
           >
             <div className="rounded-2xl border border-gray-700/30 bg-gray-900/50 backdrop-blur-sm shadow-xl">
               <div className="p-8 md:p-12">
-                <h2 className="text-3xl font-bold text-center mb-8 text-white">Questions About These Terms?</h2>
+                <h2 className="text-3xl font-bold text-center mb-8 bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent">Questions About These Terms?</h2>
                 <p className="text-lg text-gray-300 leading-relaxed text-center">
                   If you have any questions about these Terms of Service or need clarification on any 
                   aspect of the program, please contact us:
                 </p>
-                <div className="space-y-4 text-center">
-                  <div className="flex items-center justify-center space-x-3">
+                <div className="space-y-6 text-center mt-8">
+                  <div className="flex items-center justify-center space-x-3 bg-gray-800/30 rounded-lg p-4 border border-gray-700/20">
                     <Mail className="w-5 h-5 text-blue-400" />
                     <span className="text-blue-400"><strong>Email:</strong> team@ysoc.in</span>
                   </div>

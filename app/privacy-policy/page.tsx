@@ -175,17 +175,19 @@ export default function PrivacyPolicyPage() {
           >
             <div className="rounded-2xl border border-gray-700/30 bg-gray-900/50 backdrop-blur-sm shadow-xl">
               <div className="p-8 md:p-12">
-                <h2 className="text-3xl font-bold text-center mb-8 text-white">Our Commitment to Privacy</h2>
-                <p className="text-lg text-gray-300 leading-relaxed">
-                  Youth Season of Code (Y-SoC) is committed to protecting your privacy and personal information. 
-                  This Privacy Policy explains how we collect, use, disclose, and safeguard your information when 
-                  you participate in our program or use our website.
-                </p>
-                <p className="text-lg text-gray-300 leading-relaxed">
-                  By using our services, you agree to the collection and use of information in accordance with 
-                  this policy. We will not use or share your information with anyone except as described in this 
-                  Privacy Policy.
-                </p>
+                <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent">Our Commitment to Privacy</h2>
+                <div className="space-y-6 mb-8">
+                  <p className="text-lg text-gray-300 leading-relaxed">
+                    Youth Season of Code (Y-SoC) is committed to protecting your privacy and personal information. 
+                    This Privacy Policy explains how we collect, use, disclose, and safeguard your information when 
+                    you participate in our program or use our website.
+                  </p>
+                  <p className="text-lg text-gray-300 leading-relaxed">
+                    By using our services, you agree to the collection and use of information in accordance with 
+                    this policy. We will not use or share your information with anyone except as described in this 
+                    Privacy Policy.
+                  </p>
+                </div>
                 <div className="bg-gray-800/30 p-6 rounded-lg border border-gray-700/20">
                   <p className="text-sm text-gray-300">
                     <strong>Last Updated:</strong> September 2025
@@ -387,13 +389,13 @@ export default function PrivacyPolicyPage() {
           >
             <div className="rounded-2xl border border-gray-700/30 bg-gray-900/50 backdrop-blur-sm shadow-xl">
               <div className="p-8 md:p-12">
-                <h2 className="text-3xl font-bold text-center mb-8 text-white">Contact Us</h2>
+                <h2 className="text-3xl font-bold text-center mb-8 bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent">Contact Us</h2>
                 <p className="text-lg text-gray-300 leading-relaxed text-center">
                   If you have any questions about this Privacy Policy or wish to exercise your privacy rights, 
                   please contact us:
                 </p>
-                <div className="space-y-4 text-center">
-                  <div className="flex items-center justify-center space-x-3">
+                <div className="space-y-6 text-center mt-8">
+                  <div className="flex items-center justify-center space-x-3 bg-gray-800/30 rounded-lg p-4 border border-gray-700/20">
                     <Mail className="w-5 h-5 text-blue-400" />
                     <span className="text-blue-400"><strong>Email:</strong> team@ysoc.in</span>
                   </div>

@@ -337,7 +337,7 @@ export default function TeamPage() {
 
           {/* Rest of Core Team - Regular Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {coreTeam.slice(2).map((member, index) => (
+            {coreTeam.slice(2, -3).map((member, index) => (
               <motion.div
                 key={member.name}
                 initial={{ opacity: 0, y: 30 }}
@@ -393,6 +393,68 @@ export default function TeamPage() {
                 </Card>
               </motion.div>
             ))}
+          </div>
+
+          {/* Last 3 Team Members - Centered */}
+          <div className="flex justify-center mt-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl">
+              {coreTeam.slice(-3).map((member, index) => (
+                <motion.div
+                  key={member.name}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -10 }}
+                  className="group"
+                >
+                  <Card className="h-full hover:shadow-2xl transition-all duration-300 border-gray-800/50 hover:border-blue-500/50 overflow-hidden bg-gray-900/50 backdrop-blur-sm">
+                    <CardContent className="p-0">
+                      <div className="relative overflow-hidden">
+                        <div className="aspect-square w-full">
+                          <img
+                            src={member.image || "/placeholder.svg"}
+                            alt={member.name}
+                            className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                          />
+                        </div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        <div className="absolute bottom-3 left-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          {member.social.linkedin && (
+                            <Button 
+                              size="sm" 
+                              variant="secondary" 
+                              className="w-8 h-8 p-0 hover:bg-blue-600 hover:text-white transition-colors bg-white/20 border-white/30 backdrop-blur-sm"
+                              asChild
+                            >
+                              <Link href={member.social.linkedin} target="_blank" rel="noopener noreferrer">
+                                <Linkedin className="w-4 h-4" />
+                              </Link>
+                            </Button>
+                          )}
+                        </div>
+                      </div>
+                      <div className="p-4 bg-gray-900/30">
+                        <h3 className="text-base font-bold text-white mb-2">{member.name}</h3>
+                        <p className="text-blue-400 font-medium mb-2 text-xs">{member.role}</p>
+                        <div className="flex items-center text-xs text-gray-400 mb-2">
+                          <MapPin className="w-3 h-3 mr-1" />
+                          {member.location}
+                        </div>
+                        <p className="text-xs text-gray-300 mb-3 leading-relaxed line-clamp-3">{member.bio}</p>
+                        <div className="flex flex-wrap gap-1">
+                          {member.skills.map((skill) => (
+                            <Badge key={skill} variant="outline" className="text-xs border-blue-500/30 text-blue-300 hover:bg-blue-500/10 px-1.5 py-0.5 transition-colors">
+                              {skill}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
