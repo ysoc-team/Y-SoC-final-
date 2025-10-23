@@ -143,6 +143,8 @@ export default function HomePage() {
             muted
             loop
             playsInline
+            preload="none"
+            poster="/backdrop.png"
             className="w-full h-full object-cover"
             style={{
               filter: 'brightness(0.4) contrast(1.2) saturate(1.1)'
@@ -197,7 +199,7 @@ export default function HomePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.4 }}
               style={{
-                fontFamily: "'Poppins', 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif",
+                fontFamily: "'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif",
                 fontWeight: 900,
                 letterSpacing: "-0.02em",
                 lineHeight: 0.9
@@ -212,7 +214,7 @@ export default function HomePage() {
                 transition={getTransition(0.3)}
                 style={{
                   textShadow: "0 0 20px rgba(255, 255, 255, 0.3)",
-                  fontFamily: "'Poppins', sans-serif",
+                  fontFamily: "'Inter', sans-serif",
                   fontWeight: 900,
                   letterSpacing: "-0.02em"
                 }}
@@ -229,7 +231,7 @@ export default function HomePage() {
                 transition={getTransition(0.3)}
                 style={{
                   textShadow: "0 0 20px rgba(255, 255, 255, 0.3)",
-                  fontFamily: "'Poppins', sans-serif",
+                  fontFamily: "'Inter', sans-serif",
                   fontWeight: 900,
                   letterSpacing: "-0.02em"
                 }}
@@ -526,7 +528,7 @@ export default function HomePage() {
                 textShadow: "0 0 20px rgba(255, 255, 255, 0.5)"
               }}
               style={{
-                fontFamily: "'Poppins', 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif",
+                fontFamily: "'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif",
                 fontWeight: 900,
                 letterSpacing: "-0.02em",
                 lineHeight: 1.1,
