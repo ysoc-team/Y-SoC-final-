@@ -81,36 +81,55 @@ const nextConfig = {
       config.optimization.splitChunks = {
         chunks: 'all',
         cacheGroups: {
+          default: false,
+          vendors: false,
           vendor: {
             test: /[\\/]node_modules[\\/]/,
             name: 'vendors',
             chunks: 'all',
             priority: 10,
+            reuseExistingChunk: true,
+            enforce: true,
           },
           three: {
             test: /[\\/]node_modules[\\/](three|@react-three)[\\/]/,
             name: 'three',
-            chunks: 'all',
+            chunks: 'async',
             priority: 20,
+            reuseExistingChunk: true,
           },
           framer: {
             test: /[\\/]node_modules[\\/]framer-motion[\\/]/,
             name: 'framer',
             chunks: 'all',
             priority: 20,
+            reuseExistingChunk: true,
           },
           radix: {
             test: /[\\/]node_modules[\\/]@radix-ui[\\/]/,
             name: 'radix',
             chunks: 'all',
             priority: 15,
+            reuseExistingChunk: true,
+          },
+          commons: {
+            name: 'commons',
+            minChunks: 2,
+            priority: 5,
+            reuseExistingChunk: true,
           },
         },
+        maxInitialRequests: 25,
+        maxAsyncRequests: 30,
+        minSize: 20000,
       };
 
       // Tree shaking optimization
       config.optimization.usedExports = true;
       config.optimization.sideEffects = false;
+      
+      // Minimize CSS
+      config.optimization.minimize = true;
     }
 
     // Ensure proper module resolution for @ alias
