@@ -11,6 +11,47 @@ export const metadata: Metadata = {
   title: "Y-SoC - Youth Season of Code",
   description: "You Code, You Create, You Collaborate - Join the global youth open-source community",
   generator: "v0.app",
+  keywords: ["open source", "youth", "coding", "community", "mentorship", "programming", "developers", "Y-SoC"],
+  authors: [{ name: "Y-SoC Team" }],
+  creator: "Y-SoC Team",
+  publisher: "Y-SoC",
+  metadataBase: new URL('https://ysoc.in'),
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://ysoc.in',
+    siteName: 'Y-SoC - Youth Season of Code',
+    title: 'Y-SoC - Youth Season of Code',
+    description: 'You Code, You Create, You Collaborate - Join the global youth open-source community',
+    images: [
+      {
+        url: '/logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'Y-SoC Logo',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Y-SoC - Youth Season of Code',
+    description: 'You Code, You Create, You Collaborate - Join the global youth open-source community',
+    images: ['/logo.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   icons: {
     icon: "/logo.png",
     shortcut: "/logo.png",
