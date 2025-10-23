@@ -20,6 +20,11 @@ export const PerformanceMonitor = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    // Only run in development or when explicitly enabled
+    if (process.env.NODE_ENV !== 'development') {
+      return;
+    }
+
     let frameCount = 0;
     let lastTime = performance.now();
     let fps = 60;

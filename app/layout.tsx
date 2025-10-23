@@ -5,29 +5,62 @@ import { GeistMono } from "geist/font/mono"
 import { Analytics } from "@vercel/analytics/next"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Suspense } from "react"
-import { Poppins, Inter } from "next/font/google"
 import "./globals.css"
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
-  variable: "--font-poppins",
-})
-
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
-  variable: "--font-inter",
-})
 
 export const metadata: Metadata = {
   title: "Y-SoC - Youth Season of Code",
   description: "You Code, You Create, You Collaborate - Join the global youth open-source community",
   generator: "v0.app",
+  keywords: ["open source", "youth", "coding", "community", "mentorship", "programming", "developers", "Y-SoC"],
+  authors: [{ name: "Y-SoC Team" }],
+  creator: "Y-SoC Team",
+  publisher: "Y-SoC",
+  metadataBase: new URL('https://ysoc.in'),
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://ysoc.in',
+    siteName: 'Y-SoC - Youth Season of Code',
+    title: 'Y-SoC - Youth Season of Code',
+    description: 'You Code, You Create, You Collaborate - Join the global youth open-source community',
+    images: [
+      {
+        url: '/logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'Y-SoC Logo',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Y-SoC - Youth Season of Code',
+    description: 'You Code, You Create, You Collaborate - Join the global youth open-source community',
+    images: ['/logo.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   icons: {
     icon: "/logo.png",
     shortcut: "/logo.png",
     apple: "/logo.png",
+  },
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 5,
   },
 }
 
@@ -38,13 +71,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
-      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable} ${poppins.variable} ${inter.variable} antialiased`}>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://vercel.com" />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#3b82f6" />
+      </head>
+      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable} antialiased`}>
         <Suspense fallback={null}>
           <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange forcedTheme="dark">
             {children}
           </ThemeProvider>
-          <Analytics />
         </Suspense>
+        <Analytics />
       </body>
     </html>
   )
