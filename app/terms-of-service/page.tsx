@@ -73,7 +73,7 @@ export default function TermsOfServicePage() {
     },
     {
       obligation: "Intellectual Property",
-      description: "Respect for intellectual property rights and proper attribution of work. Y-SoC retains 50% ownership rights to all projects developed during the program."
+      description: "Respect for intellectual property rights and proper attribution of work. Y-SoC retains 60% ownership rights to all projects developed during the program."
     },
     {
       obligation: "Confidentiality",
@@ -190,7 +190,7 @@ export default function TermsOfServicePage() {
                 </div>
                 <div className="bg-gray-800/30 p-6 rounded-lg border border-gray-700/20">
                   <p className="text-sm text-gray-300">
-                    <strong>Last Updated:</strong> September 2025
+                    <strong>Last Updated:</strong> November 2025
                   </p>
                 </div>
               </div>
