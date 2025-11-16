@@ -29,6 +29,7 @@ export function PillNavigation() {
     { href: "/about", label: "About" },
     { href: "/timeline", label: "Timeline" },
     { href: "/team", label: "Team" },
+    { href: "/projects", label: "Projects" },
     { href: "/mentors", label: "Mentors" },
     { href: "/sponsors", label: "Sponsors" },
     { href: "/contact", label: "Contact" },

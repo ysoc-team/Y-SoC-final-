@@ -37,6 +37,7 @@ export function Navigation() {
     { href: "/about", label: "About" },
     { href: "/timeline", label: "Timeline" },
     { href: "/team", label: "Team" },
+    { href: "/projects", label: "Projects" },
     { href: "/mentors", label: "Mentors" },
     { href: "/community-partners", label: "Community Partners" },
     { href: "/sponsors", label: "Sponsors" },
