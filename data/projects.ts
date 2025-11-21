@@ -922,6 +922,140 @@ export const projects: Project[] = [
     ],
     readmeSource: "ysoc-team/retailbrain README",
   },
+  {
+    id: 23,
+    title: "Ideagen Studio — AI Film Production Suite",
+    description:
+      "Fully integrated, cloud-powered production studio with AI-generated scenes, lifelike voiceovers, and in-browser video merging—designed for directors who want cinematic quality without leaving the browser.",
+    repoUrl: "https://github.com/ysoc-team/ideagen",
+    website: "",
+    image: "/placeholder-logo.png",
+    tags: [
+      "React",
+      "TypeScript",
+      "Tailwind",
+      "Vite",
+      "FFmpeg.wasm",
+      "AI",
+      "Video Generation",
+      "Voiceover",
+      "Gemini",
+      "Cerebras"
+    ],
+    status: "ongoing",
+    summary:
+      "Scene-by-scene AI film production suite that routes prompts through a secure backend, renders clips with models like Gemini and Cerebras, layers AI voiceovers, and fuses everything locally via FFmpeg.wasm for a private final cut.",
+    highlights: [
+      "Cloud-powered AI core with Gemini/Cerebras switching",
+      "Interactive storyboard editor with real-time clip previews",
+      "AI voiceover selector with tonal presets (calm, cheerful, deep)",
+      "100% in-browser final merge using FFmpeg.wasm for privacy",
+      "Sleek Tailwind-powered UI optimized for creators"
+    ],
+    howItWorksSummary: [
+      "Creators script scenes and pick AI engines/voice styles in the React studio",
+      "Backend orchestrates requests across Gemini, Cerebras, and optional ElevenLabs voice APIs",
+      "Rendered clips stream back into the storyboard for review and tweaks",
+      "Final video is stitched locally via FFmpeg.wasm so media never leaves the device"
+    ],
+    techStackSummary: [
+      "Frontend: React + TypeScript + Tailwind (Vite)",
+      "Backend: Node.js + Express AI routing layer",
+      "AI Engines: Google Gemini, Cerebras, ElevenLabs voiceover",
+      "Video Processing: FFmpeg.wasm (browser-side)",
+      "Infrastructure: LiquidMetal Raindrop AI on Vultr cloud GPUs"
+    ],
+    readmeSource: "ysoc-team/ideagen README",
+  },
+  {
+    id: 24,
+    title: "Spooktrunt — Haunted Architectural Intelligence",
+    description:
+      "Unified architectural playground where haunted creativity meets engineering rigor. Design floating cities, cursed cathedrals, and surreal structures while AI keeps them structurally grounded.",
+    repoUrl: "https://github.com/ysoc-team/spooktrunt",
+    website: "",
+    image: "/placeholder-logo.png",
+    tags: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Three.js",
+      "AR",
+      "AI",
+      "Vertex AI",
+      "Gemini",
+      "Node.js",
+      "Google Cloud"
+    ],
+    status: "ongoing",
+    summary:
+      "Spooktrunt turns poetic prompts into levitating towers, spiral bridges, or bone cathedrals, then runs feasibility audits, energy checks, and material swaps so the impossible becomes buildable.",
+    highlights: [
+      "Freeform designer for floating floors, cursed bridges, and surreal towers",
+      "AI feasibility analyzer covering stability, energy, materials, and cost",
+      "AR/3D walkthroughs to explore haunted or futuristic structures",
+      "Blueprint revival to modernize legacy plans with AI suggestions",
+      "JSON/GLTF skeleton templates seeded with mutation logic"
+    ],
+    howItWorksSummary: [
+      "Creators drag/drop surreal geometry or describe it in natural language",
+      "Gemini + custom engines convert prompts into JSON/GLTF structures",
+      "Feasibility analyzer simulates hover physics, materials, and costs",
+      "AR portal loads assets so users can wander inside cursed cathedrals",
+      "Mutation tools iterate designs with constraint-aware placement"
+    ],
+    techStackSummary: [
+      "Frontend: React + TypeScript (Vite) with 3D/AR components",
+      "Backend: Node.js services for model generation and analysis",
+      "AI: Google Gemini + Vertex AI pipelines for prompts and feasibility",
+      "Infra: Google Cloud (Cloud Run, Functions, Firestore, GCS, Pub/Sub)",
+      "Tooling: Cloud Build, Artifact Registry, Cloud Armor, Cloud CDN"
+    ],
+    readmeSource: "ysoc-team/spooktrunt README",
+  },
+  {
+    id: 25,
+    title: "AuraFarmer – AURA Telegram Bot with Groq AI",
+    description:
+      "AI-powered Telegram bot that leverages Groq's fast inference for intelligent analysis and automation, with database migrations and containerized deployment.",
+    repoUrl: "https://github.com/ysoc-team/AuraFarmer",
+    website: "",
+    image: "/placeholder-logo.png",
+    tags: [
+      "JavaScript",
+      "Node.js",
+      "Telegram Bot",
+      "Groq",
+      "AI",
+      "Docker",
+      "Bot API"
+    ],
+    status: "ongoing",
+    summary:
+      "Telegram bot powered by Groq AI for fast, intelligent analysis and automated responses. Containerized for easy deployment with migration support for database schema management.",
+    highlights: [
+      "Groq AI integration for high-speed inference and analysis",
+      "Telegram Bot API for seamless user interactions",
+      "Database migration system for schema versioning",
+      "Dockerized deployment for consistent environments",
+      "Environment-based configuration for flexible setups"
+    ],
+    howItWorksSummary: [
+      "Users interact with the bot via Telegram commands or messages",
+      "Bot processes requests and routes them to Groq analyzer module",
+      "Groq AI performs fast inference and returns intelligent responses",
+      "Results are formatted and sent back to users via Telegram",
+      "Database migrations handle schema updates on deployment"
+    ],
+    techStackSummary: [
+      "Core: Node.js + JavaScript",
+      "Bot Framework: Telegram Bot API",
+      "AI Engine: Groq for fast inference",
+      "Database: Migration system for schema management",
+      "Deployment: Docker containerization",
+      "Configuration: Environment-based settings"
+    ],
+  },
 ]
 
 
