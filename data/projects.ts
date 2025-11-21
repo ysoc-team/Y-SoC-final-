@@ -1056,6 +1056,243 @@ export const projects: Project[] = [
       "Configuration: Environment-based settings"
     ],
   },
+  {
+    id: 26,
+    title: "ChoreoRockstar – AI That Feels the Dance",
+    description:
+      "Revolutionary AI-powered dance analysis platform featuring AI-Lex, an empathetic AI dance mentor that evaluates technique, emotion, musicality, and artistic presence. Combines multimodal AI, voice synthesis, and cinematic UI to transform every performance into a personalized artistic dialogue.",
+    repoUrl: "https://github.com/ysoc-team/Choreography-",
+    website: "",
+    image: "/placeholder-logo.png",
+    tags: [
+      "AI",
+      "Dance",
+      "Google Gemini",
+      "Cerebras",
+      "ElevenLabs",
+      "Vultr",
+      "Firebase",
+      "Next.js",
+      "TypeScript",
+      "Vite",
+      "FastAPI",
+      "TailwindCSS",
+      "Framer Motion",
+      "LiquidMetal",
+      "Raindrop AI",
+      "Computer Vision",
+      "Voice AI",
+      "Emotion Detection"
+    ],
+    status: "ongoing",
+    summary:
+      "ChoreoRockstar democratizes artistic excellence by giving every dancer access to AI-powered professional critique. AI-Lex analyzes not just technique but emotion, rhythm, and stage presence, delivering personalized feedback with empathy and precision through voice narration and cinematic animations.",
+    highlights: [
+      "AI-Lex persona: Adaptive choreographic mentor with empathy and flair",
+      "Multimodal analysis: Posture, rhythm, emotion, costume, and stage presence",
+      "Voice-narrated feedback via ElevenLabs with professional critique tone",
+      "Emotion Gradient Model (EGM) quantifies facial energy and microexpressions",
+      "Rockstar celebration mode: Confetti and neon animations for high scores (≥85)",
+      "LiquidMetal Engine for ultra-fluid frame-by-frame rendering",
+      "Privacy-first: Client-side processing, ephemeral feedback sessions"
+    ],
+    howItWorksSummary: [
+      "User uploads 15-second dance video or keyframe image",
+      "Media processor extracts frames and audio client-side",
+      "Gemini Vision + Raindrop AI analyze posture, emotion, and rhythm patterns",
+      "Cerebras Cloud executes deep neural scoring for technique evaluation",
+      "AI-Lex generates structured feedback (0-100 score + personalized Rockstar Tip)",
+      "ElevenLabs synthesizes empathetic voice narration of critique",
+      "LiquidMetal renders cinematic UI with glassmorphism and particle motion",
+      "High-scoring performances trigger celebratory confetti and stage animations"
+    ],
+    techStackSummary: [
+      "Frontend: Next.js 15 + TypeScript + Vite, TailwindCSS, Framer Motion",
+      "AI Analysis: Google Gemini Vision (Vertex AI), PoseNet, EmotionNet",
+      "Compute: Cerebras Cloud (neural scoring), Vultr Cloud (GPU inference)",
+      "Voice AI: ElevenLabs SSML API for narrated feedback",
+      "Pattern Recognition: Raindrop AI for rhythm and choreography motifs",
+      "Backend: FastAPI + Node.js hybrid orchestration layer",
+      "Storage/Auth: Firebase (Cloud Storage, performance logs)",
+      "Rendering: LiquidMetal Engine (custom frame analysis)",
+      "Deploy: Vercel (frontend), Google Cloud Run (API), Docker, GitHub Actions"
+    ],
+    readmeSource: "ysoc-team/Choreography- README",
+  },
+  {
+    id: 27,
+    title: "FutureMind Pro – Scientifically Accurate Future Prediction App",
+    description:
+      "AI-powered prediction platform combining psychological science, behavioral analytics, and voice analysis to make scientifically accurate predictions about career, health, relationships, and personal growth — not fortune-telling, but science-backed human prediction.",
+    repoUrl: "https://github.com/ysoc-team/futuremind-pro",
+    website: "",
+    image: "/placeholder-logo.png",
+    tags: [
+      "AI",
+      "Psychology",
+      "Behavioral Analytics",
+      "Voice Analysis",
+      "Google Cloud",
+      "GCP",
+      "Vertex AI",
+      "BigQuery",
+      "Cloud Run",
+      "Speech-to-Text",
+      "Machine Learning",
+      "Prediction",
+      "Truth Detection"
+    ],
+    status: "ongoing",
+    summary:
+      "FutureMind Pro combines psychological science, behavioral analytics, and AI pattern recognition to deliver scientifically accurate predictions about your future. Using voice analysis, truth detection, and data-driven behavioral models, it provides insights on career, health, relationships, and personal growth.",
+    highlights: [
+      "Voice analysis technology reads emotion, honesty, and intent from speech patterns",
+      "Truth detection system using acoustic features and linguistic markers",
+      "Scientific prediction pipeline based on psychology research and behavioral data",
+      "Multi-domain predictions: career trajectory, health outcomes, relationship patterns, personal growth",
+      "Built on GCP infrastructure with Vertex AI, BigQuery, and Cloud Run",
+      "Evidence-based approach using validated psychological models and pattern recognition"
+    ],
+    howItWorksSummary: [
+      "User provides voice responses to structured psychological assessments",
+      "Voice analysis extracts acoustic features (pitch, tone, pace, emotion) via Speech-to-Text",
+      "Truth detection algorithms analyze linguistic patterns and voice stress indicators",
+      "Behavioral analytics engine processes questionnaire data and voice metrics",
+      "AI models trained on psychological research predict future outcomes across life domains",
+      "Results presented with confidence scores and scientific explanations for predictions"
+    ],
+    techStackSummary: [
+      "AI/ML: Google Vertex AI, TensorFlow, PyTorch for prediction models",
+      "Voice Tech: Speech-to-Text API, acoustic feature extraction, emotion detection",
+      "Data Platform: BigQuery for analytics, Firestore for user data",
+      "Backend: Cloud Run, Cloud Functions, FastAPI/Flask",
+      "Frontend: React/Next.js with real-time voice recording interface",
+      "Infrastructure: GKE for orchestration, Cloud Storage for voice data, Pub/Sub for processing",
+      "Monitoring: Cloud Monitoring, Cloud Logging, Operations Suite"
+    ],
+  },
+  {
+    id: 28,
+    title: "NeuraPath – Discover Your Authentic Career Path",
+    description:
+      "Neuroscience-driven, AI-powered career guidance platform that analyzes cognitive strengths, personality traits, and bias influences to help users discover authentic career paths. Features 3D cognitive mapping, bias filtering, and personalized portfolio generation.",
+    repoUrl: "https://github.com/ysoc-team/neurapath",
+    website: "",
+    image: "/placeholder-logo.png",
+    tags: [
+      "AI",
+      "Career Guidance",
+      "Neuroscience",
+      "React",
+      "TypeScript",
+      "FastAPI",
+      "Python",
+      "TensorFlow",
+      "Three.js",
+      "React Three Fiber",
+      "Framer Motion",
+      "Firebase",
+      "Vercel",
+      "Machine Learning",
+      "3D Visualization",
+      "Cognitive Science"
+    ],
+    status: "ongoing",
+    summary:
+      "NeuraPath is a scientific, interactive career guidance platform that quantifies cognitive strengths with neuroscience-backed tests, filters external biases, and recommends AI-aligned careers. It generates personalized portfolios and provides objective, data-driven insights for authentic career decisions.",
+    highlights: [
+      "Gamified cognitive assessment capturing logic, creativity, and emotional intelligence",
+      "Interactive 3D neural network mapping personality traits (OCEAN) to skills",
+      "Bias Filter Engine quantifies external influences and reveals authentic self",
+      "AI-driven career recommendations with compatibility scores and skill development paths",
+      "Portfolio Lab generates personalized, deployable portfolio websites",
+      "Emotion Mode dynamically adapts UI based on user mood using affective computing",
+      "Insights Dashboard visualizes longitudinal cognitive growth and career progress",
+      "Science-backed approach filters parental, societal, and peer pressures"
+    ],
+    howItWorksSummary: [
+      "User completes gamified Self-Discovery Module with adaptive questions and challenges",
+      "System generates dynamic cognitive profile across multiple dimensions",
+      "3D Cognitive Map visualizes personality traits and skill interconnections",
+      "Bias Filter Engine applies statistical models to separate internal traits from external pressures",
+      "Career Alignment Engine uses ML models to calculate career compatibility scores",
+      "Portfolio Lab aligns portfolio style and content with user's authentic strengths",
+      "Emotion Mode adapts interface colors and animations based on user mood",
+      "Insights Dashboard tracks cognitive evolution and exports AI-generated reports"
+    ],
+    techStackSummary: [
+      "Frontend/UI: React.js + TypeScript + Framer Motion for interactive animations",
+      "3D Visualization: React Three Fiber + Three.js for immersive neural maps",
+      "Backend/API: FastAPI + Python for AI, bias filtering, cognitive analysis",
+      "AI/ML: TensorFlow.js (client), TensorFlow + Scikit-learn (server)",
+      "Cognitive Models: OCEAN personality mapping, bias separation algorithms",
+      "Database/Auth: Firebase for authentication and real-time data",
+      "Deployment: Vercel for zero-config frontend hosting",
+      "Affective Computing: Emotion detection for dynamic UI adaptation"
+    ],
+    readmeSource: "ysoc-team/neurapath README",
+  },
+  {
+    id: 29,
+    title: "NeuroFinance – Your Brain Meets Your Budget",
+    description:
+      "First neuro-emotional AI assistant that monitors users in real-time to prevent impulsive financial losses. Uses Emotional Confidence Score (ECS) combining facial cues, typing patterns, and behavioral signals to intercept risky transactions during cognitive vulnerability.",
+    repoUrl: "https://github.com/ysoc-team/NEUROFINACE",
+    website: "",
+    image: "/placeholder-logo.png",
+    tags: [
+      "AI",
+      "FinTech",
+      "Behavioral Cybersecurity",
+      "Python",
+      "TensorFlow",
+      "TensorFlow Lite",
+      "D3.js",
+      "Facial Recognition",
+      "Emotion Detection",
+      "Behavioral Analytics",
+      "Go",
+      "Machine Learning",
+      "Biometrics",
+      "Real-time Analytics",
+      "On-Device ML",
+      "Security",
+      "Financial Security"
+    ],
+    status: "ongoing",
+    summary:
+      "NeuroFinance protects users from financial losses during cognitive vulnerability—panic, stress, distraction. Unlike traditional FinTech that checks account validity, NeuroFinance monitors rationality of mind, detecting emotional phishing and preventing impulsive transactions through real-time fusion AI.",
+    highlights: [
+      "Emotional Confidence Score (ECS): Fusion of emotional, cognitive, and behavioral risk factors",
+      "Real-time interception: Blocks transactions when ECS < 50% during vulnerability",
+      "Multi-factor analysis: Facial stress (50%), typing patterns (30%), transaction behavior (20%)",
+      "Privacy-first: On-device ML with TensorFlow Lite keeps emotional data local",
+      "D3.js Radar Chart for transparent factor visualization",
+      "D3.js Line Chart for continuous ECS monitoring",
+      "NeuroBadge gamification rewards healthy financial habits",
+      "API-ready for M-Pesa, MTN, and African commercial banks"
+    ],
+    howItWorksSummary: [
+      "System continuously monitors user through facial recognition, typing patterns, and behavior",
+      "Emotional Risk engine analyzes facial cues for stress and anxiety (50% weight)",
+      "Cognitive Risk engine tracks typing speed and error rates for distraction (30% weight)",
+      "Behavioral Risk engine flags unusual patterns: new recipients, large amounts, off-hours (20% weight)",
+      "Fusion AI Engine calculates Emotional Confidence Score (ECS) in real-time",
+      "When ECS drops below 50%, transaction is intercepted with gentle friction UI",
+      "D3.js dashboard visualizes risk factors and ECS trends for user awareness",
+      "NeuroBadge system gamifies emotional and financial health improvements"
+    ],
+    techStackSummary: [
+      "AI/ML: Python + TensorFlow for model training, TensorFlow Lite for on-device inference",
+      "Biometrics: Facial recognition for stress/anxiety detection, EEG support",
+      "Behavioral Analytics: Typing speed, error rate, transaction pattern analysis",
+      "Visualization: D3.js for real-time radar charts and line graphs",
+      "Backend: Go services for high-performance API layer",
+      "Frontend: HTML/CSS/JS with cyber-neon UI design",
+      "Security: On-device ML processing, encrypted data storage",
+      "Integration: API-ready for African FinTech platforms (M-Pesa, MTN, banks)",
+      "Demo: Jupyter notebooks for interactive demonstrations"
+    ],
+    readmeSource: "ysoc-team/NEUROFINACE README",
+  },
 ]
-
-
