@@ -1295,4 +1295,566 @@ export const projects: Project[] = [
     ],
     readmeSource: "ysoc-team/NEUROFINACE README",
   },
+  {
+    id: 30,
+    title: "SRG – Smart Recycling Guide",
+    description:
+      "A Flutter mobile application that helps users identify recyclable materials and provides guidance on proper recycling practices to promote environmental sustainability.",
+    repoUrl: "https://github.com/ysoc-team/SRG-Smart-Recycling-Guide-",
+    website: "",
+    image: "/placeholder-logo.png",
+    tags: [
+      "Flutter",
+      "Dart",
+      "Mobile",
+      "iOS",
+      "Android",
+      "Sustainability",
+      "Recycling",
+      "Environmental"
+    ],
+    status: "ongoing",
+    summary:
+      "Smart Recycling Guide (SRG) is a cross-platform Flutter app designed to help users make informed recycling decisions by identifying materials and providing location-specific recycling guidance.",
+    highlights: [
+      "Cross-platform support for iOS and Android",
+      "Material identification and recycling guidance",
+      "Location-based recycling information",
+      "User-friendly interface for sustainable practices"
+    ],
+    howItWorksSummary: [
+      "Users scan or input items they want to recycle",
+      "App identifies material type and recyclability status",
+      "Provides location-specific recycling instructions",
+      "Guides users to nearest recycling centers if needed"
+    ],
+    techStackSummary: [
+      "Framework: Flutter (Dart)",
+      "Platform: iOS and Android support",
+      "UI: Material Design components",
+      "Features: Camera integration, location services, offline capabilities"
+    ],
+    readmeSource: "ysoc-team/SRG-Smart-Recycling-Guide- README",
+  },
+  {
+    id: 31,
+    title: "NeuroGuard – Biosignal API and Consent Ledger",
+    description:
+      "FastAPI backend for NeuroGuard system that reads biosignal data (EEG), processes it via simulated AI analysis, and handles immutable consent logging using a blockchain-based smart contract ledger.",
+    repoUrl: "https://github.com/ysoc-team/blockchain",
+    website: "",
+    image: "/placeholder-logo.png",
+    tags: [
+      "Python",
+      "FastAPI",
+      "Solidity",
+      "Blockchain",
+      "EEG",
+      "Biosignals",
+      "Healthcare",
+      "Smart Contracts",
+      "web3.py",
+      "mne",
+      "yasa",
+      "Cryptography"
+    ],
+    status: "ongoing",
+    summary:
+      "NeuroGuard provides a secure, blockchain-backed system for managing biosignal data and patient consent. The FastAPI backend processes EEG signals with AI simulation while maintaining immutable consent records on-chain.",
+    highlights: [
+      "Real-time biosignal reading via serial port with mock data fallback",
+      "AI-driven biosignal processing and anomaly detection simulation",
+      "Blockchain-based consent ledger using Solidity smart contracts",
+      "Immutable consent records with patient IDs, timestamps, and signatures",
+      "Robust fallback mechanism for hardware-free development and testing"
+    ],
+    howItWorksSummary: [
+      "System reads biosignal data from connected device (or uses mock data)",
+      "FastAPI backend processes signals through simulated AI analysis",
+      "Consent status and data logs are recorded on blockchain ledger",
+      "Smart contract ensures immutable consent records with cryptographic signatures",
+      "API endpoints provide live biosignal data and consent ledger status"
+    ],
+    techStackSummary: [
+      "Backend: Python + FastAPI",
+      "Blockchain: Solidity (NeuroGuardConsentLedger.sol)",
+      "Web3: web3.py for blockchain interactions",
+      "Signal Processing: mne (EEG), yasa (sleep stage analysis)",
+      "Security: cryptography library for consent signatures",
+      "Infrastructure: Uvicorn ASGI server"
+    ],
+    readmeSource: "ysoc-team/blockchain README",
+  },
+  {
+    id: 32,
+    title: "Full-Stack Buddy – AI-Powered Code Generator",
+    description:
+      "AI-powered development assistant that instantly generates Frontend, Backend, or Full-Stack solutions from a single prompt, helping developers prototype faster and streamline workflows.",
+    repoUrl: "https://github.com/ysoc-team/Full-Stack-Buddy",
+    website: "",
+    image: "/placeholder-logo.png",
+    tags: [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "Gemini",
+      "AI",
+      "Code Generation",
+      "Vite",
+      "Full-Stack",
+      "Developer Tools"
+    ],
+    status: "ongoing",
+    summary:
+      "Full-Stack Buddy is an AI-powered code generator that transforms a single prompt into complete frontend, backend, or full-stack solutions with structured code, explanations, and secure API key management.",
+    highlights: [
+      "Full-stack code generation from one prompt (Frontend, Backend, or Full-Stack)",
+      "Tabbed code display with syntax highlighting for Overview, Backend, and Frontend",
+      "Secure API key manager with validation and localStorage persistence",
+      "Clean React + TypeScript UI with modular components",
+      "Node.js/Express backend integration with Gemini API",
+      "Persistent settings with secure localStorage"
+    ],
+    howItWorksSummary: [
+      "User enters task or idea in the prompt input",
+      "Selects generation type: Backend Only, Frontend Only, or Full-Stack",
+      "Gemini API generates structured JSON with overview, backend, and frontend code",
+      "Results displayed in organized tabs with syntax highlighting",
+      "API keys managed securely with masked display and validation"
+    ],
+    techStackSummary: [
+      "Frontend: React + TypeScript, Vite, CSS Modules, Styled Components",
+      "Backend: Node.js + Express",
+      "AI: Google Gemini API integration",
+      "UI: React Syntax Highlighter, LocalStorage persistence",
+      "Deployment: Netlify (frontend), AWS/GCP/Azure support"
+    ],
+    readmeSource: "ysoc-team/Full-Stack-Buddy README",
+  },
+  {
+    id: 33,
+    title: "Neuronattar – Multi-Source Sleep & Wellness Intelligence",
+    description:
+      "Advanced sleep and wellness tracking platform using multi-source data inputs, Fivetran ETL pipelines, Elastic Graph Database, and Gemini AI to provide comprehensive health insights through a 7-tab dashboard.",
+    repoUrl: "https://github.com/ysoc-team/neuronattar",
+    website: "",
+    image: "/placeholder-logo.png",
+    tags: [
+      "Python",
+      "Jupyter Notebook",
+      "Fivetran",
+      "Elasticsearch",
+      "Graph Database",
+      "Gemini",
+      "AI",
+      "ETL",
+      "Healthcare",
+      "Wellness",
+      "Sleep Tracking",
+      "Data Analytics"
+    ],
+    status: "ongoing",
+    summary:
+      "Neuronattar aggregates multi-source wellness data through Fivetran ETL pipelines, stores relationships in an Elastic Graph DB, and leverages Gemini AI to deliver actionable health insights via an intelligent 7-tab dashboard.",
+    highlights: [
+      "Multi-source data ingestion from various wellness and sleep tracking devices",
+      "Fivetran ETL pipeline for automated data transformation and loading",
+      "Elastic Graph Database for complex relationship mapping",
+      "Gemini AI-powered insights and recommendations",
+      "Comprehensive 7-tab dashboard for health monitoring",
+      "Sleep stage analysis, fatigue detection, and wind-down recommendations"
+    ],
+    howItWorksSummary: [
+      "Multi-source inputs collect data from various wellness devices and apps",
+      "Fivetran ETL pipeline processes and transforms raw data",
+      "Elastic Graph DB stores interconnected health and wellness relationships",
+      "Gemini AI analyzes patterns and generates personalized insights",
+      "7-tab dashboard visualizes sleep, energy, fatigue, and recommendations",
+      "Intelligent recommendations adapt based on user patterns and goals"
+    ],
+    techStackSummary: [
+      "Data Processing: Python, Jupyter Notebooks",
+      "ETL: Fivetran for automated data pipelines",
+      "Database: Elasticsearch with Graph Database capabilities",
+      "AI: Google Gemini for intelligent analysis and recommendations",
+      "Analytics: Data visualization and dashboard components",
+      "Integration: Multi-source API connections for wellness data"
+    ],
+    readmeSource: "ysoc-team/neuronattar README",
+  },
+  {
+    id: 34,
+    title: "BioSynapse Cloud – The Living Intelligence of Earth",
+    description:
+      "Self-evolving AWS-based multi-intelligence ecosystem that learns from planetary data and human cognition, creating a living intelligence network for comprehensive environmental and biological insights.",
+    repoUrl: "https://github.com/ysoc-team/BioSynapse",
+    website: "",
+    image: "/placeholder-logo.png",
+    tags: [
+      "AWS",
+      "Machine Learning",
+      "AI",
+      "Multi-Intelligence",
+      "Ecosystem",
+      "Cloud",
+      "Python",
+      "Environmental Data",
+      "Biological Intelligence",
+      "Self-Evolving Systems"
+    ],
+    status: "ongoing",
+    summary:
+      "BioSynapse Cloud is a self-evolving multi-intelligence ecosystem built on AWS that continuously learns from Earth's systems and human cognition, creating adaptive insights for environmental and biological understanding.",
+    highlights: [
+      "Self-evolving intelligence that learns from planetary and human data",
+      "AWS-based cloud infrastructure for scalable processing",
+      "Multi-intelligence architecture integrating diverse data sources",
+      "Continuous learning and adaptation mechanisms",
+      "Comprehensive environmental and biological insights",
+      "Living intelligence network that grows over time"
+    ],
+    howItWorksSummary: [
+      "System ingests data from multiple planetary and biological sources",
+      "AWS cloud infrastructure processes and stores vast datasets",
+      "Multi-intelligence engines analyze patterns across domains",
+      "Self-evolving algorithms adapt and learn from new information",
+      "Living intelligence network synthesizes insights across systems",
+      "Users access comprehensive insights through cloud-based interfaces"
+    ],
+    techStackSummary: [
+      "Cloud: AWS (EC2, S3, Lambda, SageMaker, etc.)",
+      "AI/ML: Machine learning models for pattern recognition",
+      "Data Processing: Python-based processing pipelines",
+      "Architecture: Multi-intelligence ecosystem design",
+      "Storage: Distributed cloud storage for large-scale data",
+      "Integration: APIs for diverse environmental and biological data sources"
+    ],
+    readmeSource: "ysoc-team/BioSynapse README",
+  },
+  {
+    id: 35,
+    title: "DreamGuardian – Sleep & Wellness for Seniors",
+    description:
+      "Sleep and wellness app for seniors that collects sleep data, analyzes it using AI, and displays actionable insights for both seniors and caregivers using TiDB Cloud and Chat2Query API for automated SQL generation.",
+    repoUrl: "https://github.com/ysoc-team/dreamguardian",
+    website: "",
+    image: "/placeholder-logo.png",
+    tags: [
+      "React",
+      "TypeScript",
+      "TiDB Cloud",
+      "Chat2Query",
+      "AI",
+      "Healthcare",
+      "Wellness",
+      "Sleep Tracking",
+      "Senior Care",
+      "Caregiver Dashboard"
+    ],
+    status: "ongoing",
+    summary:
+      "DreamGuardian is a comprehensive sleep and wellness app designed for seniors, featuring AI-powered sleep analysis, caregiver dashboards, and TiDB Cloud's Chat2Query API for intelligent SQL generation and data insights.",
+    highlights: [
+      "Sleep data collection and analysis with AI-powered insights",
+      "TiDB Cloud Chat2Query API for automatic SQL query generation",
+      "Dedicated caregiver dashboard for monitoring and alerts",
+      "User-friendly interface optimized for seniors",
+      "Actionable wellness recommendations and guidance",
+      "Secure data storage and privacy protection"
+    ],
+    howItWorksSummary: [
+      "Users input sleep and wellness data through React frontend",
+      "Data sent to TiDB Cloud via Chat2Query API for processing",
+      "Chat2Query automatically generates and executes SQL queries",
+      "AI analyzes patterns and generates actionable insights",
+      "Results displayed to users and caregivers via dashboard",
+      "Alerts and recommendations provided in real-time"
+    ],
+    techStackSummary: [
+      "Frontend: React + TypeScript, Vite",
+      "Database: TiDB Cloud with Chat2Query Data App",
+      "AI: Pattern analysis and insight generation",
+      "UI: shadcn/ui components, Tailwind CSS",
+      "Storage: TiDB Cloud database cluster",
+      "Features: Sleep tracking, caregiver portal, wellness tips"
+    ],
+    readmeSource: "ysoc-team/dreamguardian README",
+  },
+  {
+    id: 36,
+    title: "InfoStream – Real-Time News Aggregator",
+    description:
+      "React-based application that aggregates and displays real-time news from various sources, providing users with up-to-date information across customizable categories with a user-friendly interface.",
+    repoUrl: "https://github.com/ysoc-team/InfoStream",
+    website: "",
+    image: "/placeholder-logo.png",
+    tags: [
+      "React",
+      "TypeScript",
+      "News",
+      "Real-Time",
+      "Data Aggregation",
+      "API Integration",
+      "Web App"
+    ],
+    status: "ongoing",
+    summary:
+      "InfoStream fetches news data from multiple APIs, processes the information, and presents it in an organized, user-friendly format with real-time updates and customizable news categories.",
+    highlights: [
+      "Real-time news updates from multiple sources",
+      "User-friendly interface with customizable news categories",
+      "Responsive design for optimal viewing on various devices",
+      "Efficient data aggregation and processing",
+      "Organized presentation of news articles"
+    ],
+    howItWorksSummary: [
+      "System fetches news data from multiple API sources",
+      "Information is processed and categorized automatically",
+      "Users can customize categories and preferences",
+      "Real-time updates keep content fresh and current",
+      "Results displayed in organized, user-friendly format"
+    ],
+    techStackSummary: [
+      "Frontend: React + TypeScript",
+      "Data: Multiple news API integrations",
+      "UI: Responsive design components",
+      "Features: Category filtering, search, bookmarks",
+      "Real-time: Live data updates and refresh"
+    ],
+    readmeSource: "ysoc-team/InfoStream README",
+  },
+  {
+    id: 37,
+    title: "AIEditor – AI-Powered Text Editor",
+    description:
+      "React-based text editor enhanced with AI capabilities to assist users in writing and editing content more efficiently with grammar suggestions, style improvements, and real-time collaboration features.",
+    repoUrl: "https://github.com/ysoc-team/aieditor",
+    website: "",
+    image: "/placeholder-logo.png",
+    tags: [
+      "React",
+      "TypeScript",
+      "AI",
+      "Text Editor",
+      "Natural Language Processing",
+      "Writing Assistant",
+      "Grammar Check",
+      "Collaboration"
+    ],
+    status: "ongoing",
+    summary:
+      "AIEditor utilizes AI models to analyze text input, providing real-time suggestions and corrections to improve writing quality, with support for multiple document formats and collaborative editing.",
+    highlights: [
+      "AI-driven grammar and style suggestions",
+      "Real-time collaboration features",
+      "Support for multiple document formats",
+      "Intelligent writing assistance",
+      "Context-aware recommendations",
+      "Export and sharing capabilities"
+    ],
+    howItWorksSummary: [
+      "User types or pastes text into the editor",
+      "AI models analyze text in real-time",
+      "Suggestions for grammar, style, and clarity provided",
+      "Users can accept or reject recommendations",
+      "Documents saved with version history",
+      "Collaborative features enable team editing"
+    ],
+    techStackSummary: [
+      "Frontend: React + TypeScript",
+      "AI: Language models for text analysis (GPT/Gemini)",
+      "Editor: Rich text editing with syntax highlighting",
+      "Collaboration: Real-time sync and comments",
+      "Storage: Document persistence and versioning"
+    ],
+    readmeSource: "ysoc-team/aieditor README",
+  },
+  {
+    id: 38,
+    title: "SkillSync-AI – AI-Powered Peer Learning Platform",
+    description:
+      "Platform that connects learners with peers for collaborative learning experiences, leveraging AI to match users based on skills, interests, and learning goals for effective skill development.",
+    repoUrl: "https://github.com/ysoc-team/SkillSync-AI",
+    website: "",
+    image: "/placeholder-logo.png",
+    tags: [
+      "AI",
+      "Peer Learning",
+      "Education",
+      "Matching Algorithm",
+      "Collaboration",
+      "Skills Development",
+      "Social Learning"
+    ],
+    status: "ongoing",
+    summary:
+      "SkillSync-AI uses AI algorithms to analyze user profiles and learning goals, facilitating connections between compatible learners for mutual growth and skill development through peer-to-peer collaboration.",
+    highlights: [
+      "Intelligent peer matching based on skills and interests",
+      "Support for a wide range of subjects and skill levels",
+      "Community features for group discussions and resource sharing",
+      "Personalized learning paths and recommendations",
+      "Progress tracking and skill assessment",
+      "Secure messaging and collaboration tools"
+    ],
+    howItWorksSummary: [
+      "Users create profiles with skills, interests, and learning goals",
+      "AI algorithms analyze profiles and match compatible learners",
+      "Matched peers connect through the platform",
+      "Collaborative learning sessions and resource sharing enabled",
+      "Progress tracked and recommendations updated",
+      "Community features support group learning activities"
+    ],
+    techStackSummary: [
+      "Frontend: React/Next.js + TypeScript",
+      "AI: Matching algorithms and recommendation systems",
+      "Backend: Node.js/Express or Python/FastAPI",
+      "Database: User profiles, skills, and match data",
+      "Features: Messaging, video calls, resource sharing",
+      "Analytics: Progress tracking and skill assessment"
+    ],
+    readmeSource: "ysoc-team/SkillSync-AI README",
+  },
+  {
+    id: 39,
+    title: "SafePath – Location-Aware Safety Navigation",
+    description:
+      "Mapping application designed to help users navigate safely by providing real-time information about route safety conditions, integrating with local law enforcement data for incident reports and alerts.",
+    repoUrl: "https://github.com/ysoc-team/safepath",
+    website: "",
+    image: "/placeholder-logo.png",
+    tags: [
+      "React Native",
+      "TypeScript",
+      "Maps",
+      "Navigation",
+      "Safety",
+      "Location Services",
+      "Real-Time Updates",
+      "Mobile"
+    ],
+    status: "ongoing",
+    summary:
+      "SafePath collects data from various sources, analyzes route safety, and offers users the safest paths to their destinations with real-time updates on safety conditions and incident reports.",
+    highlights: [
+      "Real-time updates on safety conditions of routes",
+      "Integration with local law enforcement data for incident reports",
+      "User-friendly interface with customizable route preferences",
+      "Safe route recommendations based on historical data",
+      "Community reporting for safety incidents",
+      "Offline map support for reliable navigation"
+    ],
+    howItWorksSummary: [
+      "User enters destination and preferences",
+      "System collects safety data from multiple sources",
+      "Routes analyzed for safety conditions and incidents",
+      "Safest paths recommended with visual indicators",
+      "Real-time updates alert users to safety changes",
+      "Users can report incidents to help community"
+    ],
+    techStackSummary: [
+      "Mobile: React Native + TypeScript",
+      "Maps: Map integration (Google Maps/Mapbox)",
+      "Location: GPS and geolocation services",
+      "Data: Law enforcement APIs, community reports",
+      "Features: Route planning, safety alerts, incident reporting",
+      "Backend: Safety data aggregation and processing"
+    ],
+    readmeSource: "ysoc-team/safepath README",
+  },
+  {
+    id: 40,
+    title: "Rimo – Remote Monitoring System",
+    description:
+      "System designed for remote monitoring of various environments, providing real-time data and alerts to users through customizable alert settings and support for multiple sensor integrations.",
+    repoUrl: "https://github.com/ysoc-team/rimo",
+    website: "",
+    image: "/placeholder-logo.png",
+    tags: [
+      "React",
+      "TypeScript",
+      "IoT",
+      "Remote Monitoring",
+      "Sensors",
+      "Real-Time Data",
+      "Alerts",
+      "Dashboard"
+    ],
+    status: "ongoing",
+    summary:
+      "Rimo collects data from connected sensors, processes the information, and provides users with real-time updates and alerts for environmental conditions, equipment status, and custom monitoring parameters.",
+    highlights: [
+      "Real-time monitoring of environmental conditions",
+      "Customizable alert settings for different parameters",
+      "Support for multiple sensor integrations",
+      "Dashboard with visual data representation",
+      "Historical data tracking and analytics",
+      "Mobile and web access for remote monitoring"
+    ],
+    howItWorksSummary: [
+      "Sensors collect data from monitored environments",
+      "Data transmitted to Rimo system in real-time",
+      "System processes and analyzes sensor readings",
+      "Alerts triggered based on customizable thresholds",
+      "Dashboard displays current status and historical trends",
+      "Users receive notifications via multiple channels"
+    ],
+    techStackSummary: [
+      "Frontend: React + TypeScript",
+      "IoT: Sensor integration and data collection",
+      "Backend: Data processing and alert management",
+      "Database: Time-series data storage",
+      "Features: Real-time dashboards, alerts, analytics",
+      "Communication: MQTT/WebSocket for real-time updates"
+    ],
+    readmeSource: "ysoc-team/rimo README",
+  },
+  {
+    id: 41,
+    title: "Plantologist – AI Plant Care Assistant",
+    description:
+      "Application that assists users in caring for their plants by providing personalized care schedules, reminders for watering and fertilizing, and optimal care recommendations based on plant species and local weather data.",
+    repoUrl: "https://github.com/ysoc-team/plantologist",
+    website: "",
+    image: "/placeholder-logo.png",
+    tags: [
+      "React",
+      "TypeScript",
+      "AI",
+      "Plant Care",
+      "Weather Integration",
+      "Reminders",
+      "Gardening",
+      "Mobile"
+    ],
+    status: "ongoing",
+    summary:
+      "Plantologist uses a database of plant care information, user input, and local weather data to generate customized care plans and reminders, helping users maintain healthy plants with personalized guidance.",
+    highlights: [
+      "Personalized care schedules based on plant species",
+      "Reminders for watering, fertilizing, and other care tasks",
+      "Integration with weather data for optimal care recommendations",
+      "Plant identification and care database",
+      "Progress tracking and plant health monitoring",
+      "Seasonal care adjustments and tips"
+    ],
+    howItWorksSummary: [
+      "Users add plants to their collection with species information",
+      "System references plant care database for specific requirements",
+      "Local weather data integrated for personalized recommendations",
+      "Care schedule generated with automatic reminders",
+      "Users track watering, fertilizing, and other care activities",
+      "System adjusts recommendations based on season and weather"
+    ],
+    techStackSummary: [
+      "Frontend: React + TypeScript",
+      "Database: Plant species and care information",
+      "Weather: Weather API integration for local conditions",
+      "Notifications: Reminder system for care tasks",
+      "Features: Plant identification, care logs, progress tracking",
+      "Mobile: Responsive design for on-the-go use"
+    ],
+    readmeSource: "ysoc-team/plantologist README",
+  },
 ]
