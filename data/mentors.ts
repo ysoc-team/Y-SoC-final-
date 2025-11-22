@@ -602,19 +602,4 @@ export const mentors: Mentor[] = [
     languages: ["English"],
     linkedin: "https://www.linkedin.com/in/sandeepkhandelwalpune/"
   },
-  {
-    id: 40,
-    name: "Peggy Du",
-    role: "Product Designer II",
-    company: "Esri",
-    avatar: "/peggy.jpeg",
-    expertise: ["Product Design", "UX/UI Design", "Mobile App Design", "iOS", "Android", "Geospatial Design", "Accessibility Design", "Design Systems", "User Research", "Visual Design", "AR/VR Design", "Unity", "Python", "CSS/HTML", "Cross-functional Collaboration"],
-    experience: "4+ years",
-    bio: "Product Designer at Esri with 4+ years of experience crafting intuitive and engaging user experiences. Expert in mobile app design, accessibility, and geospatial interfaces. Red Dot Design Award winner for Brands & Communication Design 2025. Previously led design for Chloe Ting mobile app achieving 100K+ downloads and 4.9/5 rating.",
-    specialties: ["Mobile App Design", "Accessibility & Inclusive Design", "Geospatial UX/UI", "Design Systems", "User Research", "Cross-platform Design", "AR/VR Design", "Award-winning Design"],
-    availability: "Available",
-    timezone: "PST",
-    languages: ["English"],
-    linkedin: "https://www.linkedin.com/in/peggy-du-117372201/"
-  }
 ]
