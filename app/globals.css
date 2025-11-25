@@ -28,7 +28,6 @@ html {
 /* GPU acceleration for smooth animations */
 .gpu-accelerated {
   transform: translateZ(0);
-  will-change: transform;
 }
 
 /* Smooth transitions for interactive elements */
@@ -203,7 +202,7 @@ body {
 }
 
 @theme inline {
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', 'Helvetica Neue', Arial, sans-serif;
   --font-mono: var(--font-geist-mono);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -311,7 +310,7 @@ body {
 
   /* GPU acceleration for animations */
   .gpu-accelerated {
-    will-change: transform, opacity;
+    will-change: auto;
     transform: translateZ(0);
     backface-visibility: hidden;
     perspective: 1000px;
@@ -319,7 +318,6 @@ body {
 
   /* Optimized animations for 60fps */
   .smooth-animate {
-    will-change: transform, opacity;
     transform: translateZ(0);
   }
 
@@ -376,9 +374,17 @@ body {
 
   /* Optimize repaints and reflows */
   .optimize-rendering {
-    will-change: transform, opacity;
+    will-change: auto;
     transform: translateZ(0);
     backface-visibility: hidden;
+  }
+
+  /* GPU acceleration - use sparingly */
+  .gpu-accelerated {
+    will-change: auto;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
   }
 
   /* Lazy loading styles */

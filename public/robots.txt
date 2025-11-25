@@ -1,0 +1,10 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Disallow admin or private pages
+Disallow: /api/
+Disallow: /test-form
+
+# Sitemap location
+Sitemap: https://ysoc.in/sitemap.xml

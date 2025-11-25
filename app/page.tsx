@@ -13,6 +13,67 @@ import { animations, getTransition } from "@/lib/animations"
 import { PerformanceMonitor, usePerformanceOptimization } from "@/components/PerformanceMonitor"
 import { LazyPrism, LazyPrismaticBurst, LazyPixelBlast } from "@/components/LazyComponents"
 
+const features = [
+  {
+    icon: Code,
+    title: "Open Source Projects",
+    description: "Contribute to real-world projects and build your portfolio with meaningful code.",
+  },
+  {
+    icon: Users,
+    title: "Global Community",
+    description: "Connect with passionate developers from around the world and learn together.",
+  },
+  {
+    icon: Zap,
+    title: "Skill Development",
+    description: "Level up your coding skills with mentorship and hands-on experience.",
+  },
+  {
+    icon: Globe,
+    title: "Remote Collaboration",
+    description: "Work with distributed teams and master modern development workflows.",
+  },
+]
+
+const roles = [
+  { 
+    name: "Project Leads", 
+    color: "bg-gradient-to-r from-blue-500 to-cyan-400", 
+    iconColor: "text-blue-400",
+    icon: Briefcase,
+    description: "Guide and manage open-source projects" 
+  },
+  { 
+    name: "Mentors", 
+    color: "bg-gradient-to-r from-blue-500 to-cyan-400", 
+    iconColor: "text-blue-400",
+    icon: GraduationCap,
+    description: "Share knowledge and guide newcomers" 
+  },
+  { 
+    name: "Contributors", 
+    color: "bg-gradient-to-r from-blue-500 to-cyan-400", 
+    iconColor: "text-blue-400",
+    icon: Code,
+    description: "Write code and build amazing features" 
+  },
+  { 
+    name: "Problem Architects", 
+    color: "bg-gradient-to-r from-blue-500 to-cyan-400", 
+    iconColor: "text-blue-400",
+    icon: Target,
+    description: "Design clear, challenging problem statements that drive innovation and learning." 
+  },
+  { 
+    name: "Learners", 
+    color: "bg-gradient-to-r from-blue-500 to-cyan-400", 
+    iconColor: "text-blue-400",
+    icon: BookOpen,
+    description: "Start your open-source journey" 
+  },
+]
+
 export default function HomePage() {
   const [showScrollTop, setShowScrollTop] = useState(false)
   const { scrollYProgress } = useScroll()
@@ -52,68 +113,6 @@ export default function HomePage() {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
-  const features = [
-    {
-      icon: Code,
-      title: "Open Source Projects",
-      description: "Contribute to real-world projects and build your portfolio with meaningful code.",
-    },
-    {
-      icon: Users,
-      title: "Global Community",
-      description: "Connect with passionate developers from around the world and learn together.",
-    },
-    {
-      icon: Zap,
-      title: "Skill Development",
-      description: "Level up your coding skills with mentorship and hands-on experience.",
-    },
-    {
-      icon: Globe,
-      title: "Remote Collaboration",
-      description: "Work with distributed teams and master modern development workflows.",
-    },
-  ]
-
-
-  const roles = [
-    { 
-      name: "Project Leads", 
-      color: "bg-gradient-to-r from-blue-500 to-cyan-400", 
-      iconColor: "text-blue-400",
-      icon: Briefcase,
-      description: "Guide and manage open-source projects" 
-    },
-    { 
-      name: "Mentors", 
-      color: "bg-gradient-to-r from-blue-500 to-cyan-400", 
-      iconColor: "text-blue-400",
-      icon: GraduationCap,
-      description: "Share knowledge and guide newcomers" 
-    },
-    { 
-      name: "Contributors", 
-      color: "bg-gradient-to-r from-blue-500 to-cyan-400", 
-      iconColor: "text-blue-400",
-      icon: Code,
-      description: "Write code and build amazing features" 
-    },
-    { 
-      name: "Problem Architects", 
-      color: "bg-gradient-to-r from-blue-500 to-cyan-400", 
-      iconColor: "text-blue-400",
-      icon: Target,
-      description: "Design clear, challenging problem statements that drive innovation and learning." 
-    },
-    { 
-      name: "Learners", 
-      color: "bg-gradient-to-r from-blue-500 to-cyan-400", 
-      iconColor: "text-blue-400",
-      icon: BookOpen,
-      description: "Start your open-source journey" 
-    },
-  ]
-
   return (
     <div className="min-h-screen bg-black scroll-smooth">
         <PerformanceMonitor />
@@ -143,6 +142,8 @@ export default function HomePage() {
             muted
             loop
             playsInline
+            preload="none"
+            poster="/backdrop.png"
             className="w-full h-full object-cover"
             style={{
               filter: 'brightness(0.4) contrast(1.2) saturate(1.1)'
@@ -197,7 +198,7 @@ export default function HomePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.4 }}
               style={{
-                fontFamily: "'Poppins', 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif",
+                fontFamily: "'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif",
                 fontWeight: 900,
                 letterSpacing: "-0.02em",
                 lineHeight: 0.9
@@ -212,7 +213,7 @@ export default function HomePage() {
                 transition={getTransition(0.3)}
                 style={{
                   textShadow: "0 0 20px rgba(255, 255, 255, 0.3)",
-                  fontFamily: "'Poppins', sans-serif",
+                  fontFamily: "'Inter', sans-serif",
                   fontWeight: 900,
                   letterSpacing: "-0.02em"
                 }}
@@ -229,7 +230,7 @@ export default function HomePage() {
                 transition={getTransition(0.3)}
                 style={{
                   textShadow: "0 0 20px rgba(255, 255, 255, 0.3)",
-                  fontFamily: "'Poppins', sans-serif",
+                  fontFamily: "'Inter', sans-serif",
                   fontWeight: 900,
                   letterSpacing: "-0.02em"
                 }}
@@ -526,7 +527,7 @@ export default function HomePage() {
                 textShadow: "0 0 20px rgba(255, 255, 255, 0.5)"
               }}
               style={{
-                fontFamily: "'Poppins', 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif",
+                fontFamily: "'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif",
                 fontWeight: 900,
                 letterSpacing: "-0.02em",
                 lineHeight: 1.1,
