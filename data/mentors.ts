@@ -602,4 +602,19 @@ export const mentors: Mentor[] = [
     languages: ["English"],
     linkedin: "https://www.linkedin.com/in/sandeepkhandelwalpune/"
   },
+  {
+    id: 40,
+    name: "Nishant Gupta",
+    role: "Junior Associate & Founder",
+    company: "Coforge",
+    avatar: "/nishant_gupta.jpg",
+    expertise: ["Python", "Java", "JavaScript", "FastAPI", "REST APIs", "OpenAI API", "Hugging Face", "SQL", "Git", "AWS", "Automation Workflows"],
+    experience: "2+ years",
+    bio: "AI Solutions Architect and Automation Engineer with 85K+ followers on Instagram (@codewithnishant). Building scalable AI-driven systems, voice agents, and API-integrated automation solutions for founders and growing businesses.",
+    specialties: ["Voice AI Agents", "LLM Integrations", "Business Automation Systems", "Chatbot Development", "API-based Backend Architecture"],
+    availability: "Available",
+    timezone: "IST",
+    languages: ["English", "Hindi"],
+    linkedin: "https://www.linkedin.com/in/nishantgupta-codewithnishant/"
+  },
 ]

@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import Link from "next/link"
-import { ArrowRight, Code, Users, Zap, Globe, Calendar, Trophy, ChevronUp, Briefcase, GraduationCap, Target, BookOpen } from "lucide-react"
+import { ArrowRight, Code, Users, Zap, Globe, Calendar, Trophy, ChevronUp, Briefcase, GraduationCap } from "lucide-react"
 import { motion, useScroll, useTransform, useSpring, useInView } from "framer-motion"
 import { useEffect, useState, useCallback, useMemo, lazy, Suspense } from "react"
 import { animations, getTransition } from "@/lib/animations"
@@ -98,20 +98,6 @@ export default function HomePage() {
       icon: Code,
       description: "Write code and build amazing features" 
     },
-    { 
-      name: "Problem Architects", 
-      color: "bg-gradient-to-r from-blue-500 to-cyan-400", 
-      iconColor: "text-blue-400",
-      icon: Target,
-      description: "Design clear, challenging problem statements that drive innovation and learning." 
-    },
-    { 
-      name: "Learners", 
-      color: "bg-gradient-to-r from-blue-500 to-cyan-400", 
-      iconColor: "text-blue-400",
-      icon: BookOpen,
-      description: "Start your open-source journey" 
-    },
   ]
 
   return (
@@ -184,7 +170,7 @@ export default function HomePage() {
                 >
                   <Calendar className="w-4 h-4 mr-2 animate-pulse" />
                   <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent font-bold tracking-wide">
-                    November 2025 - April 2026
+                    November 2025 - June 2026
                   </span>
                 </Badge>
               </motion.div>
@@ -449,38 +435,6 @@ export default function HomePage() {
               ))}
             </div>
 
-            {/* Second Row - 2 roles centered */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
-              {roles.slice(3, 5).map((role, index) => (
-                <motion.div
-                  key={role.name}
-                  whileInView={animations.scale.animate}
-                  transition={getTransition(0.4)}
-                  viewport={animations.scrollReveal.viewport}
-                  whileHover={animations.card.whileHover}
-                  className="cursor-pointer group"
-                >
-                  <div className="h-full text-center rounded-2xl border border-gray-700/30 bg-gray-900/50 backdrop-blur-sm hover:border-gray-600/50 hover:shadow-xl transition-all duration-300">
-                    <div className="p-6">
-                      {/* Modern Icon */}
-                      <div className="w-16 h-16 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 flex items-center justify-center mx-auto mb-4 shadow-lg shadow-blue-500/30">
-                        <role.icon className="w-8 h-8 text-white" />
-                      </div>
-                      
-                      {/* Role Title */}
-                      <h3 className="text-xl font-bold mb-3 text-white group-hover:text-blue-400 transition-colors duration-300">
-                        {role.name}
-                      </h3>
-                      
-                      {/* Role Description */}
-                      <p className="text-gray-300 group-hover:text-gray-200 transition-colors duration-300">
-                        {role.description}
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
           </div>
         </div>
       </section>

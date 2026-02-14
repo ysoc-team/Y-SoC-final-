@@ -41,7 +41,7 @@ export default function FAQPage() {
         },
         {
           question: "How long does the program run?",
-          answer: "Y-SoC runs for 6 months, from November 2025 to April 2026. The program is structured in phases: Registration & Onboarding, Community Bonding, Active Contribution, Refinement & Completion, and Final Showcase."
+          answer: "Y-SoC runs for 6 months, from November 2025 to June 2026. The program is structured in phases: Registration & Onboarding, Community Bonding, Active Contribution, Refinement & Completion, and Final Showcase."
         }
       ]
     },
@@ -52,11 +52,11 @@ export default function FAQPage() {
       questions: [
         {
           question: "How do I apply to Y-SoC?",
-          answer: "You can apply by visiting our recruitment page and filling out the application form. Select your preferred role (Project Lead, Mentor, Contributor, Designer, or Learner), provide your details, and submit your application. We'll review it and get back to you within 5-7 business days."
+          answer: "You can apply by visiting our recruitment page and filling out the application form. Select your preferred role (Project Lead, Mentor, or Contributor), provide your details, and submit your application. We'll review it and get back to you within 5-7 business days."
         },
         {
           question: "What roles are available in Y-SoC?",
-          answer: "We offer five main roles: Project Lead (guide and manage projects), Mentor (share knowledge and guide newcomers), Contributor (write code and build features), Designer (create beautiful interfaces), and Learner (start your open-source journey)."
+          answer: "We offer three main roles: Project Lead (guide and manage projects), Mentor (share knowledge and guide newcomers), and Contributor (write code and build features)."
         },
         {
           question: "What information do I need to provide in my application?",

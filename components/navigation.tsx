@@ -36,6 +36,7 @@ export function Navigation() {
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
     { href: "/timeline", label: "Timeline" },
+    { href: "/events", label: "Events" },
     { href: "/team", label: "Team" },
     { href: "/projects", label: "Projects" },
     { href: "/mentors", label: "Mentors" },

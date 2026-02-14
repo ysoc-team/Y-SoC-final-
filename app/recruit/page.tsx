@@ -14,7 +14,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Checkbox } from "@/components/ui/checkbox"
 import { motion } from "framer-motion"
-import { Crown, Users, Code, Target, GraduationCap, Send, CheckCircle, AlertCircle, Briefcase, BookOpen, Mail, MapPin, Star, Link as LinkIcon, Clock, Heart } from "lucide-react"
+import { Crown, Users, Code, GraduationCap, Send, CheckCircle, AlertCircle, Briefcase, Mail, MapPin, Star, Link as LinkIcon, Clock, Heart } from "lucide-react"
 
 export default function RecruitPage() {
   const [formData, setFormData] = useState({
@@ -44,8 +44,6 @@ export default function RecruitPage() {
     { value: "project-lead", label: "Project Lead", icon: Briefcase, description: "Guide and manage open-source projects", color: "text-blue-500", iconColor: "text-blue-500" },
     { value: "mentor", label: "Mentor", icon: GraduationCap, description: "Share knowledge and guide newcomers", color: "text-teal-500", iconColor: "text-teal-500" },
     { value: "contributor", label: "Contributor", icon: Code, description: "Write code and build amazing features", color: "text-green-500", iconColor: "text-green-500" },
-    { value: "problem-architect", label: "Problem Architect", icon: Target, description: "Design clear, challenging problem statements that drive innovation and learning.", color: "text-purple-500", iconColor: "text-purple-500" },
-    { value: "learner", label: "Learner", icon: BookOpen, description: "Start your open-source journey", color: "text-orange-500", iconColor: "text-orange-500" },
   ]
 
   const handleSubmit = async (e: React.FormEvent) => {

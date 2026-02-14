@@ -11,9 +11,8 @@ Visit our live website: [Y-SoC Official Website](https://ysoc.in)
 ## ✨ Features
 
 ### 🏠 **Homepage**
-- **Hero Section**: Dynamic event timeline (November to April) with engaging animations
-- **Role Selection**: Interactive cards for different participation roles
-- **Problem Architects**: Specialized role for designing challenging problem statements
+- **Hero Section**: Dynamic event timeline (November to June) with engaging animations
+- **Role Selection**: Interactive cards for Project Leads, Mentors, and Contributors
 - **Call-to-Action**: Clear pathways for joining the community
 
 ### 👥 **Team Page**
@@ -24,7 +23,7 @@ Visit our live website: [Y-SoC Official Website](https://ysoc.in)
 
 ### 🎯 **Recruitment Page**
 - **Comprehensive Application Form**: Multi-step form with validation
-- **Role Selection**: Choose from Project Lead, Mentor, Contributor, Problem Architect, or Learner
+- **Role Selection**: Choose from Project Lead, Mentor, or Contributor
 - **Form Validation**: Real-time validation with visual feedback
 - **Required Fields**: Experience level, time commitment, and contact information
 

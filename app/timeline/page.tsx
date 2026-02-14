@@ -9,56 +9,117 @@ import Particles from "@/components/Particles"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { animations, getTransition } from "@/lib/animations"
-import { Calendar, Users, Lightbulb, Code, Trophy, Star, ArrowRight, CheckCircle, Clock } from "lucide-react"
+import { Users, Lightbulb, Code, Trophy, Star, ArrowRight, CheckCircle, BookOpen, GitBranch } from "lucide-react"
 
 export default function TimelinePage() {
 
   const timelineEvents = [
     {
-      month: "Phase 1",
-      title: "Registration & Onboarding",
-      icon: Calendar,
-      description: "Applications open for Project Leads, Mentors, and Participants. Teams are formed and projects are introduced.",
-      highlights: [],
+      month: "1 Feb – 7 Feb",
+      phase: "Phase 0",
+      title: "Onboarding & Culture",
+      icon: BookOpen,
+      description: "Get oriented with open-source mindset, Git/GitHub workflow, and community norms.",
+      highlights: [
+        "Orientation and Open-Source mindset",
+        "Git/GitHub workflow: Issues → Branch → PR → Review → Merge",
+        "Tooling setup and community norms",
+      ],
+      workshops: [],
+      awards: [],
       accentColor: "#0096FF",
-      status: "current",
-    },
-    {
-      month: "Phase 2",
-      title: "Community Bonding",
-      icon: Users,
-      description: "Contributors connect with mentors, explore beginner-friendly issues, and learn through workshops.",
-      highlights: [],
-      accentColor: "#00E0FF",
       status: "upcoming",
     },
     {
-      month: "Phase 3",
-      title: "Active Contribution",
+      month: "8 Feb – 28 Feb",
+      phase: "Phase 1",
+      title: "Guided Contribution Sprint",
       icon: Code,
-      description: "Core development begins with pull requests, code reviews, and teamwork.",
-      highlights: [],
+      description: "Learners act as Contributors with assigned beginner-friendly issues.",
+      highlights: [
+        "Learners act as Contributors",
+        "Assigned beginner-friendly issues",
+      ],
+      workshops: [],
+      awards: [],
+      accentColor: "#00E0FF",
+      status: "current",
+    },
+    {
+      month: "1 Mar – 31 Mar",
+      phase: "Phase 2",
+      title: "Independent Contribution & Collaboration",
+      icon: Users,
+      description: "Self-picked issues and collaboration with the community.",
+      highlights: [
+        "Self-picked issues and collaboration",
+      ],
+      workshops: [],
+      awards: [],
       accentColor: "#00FFA3",
       status: "upcoming",
     },
     {
-      month: "Phase 4",
-      title: "Refinement & Completion",
-      icon: Lightbulb,
-      description: "Features are polished, bugs are fixed, and documentation is improved.",
-      highlights: [],
+      month: "1 Apr – 15 Apr",
+      phase: "Phase 3",
+      title: "Hack & Build Phase",
+      icon: GitBranch,
+      description: "Internal Hackathon with feature/module development via issues and PRs.",
+      highlights: [
+        "Internal Hackathon",
+        "Feature/module development via issues and PRs",
+      ],
+      workshops: [],
+      awards: [],
       accentColor: "#CFFF04",
       status: "upcoming",
     },
     {
-      month: "Phase 5",
-      title: "Final Showcase",
-      icon: Trophy,
-      description: "Completed projects are presented to the community, with recognition for outstanding contributors.",
-      highlights: [],
+      month: "16 Apr – 30 Apr",
+      phase: "Phase 4",
+      title: "Maintainer Shadowing",
+      icon: Star,
+      description: "Leaderboard updating, PR reviews, issue labeling, and mentoring.",
+      highlights: [
+        "Leaderboard updating",
+        "PR reviews, issue labeling, mentoring",
+      ],
+      workshops: [],
+      awards: [],
       accentColor: "#9D4DFF",
       status: "upcoming",
-    }
+    },
+    {
+      month: "1 May – Mid May",
+      phase: "Phase 5",
+      title: "Open Innovation Sprint",
+      icon: Lightbulb,
+      description: "Open-ended Hackathon with major enhancements.",
+      highlights: [
+        "Open-ended Hackathon",
+        "Major enhancements",
+      ],
+      workshops: [],
+      awards: [],
+      accentColor: "#FF6B6B",
+      status: "upcoming",
+    },
+    {
+      month: "—",
+      phase: "Final",
+      title: "Evaluation & Recognition",
+      icon: Trophy,
+      description: "Final evaluation based on quality of PRs, issue discussions, reviews and collaboration.",
+      highlights: [
+        "Quality of PRs",
+        "Issue discussions",
+        "Reviews and collaboration",
+      ],
+      workshops: [],
+      awards: ["Top Contributor", "Best Reviewer", "Best Maintainer", "Community Builder"],
+      accentColor: "#FFD93D",
+      status: "upcoming",
+    },
   ]
 
 
@@ -145,46 +206,48 @@ export default function TimelinePage() {
           </motion.div>
 
           <div className="relative">
-            {/* Timeline Line */}
-            <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-gray-600 via-gray-500 to-gray-600 transform -translate-x-1/2 shadow-lg shadow-gray-500/20" />
+            {/* Timeline Line - spans full height of content */}
+            <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-gray-600 via-gray-500 to-gray-600 transform -translate-x-1/2 shadow-lg shadow-gray-500/20 z-0" />
+            {/* Blue progress trail - from top to current phase */}
+            <div
+              className="absolute left-1/2 top-0 w-1 bg-gradient-to-b from-blue-500 via-cyan-500 to-blue-500 transform -translate-x-1/2 shadow-lg shadow-blue-500/30 z-[1] transition-all duration-500"
+              style={{
+                height: `${Math.max(0, ((timelineEvents.findIndex((e) => e.status === "current") + 0.5) / timelineEvents.length) * 100)}%`,
+              }}
+            />
 
-            {/* Timeline Dots */}
-            {timelineEvents.map((event, index) => (
-              <div
-                key={`dot-${event.month}`}
-                className={`absolute left-1/2 w-4 h-4 rounded-full transform -translate-x-1/2 z-10 ${
-                  event.status === "current" 
-                    ? "bg-gradient-to-r from-blue-500 to-cyan-400 shadow-lg shadow-blue-500/50" 
-                    : "bg-gray-600 shadow-lg shadow-gray-500/30"
-                }`}
-                style={{
-                  top: `${index * 20}rem` // Position dots at correct intervals
-                }}
-              />
-            ))}
-
-
-            <div className="space-y-16">
+            <div className="space-y-16 relative">
               {timelineEvents.map((event, index) => (
                 <motion.div
-                  key={event.month}
+                  key={`${event.phase}-${event.title}`}
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
                   className={`relative flex items-center ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
                 >
+                  {/* Timeline Dot - first at top of line, others centered with card */}
+                  <div
+                    className={`absolute left-1/2 w-4 h-4 rounded-full -translate-x-1/2 z-10 ${
+                      index === 0 ? "top-0" : "top-1/2 -translate-y-1/2"
+                    } ${
+                      event.status === "current"
+                        ? "bg-gradient-to-r from-blue-500 to-cyan-400 shadow-lg shadow-blue-500/50"
+                        : "bg-gray-600 shadow-lg shadow-gray-500/30"
+                    }`}
+                  />
+
                   {/* Content Card */}
                   <div
                     className={`w-full md:w-5/12 ml-16 md:ml-0 ${
-                      index % 2 === 0 ? "md:mr-auto md:pr-8" : "md:ml-auto md:pl-8"
+                      index % 2 === 0 ? "md:mr-auto md:pr-12" : "md:ml-auto md:pl-12"
                     }`}
                   >
-                    <div 
+                    <div
                       className="bg-[#1a1a2e] rounded-2xl p-6 border border-gray-600/40 hover:border-gray-500/60 transition-all duration-300 shadow-lg hover:shadow-xl"
                       style={{
                         borderLeftColor: event.accentColor,
-                        borderLeftWidth: '4px'
+                        borderLeftWidth: "4px",
                       }}
                     >
                       <div className="flex items-start gap-4 mb-4">
@@ -192,27 +255,55 @@ export default function TimelinePage() {
                           className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"
                           style={{
                             backgroundColor: event.accentColor,
-                            boxShadow: `0 0 20px ${event.accentColor}40`
+                            boxShadow: `0 0 20px ${event.accentColor}40`,
                           }}
                         >
                           <event.icon className="w-6 h-6 text-white" />
                         </div>
                         <div className="flex-1">
-                          <div className="flex items-center gap-3 mb-2">
-                            <span className="text-sm font-medium text-gray-300">{event.month}</span>
-                            <span 
+                          <div className="flex items-center gap-3 mb-2 flex-wrap">
+                            <span className="text-sm font-medium text-gray-300">{event.phase}</span>
+                            {event.month !== "—" && (
+                              <span className="text-sm text-gray-400">• {event.month}</span>
+                            )}
+                            <span
                               className="px-3 py-1 rounded-full text-xs font-semibold"
                               style={{
                                 backgroundColor: `${event.accentColor}20`,
                                 color: event.accentColor,
-                                border: `1px solid ${event.accentColor}40`
+                                border: `1px solid ${event.accentColor}40`,
                               }}
                             >
                               {event.status === "current" ? "Current" : "Upcoming"}
                             </span>
                           </div>
-                          <h3 className="text-xl font-bold text-white mb-3">{event.title}</h3>
-                          <p className="text-gray-200 leading-relaxed">{event.description}</p>
+                          <h3 className="text-xl font-bold text-white mb-2">{event.title}</h3>
+                          <p className="text-gray-200 leading-relaxed mb-4">{event.description}</p>
+                          {event.highlights && event.highlights.length > 0 && (
+                            <ul className="space-y-2 mb-4">
+                              {event.highlights.map((item, i) => (
+                                <li key={i} className="text-gray-300 flex items-start gap-2 text-sm">
+                                  <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                                  <span>{item}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+                          {event.awards && event.awards.length > 0 && (
+                            <div>
+                              <p className="text-sm font-semibold text-amber-400 mb-2">Awards:</p>
+                              <div className="flex flex-wrap gap-2">
+                                {event.awards.map((a, i) => (
+                                  <span
+                                    key={i}
+                                    className="px-3 py-1 rounded-lg bg-amber-500/20 text-amber-300 text-sm"
+                                  >
+                                    {a}
+                                  </span>
+                                ))}
+                              </div>
+                            </div>
+                          )}
                         </div>
                       </div>
                     </div>

@@ -107,7 +107,7 @@ export function Footer() {
                   young developers building the future together.
                 </p>
                 <Badge variant="secondary" className="mb-6">
-                  November 2025 - April 2026
+                  November 2025 - June 2026
                 </Badge>
                 <div className="flex space-x-4">
                   {socialLinks.map((social) => (

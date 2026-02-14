@@ -9,7 +9,7 @@ import DarkVeil from "@/components/DarkVeil"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { animations, getTransition } from "@/lib/animations"
-import { Target, Eye, Users, Code, Target as ProblemArchitect, GraduationCap, Crown, ArrowRight, Globe, Heart, Zap } from "lucide-react"
+import { Eye, Users, Code, GraduationCap, Crown, ArrowRight, Globe, Heart, Zap, Target } from "lucide-react"
 
 export default function AboutPage() {
   const memberCategories = [
@@ -39,24 +39,6 @@ export default function AboutPage() {
       skills: ["Software Development", "Bug Fixing", "Feature Implementation", "Testing"],
       color: "bg-green-500",
       textColor: "text-green-500",
-    },
-    {
-      icon: ProblemArchitect,
-      title: "Problem Architects",
-      description:
-        "Strategic thinkers who design clear, challenging problem statements that drive innovation and learning. They craft ground-level problems that inspire creative solutions and address real-world challenges.",
-      skills: ["Problem Design", "Strategic Thinking", "Innovation", "Ground Level Analysis"],
-      color: "bg-purple-500",
-      textColor: "text-purple-500",
-    },
-    {
-      icon: GraduationCap,
-      title: "Learners",
-      description:
-        "Enthusiastic beginners starting their open-source journey. They learn by doing, contributing, and growing with the community.",
-      skills: ["Learning", "Contributing", "Collaboration", "Growth Mindset"],
-      color: "bg-orange-500",
-      textColor: "text-orange-500",
     },
   ]
 
@@ -263,12 +245,10 @@ export default function AboutPage() {
                         <h4 className="text-sm font-semibold text-gray-400 mb-3">Key Skills & Responsibilities</h4>
                         <div className="flex flex-wrap gap-2">
                           {category.skills.map((skill, skillIndex) => {
-                            const colorMap = {
+                            const colorMap: Record<string, string> = {
                               "text-blue-500": "border-blue-500 bg-blue-500/10 text-blue-400 hover:bg-blue-500/20",
                               "text-teal-500": "border-teal-500 bg-teal-500/10 text-teal-400 hover:bg-teal-500/20",
                               "text-green-500": "border-green-500 bg-green-500/10 text-green-400 hover:bg-green-500/20",
-                              "text-purple-500": "border-purple-500 bg-purple-500/10 text-purple-400 hover:bg-purple-500/20",
-                              "text-orange-500": "border-orange-500 bg-orange-500/10 text-orange-400 hover:bg-orange-500/20"
                             };
                             return (
                               <span
@@ -439,7 +419,7 @@ export default function AboutPage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {memberCategories.map((category, index) => (
               <motion.div
                 key={category.title}
@@ -481,22 +461,6 @@ export default function AboutPage() {
                             <li>• Portfolio of meaningful contributions</li>
                             <li>• Code review and collaboration skills</li>
                             <li>• Technical skill development</li>
-                          </>
-                        )}
-                        {category.title === "Problem Architects" && (
-                          <>
-                            <li>• Strategic problem analysis and design</li>
-                            <li>• Research methodology and innovation skills</li>
-                            <li>• Impact assessment and community needs analysis</li>
-                            <li>• Creative thinking and solution architecture</li>
-                          </>
-                        )}
-                        {category.title === "Learners" && (
-                          <>
-                            <li>• Structured learning path</li>
-                            <li>• Mentorship and guidance</li>
-                            <li>• Safe environment to make mistakes</li>
-                            <li>• Gradual skill building and confidence</li>
                           </>
                         )}
                       </ul>
